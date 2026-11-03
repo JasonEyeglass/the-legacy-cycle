@@ -36,7 +36,7 @@ Every region boss in the GDD is a **hero or ruler from an earlier Cycle who fell
 3. **This bloodline (weeks):** the Void Sovereign cannot be beaten by one generation. Opening the Forgotten Realm needs **three seals**, and each one can only be earned by a different generation of your family. That gives a long-term goal that only the legacy system can deliver.
 
 ## Story arc (draft)
-- **Prologue: The Last Ember (first 5 minutes).** You play the last Cycle's champion in a short, scripted, powerful fight that you're meant to lose. You see the Fallen Knight fall to the Void. Then you wake up as a young villager in Havenbrook with a faint Ember. This teaches combat, sets up the mystery, and gives new players a clear first goal. It fills the "first 5 minutes" gap from [[GDD v0.2 Review]].
+- **Prologue: The Last Ember (first 5 minutes).** You play the last Cycle's champion in a short, scripted, powerful fight that you're meant to lose. You see the Fallen Knight fall to the Void. Then you wake up as a young villager in Havenbrook with a faint Ember. This teaches combat, sets up the mystery, and gives new players a clear first goal. It fills the "first 5 minutes" gap from [[GDD v0.2 Review]]. Full script: [[Prologue Script]].
 - **Act 1: Havenbrook.** Learn what the Cycle is. Meet the wounded knight (the GDD's choice). Beat the Fallen Knight and see his memory.
 - **Act 2: Forest and Frostveil.** Follow the trail of the earlier heroes. Learn that heroes fall when they hold on.
 - **Act 3: Ashen Wastes and Shadowlands.** Understand what the Titan was built to do and what deal the Monarch made. The first seal is earned here. Retiring becomes possible, and the heir begins with the family's story already in motion.

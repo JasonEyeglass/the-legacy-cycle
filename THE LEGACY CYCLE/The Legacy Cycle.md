@@ -20,3 +20,6 @@ Team: [[Team and Roles]] · [[Current Status]] · [[Decisions Log]]
 
 - [[Competitor Baseline - Rogue Lineage and Deepwoken]]
 - [[Story Foundation]]
+
+- [[Prologue Script]]
+- [[Project Plan Overview]] (start here)
