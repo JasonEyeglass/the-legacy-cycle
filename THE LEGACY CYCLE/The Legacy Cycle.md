@@ -25,3 +25,5 @@ Team: [[Team and Roles]] · [[Current Status]] · [[Decisions Log]]
 - [[Project Plan Overview]] (start here)
 
 - [[Economy and Monetization]]
+
+- [[Act 1 Quest Outline]]

@@ -10,7 +10,7 @@ What each member of [[Team and Roles]] is working on now. Each person edits only
 
 | Member | Working on | Last updated | Blocked by |
 |---|---|---|---|
-| JasonEyeglass | Done: legacy spec, story, prologue, plan overview, economy and monetization. Next: fill in team roles | 2026-11-03 | |
+| JasonEyeglass | Done: legacy spec, story, prologue, plan overview, economy and monetization, Act 1 quest outline. Next: fill in team roles | 2026-11-03 | |
 | _name_ | | | |
 | _name_ | | | |
 | _name_ | | | |

@@ -38,12 +38,13 @@ Full note: [[Legacy System Spec]]
 - **Do now (milestone D):** save the knight choice in `bloodline.familyFlags`, not on the character.
 
 ## 5. Story
-Full notes: [[Story Foundation]] and [[Prologue Script]]
+Full notes: [[Story Foundation]], [[Prologue Script]] and [[Act 1 Quest Outline]]
 - **Premise:** every hundred years the Void wakes, a hero rises, and the hero falls and becomes a monster. That's the Cycle. Every region boss is a fallen hero from an earlier Cycle.
 - **The Ember:** heroes carry an Ember that slowly corrupts. Past heroes fell because they held on too long. Retiring means passing your Ember on, which makes the legacy mechanic the lesson of the story.
 - **Long-term goal:** the final boss needs three seals, each from a different generation of your family.
 - **Prologue (first 5 minutes):** you play Ser Caelan, the last champion. He refuses to pass on his Ember and becomes the Fallen Knight, the first boss. His Ember escapes and finds your character a hundred years later.
 - **First playable build needs:** the prologue and Act 1 only.
+- **Act 1:** 6 main quests in Havenbrook. The wounded knight (Ser Bryn Hale) is dying the way Caelan did. Save him with your Ember, take his sword, or leave him; leaving him makes him the dungeon mini-boss. The Old Gate dungeon ends with the Fallen Knight. First playable cut is ~15 minutes.
 
 ## 6. Build plan (milestones from the GDD, with our changes)
 | Milestone | Exit criteria | Changes from our planning |
