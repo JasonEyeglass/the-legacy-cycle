@@ -1,0 +1,18 @@
+# Personal Obsidian state (differs per person, causes constant conflicts)
+THE LEGACY CYCLE/.obsidian/workspace.json
+THE LEGACY CYCLE/.obsidian/workspace-mobile.json
+THE LEGACY CYCLE/.obsidian/cache
+THE LEGACY CYCLE/.trash/
+
+# Plugin settings hold personal access tokens - never commit
+THE LEGACY CYCLE/.obsidian/plugins/*/data.json
+THE LEGACY CYCLE/.obsidian/plugins/*/*.log
+
+# Personal Claude Code settings
+.claude/settings.local.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
