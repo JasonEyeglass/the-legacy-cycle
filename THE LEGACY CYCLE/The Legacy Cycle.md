@@ -23,3 +23,5 @@ Team: [[Team and Roles]] · [[Current Status]] · [[Decisions Log]]
 
 - [[Prologue Script]]
 - [[Project Plan Overview]] (start here)
+
+- [[Economy and Monetization]]

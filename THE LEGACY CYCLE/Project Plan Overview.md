@@ -56,6 +56,14 @@ Full notes: [[Story Foundation]] and [[Prologue Script]]
 
 **After alpha:** retirement shrine and ceremony, heirlooms, bloodline traits, reputation, the heir prologue variant.
 
+## 6b. Economy and monetization
+Full note: [[Economy and Monetization]]
+- **One currency (gold) plus region materials.** No premium currency; cosmetics priced directly in Robux.
+- **Gold mostly from quests and dungeons,** little from killing enemies. Main sinks: upgrades, repairs, heirloom engraving, and retirement (90% of gold left behind).
+- **No player trading at launch.**
+- **Free to play, cosmetics only.** Skins, Ember colors, family crests that last across generations, emotes, private servers. Purchases belong to the account and are never lost on retirement.
+- **Never sold:** power, boosts, revives, loot boxes, legacy perks.
+
 ## 7. How the team works
 Full notes: [[Team and Roles]], [[Current Status]], [[Decisions Log]]
 - **Repo:** https://github.com/JasonEyeglass/the-legacy-cycle (private). The Obsidian vault inside it is the team's shared memory; every member's Claude reads it.
@@ -78,8 +86,10 @@ Full notes: [[Team and Roles]], [[Current Status]], [[Decisions Log]]
 - [ ] Character creation before or after the prologue?
 - [ ] Is the tone right for the Roblox audience?
 
+**Economy and monetization** (drafted in [[Economy and Monetization]])
+- [ ] Robux prices, gold inheritance %, and gray areas (inventory space, character slots) listed there.
+
 **Still missing from the plan**
-- [ ] Economy and monetization (cosmetic only).
 - [ ] Reasons to come back (daily or weekly activities).
 - [ ] Numbers: level ranges, region length, boss health and party scaling.
 
