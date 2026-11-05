@@ -18,11 +18,11 @@ The first 5 minutes of [[Home|The Legacy Cycle]], as set out in [[Story Foundati
 | Players | Solo. Every new player sees it once. |
 | Teaches | Moving, basic attack, heavy attack, dodge, parry, the Ember skill (the GDD's "one magic ability") |
 | Ends with | The player waking up in present-day Havenbrook with the first quest |
-| Can it be skipped? | Not the first time. Skippable for every later character in the bloodline (see "Heirs" below). |
+| Can it be skipped? | Not the first time. Rewatchable later from the Memory Journal. |
 
 ## Characters
 - **Ser Caelan:** the playable champion. Brave, proud, worn out. His flaw is that he cannot let go.
-- **The Keeper:** an ageless spirit bound to the Shrine of Embers. Calm and sad. She has watched every Cycle. The player meets her again in present-day Havenbrook, where she runs the retirement shrine.
+- **The Keeper:** an ageless spirit bound to the Shrine of Embers. Calm and sad. She has watched every Cycle. The player meets her again in present-day Havenbrook, where she guards the Shrine of Embers.
 - **The Void:** never shown clearly. A voice and a darkness. The Void Sovereign stays hidden until the endgame.
 - **Hollowed soldiers / the Brute:** Caelan's own soldiers, already taken by the Void.
 
@@ -139,26 +139,25 @@ The spark rises into the sky. Time-lapse: Havenbrook is rebuilt, seasons pass, t
 | The Keeper | "A champion's Ember. And with it, his fight." |
 | The Keeper | "The Void is stirring again. It always does." |
 | The Keeper | "Go to the guild hall. Tell them the Keeper sent you." |
-| The Keeper (as player leaves) | "And when your time comes... come back here. Don't hold on too long." |
+| The Keeper (as player leaves) | "And when the time comes... let go. He never could." |
 
 **First quest given:** *A Spark in Havenbrook*, go to the guild hall. Act 1 begins.
 
-That last Keeper line foreshadows retirement. Players won't understand it now; they will when the Shrine of Embers becomes the retirement point.
+That last Keeper line foreshadows the final choice, where the player decides whether to let the Echoes go. Players won't understand it now; they will at the end.
 
 ---
 
 ## Payoffs later in the game
 - **Fallen Knight boss fight (Act 1):** he uses Caelan's moves from the prologue, and fights the player's Ember with his corrupted one. Mid-fight line: *"I... hold... the line."* His boss memory replays Scene 4 from the Keeper's view.
 - **The wounded knight choice (Act 1):** saving the wounded knight is the chance to do what the Keeper could not do for Caelan. Leaving him lets him fall the same way.
-- **Retirement (later):** the Keeper runs the ceremony. Her line on the player's first retirement: *"You let go. He never could."*
+- **The final choice (endgame):** if the player lets the Echoes go, the Keeper's last line: *"You let go. He never could."*
 
-## Heirs (later generations)
-When a new generation starts, the full prologue is skipped. The heir gets a 20-second variant: the Keeper hands the family's Ember from the retired character to the heir at the Shrine of Embers. Not needed in the first playable build.
+(2026-11-05: the heir variant of this prologue was cut along with heirs. See [[Decisions|Decisions Log]].)
 
 ## Implementation notes (for the gameplay programmer)
 - **Where it runs:** build it as a hidden zone inside the Havenbrook place, not as a separate place. That avoids a teleport in a new player's first minute, which is the riskiest moment for a failed teleport (see [[GDD v0.2 Review]]).
 - **Solo:** enemies in the prologue give no rewards, so they can be simulated on the client. This keeps it solo without a reserved server. Shortcut with a known limit: client-side enemies are only fine because nothing here is saved or rewarded.
-- **Save flag:** store `bloodline.familyFlags.prologue_seen = true` when the player reaches Scene 6, as set out in the [[Legacy System Spec]] data model.
+- **Save flag:** store `character.storyFlags.prologue_seen = true` when the player reaches Scene 6 (one-character profile in [[Merge Proposal - Legacy Cycle and Action MMO]]).
 - **Disconnect:** if the player leaves mid-prologue, they restart it from the beginning. It's short enough for that to be acceptable.
 - **Assets needed:** burning old Havenbrook (a damaged copy of the Havenbrook blockout), north gate, Shrine of Embers (old and overgrown versions), Caelan model, Fallen Caelan model (reused as the Act 1 boss), hollowed soldier, Void Brute, the Keeper, Void tendrils VFX, Ember VFX.
 

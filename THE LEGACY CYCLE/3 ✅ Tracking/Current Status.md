@@ -10,7 +10,7 @@ What each member of [[Team and Roles]] is working on now. Each person edits only
 
 | Member | Working on | Last updated | Blocked by |
 |---|---|---|---|
-| JasonEyeglass | Done: legacy spec, story, prologue, plan overview, economy and monetization, Act 1 quest outline; imported chat proposals ([[Chat Import Hub - Roblox Action MMO]]). drafted [[Merge Proposal - Legacy Cycle and Action MMO]]. Next: team decides Legacy Cycle, Shattered Sky, or the merge; fill in team roles | 2026-11-05 | |
+| JasonEyeglass | Done: legacy spec, story, prologue, plan overview, economy and monetization, Act 1 quest outline; imported chat proposals ([[Chat Import Hub - Roblox Action MMO]]). drafted [[Merge Proposal - Legacy Cycle and Action MMO]]; cut heirs (one character per player) across the plan. Next: team decides Legacy Cycle, Shattered Sky, or the merge; fill in team roles | 2026-11-05 | |
 | _name_ | | | |
 | _name_ | | | |
 | _name_ | | | |

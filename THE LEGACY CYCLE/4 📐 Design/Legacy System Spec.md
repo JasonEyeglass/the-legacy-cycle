@@ -76,3 +76,10 @@ Profile (versioned, DataStoreService)
 - [ ] Does the heir play as a direct child or as a chosen apprentice? This affects character customization.
 - [ ] Is 50% reputation carry-over the right amount? It needs playtesting.
 - [ ] Is there a monetization link (cosmetic ancestor portraits, heirloom skins) that stays non-pay-to-win?
+
+## Proposals
+**JasonEyeglass, 2026-11-05: cut heirs and retirement.** Logged in [[Decisions|Decisions Log]]. The heir loop is too complicated for younger players, so each player keeps one character for the whole game. If the owner agrees, mark this spec as superseded:
+- Cut: retirement, the retirement ceremony, heirs, heirlooms, bloodline traits, reputation carry-over, the ancestor hall, hardcore permadeath.
+- Keep: per-player story flags (the knight choice), the death penalty, and the multiplayer rule that flag-driven content shows only in private instances or per-player NPCs.
+- Data model: drop `bloodline`; move `familyFlags` to `character.storyFlags`. Full profile in [[Merge Proposal - Legacy Cycle and Action MMO]].
+- "Legacy" now means the heroes before you, told through playable boss and Echo memories.

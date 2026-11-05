@@ -93,12 +93,12 @@ Private dungeon, 1–4 players, 15–25 minutes (GDD target). Flow follows GDD s
 - The Keeper: *"He held the line for a hundred years. Nobody told him he could stop."*
 - She reveals the other fallen heroes are waking too. The nearest is in the Ethereal Forest.
 - **Reward:** 150 gold, title "Ember-Bearer", the road to the forest opens (Act 2).
-- Seed for the legacy system: she shows the player the empty stone ring in the shrine. *"One day you'll stand here and hand your Ember on. Not today."*
+- Seed for the final choice: she shows the player the empty stone ring in the shrine. *"Every hero I've known held on too long. Remember that."*
 
 ---
 
 ## The wounded knight choice
-Saved as `bloodline.familyFlags.knight_fate` = `saved` / `took` / `left`. This is the milestone D proof: one choice that changes a later quest and NPC responses.
+Saved as `character.storyFlags.knight_fate` = `saved` / `took` / `left`. This is the milestone D proof: one choice that changes a later quest and NPC responses.
 
 | | **Save him** | **Take his weapon** | **Leave him** |
 |---|---|---|---|
@@ -109,7 +109,6 @@ Saved as `bloodline.familyFlags.knight_fate` = `saved` / `took` / `left`. This i
 | In the dungeon (mini-boss) | A void brute (standard) | A void brute (standard) | **Hollowed Bryn**: Bryn, taken by the Void. Uses guild knight moves. Drops a tarnished *Hale's Oath*. |
 | In the boss fight | In the last phase, Bryn appears at the gate and holds it for 10 seconds, a scripted assist that gives the party a free hit | Nothing | Nothing |
 | Later (Act 2+) | Bryn becomes a weapon trainer | Hale family members distrust you | The Keeper mentions Bryn |
-| **Next generation** | The Hale family trains your heir: *"Your family saved ours."* | The Hales remember: *"Your family took our sword."* | Hollowed Bryn becomes a wandering threat in Havenbrook for the heir |
 
 No choice is "the right one" in rewards. *Take* gets the best weapon early. *Save* gets the ally and the best long-term story. *Leave* gets the hardest and most memorable fight. That keeps it a real choice, not a test.
 
@@ -150,7 +149,7 @@ Cut for later: 1.2, 1.4 (upgrade can move to a guild NPC), the puzzle, and all s
 
 ## Implementation notes
 - **Per-player visibility:** Bryn in the watchtower and in the guild exists only for players whose state matches. Use client-side visibility or a per-player NPC. Never one shared Bryn in the region (spec rule).
-- **Flags:** `knight_fate` on `bloodline.familyFlags`; quest progress on `character.questState`; Act 1 complete as `bloodline.familyFlags.act1_complete`.
+- **Flags:** `knight_fate` on `character.storyFlags`; quest progress on `character.questState`; Act 1 complete as `character.storyFlags.act1_complete`. (One character per player since 2026-11-05; no `bloodline` section.)
 - **Disconnect in the dungeon:** restoring dungeon progress after a disconnect is a GDD risk. Simplest first version: checkpoint before the mini-boss and before the Fallen Knight.
 
 ## Open questions

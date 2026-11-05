@@ -57,3 +57,13 @@ Only the Prologue and Act 1 are needed: the prologue fight, Havenbrook, the woun
 - [ ] Do seals need to be earned in a set order?
 - [ ] Endgame choices: does "end the Cycle" end the game, or start an endless post-game?
 - [ ] Is the tone right for the Roblox audience (dark fantasy but not grim)?
+
+## Proposals
+**JasonEyeglass, 2026-11-05: story without heirs.** Logged in [[Decisions|Decisions Log]]; one character per player. Suggested changes for the owner:
+- **The Ember:** past heroes still fell because they held on too long, but the player learns this through playable boss memories, not by retiring. Corruption changes only visuals and dialogue.
+- **Three scales:** "this bloodline (weeks)" becomes "this hero (weeks)": the region chapters and the three seals.
+- **Seals:** earned from the Frostbound King, the Infernal Titan and the Forsaken Monarch, not from three generations.
+- **Act 3:** drop "retiring becomes possible, and the heir begins".
+- **Endgame:** the final choice stays (end the Cycle by letting go, take control of it, or join it), made by your one hero instead of your bloodline.
+- **The family chronicle** becomes the Memory Journal in your character's menu.
+- Details and the Echo version of this: [[Merge Proposal - Legacy Cycle and Action MMO]].

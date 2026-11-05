@@ -7,11 +7,11 @@ status: draft
 
 # Economy and Monetization (draft v0.1)
 
-How players earn and spend in [[Home|The Legacy Cycle]], and how the game makes money. Fills the gap flagged in [[GDD v0.2 Review]]. Builds on the [[Legacy System Spec]] (what survives retirement) and [[Competitor Baseline - Rogue Lineage and Deepwoken]] (both charge an entry fee; we don't).
+How players earn and spend in [[Home|The Legacy Cycle]], and how the game makes money. Fills the gap flagged in [[GDD v0.2 Review]]. Updated 2026-11-05: one character per player, no retirement or heirs (see [[Decisions|Decisions Log]]). Builds on [[Competitor Baseline - Rogue Lineage and Deepwoken]] (both charge an entry fee; we don't).
 
 **Two rules everything below follows:**
 1. **Nothing you can buy makes you stronger.** No paid stats, gear, XP boosts or revives. The GDD already says cosmetics over pay-to-win.
-2. **Nothing you buy is ever lost.** Purchases belong to the account, not the character, so they survive death and retirement. This makes buying feel safe in a game built on starting over.
+2. **Nothing you buy is ever lost.** Purchases belong to the account, not the character, so they survive death and any future character reset. This makes buying feel safe.
 
 ---
 
@@ -20,11 +20,11 @@ How players earn and spend in [[Home|The Legacy Cycle]], and how the game makes 
 ## Currencies
 Keep it to **one currency plus materials**. More currencies confuse new players, especially on mobile.
 
-| Resource | What it is | Kept on retirement? |
-|---|---|---|
-| **Gold** | The only currency. Earned in play, never sold for Robux. | 10% passes to the heir as an inheritance (spec says "a small inheritance") |
-| **Materials** | Region-specific: e.g. Havenbrook iron, Forest moonwood, Frostveil ice-crystal, Ashen ore. Used for upgrades and crafting. | No |
-| **Renown** | Not spent. Reputation with factions; it carries over at 50% per the spec. | 50% |
+| Resource | What it is |
+|---|---|
+| **Gold** | The only currency. Earned in play, never sold for Robux. |
+| **Materials** | Region-specific: e.g. Havenbrook iron, Forest moonwood, Frostveil ice-crystal, Ashen ore. Used for upgrades and crafting. |
+| **Renown** | Not spent. Reputation with factions. |
 
 There is **no premium currency** (no "gems"). Cosmetics are priced directly in Robux. Players and parents always see the real price, and there's no leftover-currency trick.
 
@@ -43,8 +43,7 @@ There is **no premium currency** (no "gems"). Cosmetics are priced directly in R
 | **Gear upgrades** | Main sink. Gold + region materials. Materials from later regions make players explore. |
 | **Repairs** | Connects to the death penalty in the spec (durability loss). Cheap, but constant. |
 | **Crafting** | Consumables (potions, Ember charges) and gear. |
-| **Heirloom engraving** | Passing on an heirloom at retirement costs gold, scaling with the item's power. Same idea as Deepwoken's 40-Echo cost for legendary items. |
-| **Retirement** | The biggest sink: 90% of gold is left behind. Spending gold before retiring (upgrading the heirloom, buying cosmetics in gold shops) is a natural last goal for a character. |
+| **Echo awakenings** | Replaces retirement as the big late-game sink. Awakening a mastered Echo costs gold + materials from its region (if Echoes are adopted, see [[Merge Proposal - Legacy Cycle and Action MMO]]). |
 | **Gold cosmetics** | Some dyes and simple outfits sell for gold, so non-paying players get cosmetics too. |
 
 **No player trading at launch.** The GDD defers trading. That's also the strongest protection against item duplication bugs and selling items for real money. Revisit after alpha.
@@ -74,14 +73,13 @@ No entry fee. Rogue Lineage (200 Robux) and Deepwoken (400 Robux) can charge bec
 |---|---|---|---|
 | **Armor and weapon skins (appearance changes)** | Developer product, saved as owned on the account | 99–399 Robux | Changes looks only. Main product line. One set per region theme. |
 | **Ember colors** | Developer product | 149 Robux | Changes the color of the Ember VFX (gold by default). Fits the story and is visible in every fight. |
-| **Family crest and banner** | Developer product | 199 Robux for crest designs, 99 for colors | **Bloodline-themed: the crest stays across all generations.** Shows on capes, shields, the ancestor hall. Best fit for the legacy theme. |
-| **Heirloom skins** | Developer product | 249 Robux | A look for heirloom weapons, kept forever as the family weapon. |
+| **Crest and banner** | Developer product | 199 Robux for crest designs, 99 for colors | Your personal crest. Shows on capes and shields. |
 | **Emotes** | Developer product | 49–99 Robux | Cheap first purchase. |
 | **Private servers** | Built-in Roblox feature | ~100 Robux/month | Friends play shared regions together. Little work to add. |
 | **Seasonal "Chronicle" pass** | Developer product | ~399 Robux per season | **Later, not at launch.** Free track + paid track of cosmetics only, unlocked by playing. |
 
 ## Free cosmetics too
-Some of the best looks are **earned only through play**: boss-kill armor sets, a crest border for each generation completed, an Ember color for breaking the Cycle. That way a cosmetic means "I did this", not only "I paid".
+Some of the best looks are **earned only through play**: boss-kill armor sets, a crest border for each region boss, an Ember color for breaking the Cycle. That way a cosmetic means "I did this", not only "I paid".
 
 ## Other income
 - **Premium Payouts:** Roblox pays experiences based on how long Roblox Premium subscribers spend in them. A good main story and coming-back reasons increase this with no extra work.
@@ -92,27 +90,24 @@ Some of the best looks are **earned only through play**: boss-kill armor sets, a
 | Stats, gear, XP or gold boosts | Pay-to-win breaks co-op fairness and the "not stronger" rule |
 | Paid revives or skipping the death penalty | Deepwoken sells a 1,000-Robux revive; we keep death fair for everyone |
 | Loot boxes or paid random rewards | Our audience is young. Roblox also has rules about paid random items; every price stays fixed and visible. |
-| Extra legacy perks (traits, heirlooms) | The legacy system must be earned through deeds |
 | "Limited time, buy now!" pressure | Seasonal items can rotate, but no countdown pressure aimed at kids |
 
 ## Gray areas for the team to decide
 - [ ] **Inventory or wardrobe space.** Convenience, not power, but can feel like pressure. Suggest: generous free space, extra wardrobe slots for cosmetics only.
-- [ ] **Extra character slots.** Only matters if the team allows several heirs side by side (open question in the spec).
 - [ ] **Rewarded video ads.** Roblox supports opt-in ads with a small reward. Probably skip: it doesn't fit the tone.
 
 ## Launch set (first public release)
-Keep it small: **5–8 cosmetic items, private servers, Premium Payouts.** That's enough to test what sells without slowing down the game. Add crests, heirloom skins and the Chronicle pass once the legacy system ships.
+Keep it small: **5–8 cosmetic items, private servers, Premium Payouts.** That's enough to test what sells without slowing down the game. Add crests and the Chronicle pass after launch.
 
 ---
 
 ## Implementation notes (for the gameplay programmer)
-- **Profile changes:** add an `account` section next to `bloodline` and `character` in the spec's data model: `account.ownedCosmetics`, `account.processedPurchases`, `account.crest`. Retirement never touches `account`.
+- **Profile changes:** add an `account` section next to `character` in the profile (see [[Merge Proposal - Legacy Cycle and Action MMO]]): `account.ownedCosmetics`, `account.processedPurchases`, `account.crest`. Nothing that changes `character` ever touches `account`.
 - **Purchases must be processed exactly once.** Roblox's `MarketplaceService.ProcessReceipt` can be called more than once for the same purchase. Save the `PurchaseId` in `account.processedPurchases` and only return `PurchaseGranted` after the save succeeds. Getting this wrong means players pay and get nothing, or get items twice.
 - **Server only.** Gold, materials and ownership change only on the server, validated like everything else (GDD section 9).
 - **Logging:** log every gold source and sink from day one, so balancing uses real numbers instead of guesses.
 
 ## Open questions
 - [ ] Are the example Robux prices right? Check prices of similar cosmetics in top Roblox RPGs before launch.
-- [ ] 10% gold inheritance: too much or too little?
 - [ ] Should gold shops sell some outfits, or only dyes?
 - [ ] When does player trading come back, and with what limits?
