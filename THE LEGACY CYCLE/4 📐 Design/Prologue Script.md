@@ -7,7 +7,7 @@ status: draft
 
 # Prologue Script: The Last Ember (draft v0.1)
 
-The first 5 minutes of [[The Legacy Cycle]], as set out in [[Story Foundation]]. It teaches the controls, sets up the mystery of the Cycle, and introduces the Ember that the [[Legacy System Spec]] is built on.
+The first 5 minutes of [[Home|The Legacy Cycle]], as set out in [[Story Foundation]]. It teaches the controls, sets up the mystery of the Cycle, and introduces the Ember that the [[Legacy System Spec]] is built on.
 
 **The twist:** the player plays **Ser Caelan**, champion of the last Cycle. At the end, Caelan refuses to pass on his Ember and the Void takes him. He becomes **the Fallen Knight**, the Havenbrook boss the player fights later in Act 1. The player's first character is the first boss they will face.
 

@@ -7,7 +7,7 @@ status: draft
 
 # Legacy System Spec (draft v0.1)
 
-One-page spec for the signature mechanic of [[The Legacy Cycle]]. It answers concern #1 in [[GDD v0.2 Review]]: decide what carries between generations now, even if it is built later. Everything here is a proposal for the team to accept, change or reject.
+One-page spec for the signature mechanic of [[Home|The Legacy Cycle]]. It answers concern #1 in [[GDD v0.2 Review]]: decide what carries between generations now, even if it is built later. Everything here is a proposal for the team to accept, change or reject.
 
 ## The pitch in one line
 **Your character's choices become your family's reputation.** The world remembers your bloodline, not just your character.

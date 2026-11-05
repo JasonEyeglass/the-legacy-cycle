@@ -7,7 +7,7 @@ status: draft
 
 # Act 1 Quest Outline: Havenbrook (draft v0.1)
 
-Act 1 of [[The Legacy Cycle]]. Picks up straight after the [[Prologue Script]] and follows the arc in [[Story Foundation]]. Uses the wounded knight choice from the GDD, saved the way the [[Legacy System Spec]] says, and gold amounts from [[Economy and Monetization]].
+Act 1 of [[Home|The Legacy Cycle]]. Picks up straight after the [[Prologue Script]] and follows the arc in [[Story Foundation]]. Uses the wounded knight choice from the GDD, saved the way the [[Legacy System Spec]] says, and gold amounts from [[Economy and Monetization]].
 
 ## The act in one line
 The player's Ember brings them to the guild, they meet a knight dying the way Caelan did, and they go beneath Havenbrook to face what Caelan became.

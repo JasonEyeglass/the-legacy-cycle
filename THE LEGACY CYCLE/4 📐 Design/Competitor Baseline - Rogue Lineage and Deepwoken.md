@@ -6,7 +6,7 @@ tags: [research, competitors, legacy, design]
 
 # Competitor Baseline: Rogue Lineage and Deepwoken
 
-Baseline for [[The Legacy Cycle]]. It checks the comparison table in [[Legacy System Spec]] and follows up concern #2 in [[GDD v0.2 Review]].
+Baseline for [[Home|The Legacy Cycle]]. It checks the comparison table in [[Legacy System Spec]] and follows up concern #2 in [[GDD v0.2 Review]].
 
 > Based on web research (wikis, guides, news) on 2026-11-03, not hands-on play. Numbers change with updates. Someone on the team should play each game for a few hours before we lock the design.
 

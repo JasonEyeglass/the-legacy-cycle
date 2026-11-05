@@ -6,7 +6,7 @@ tags: [hub, plan, overview]
 
 # Project Plan Overview
 
-Everything planned so far for [[The Legacy Cycle]] on one page. Start here if you are new to the project. Each section links to the full note. Status of all of this: **proposals**, until the team logs them in [[Decisions Log]].
+Everything planned so far for [[Home|The Legacy Cycle]] on one page. Start here if you are new to the project. Each section links to the full note. Status of all of this: **proposals**, until the team logs them in [[Decisions|Decisions Log]].
 
 ## 1. The game
 Roblox open-world dark-fantasy action RPG. Tagline: *"Your Choices. Their Tomorrow."* Source: `The_Legacy_Cycle_Updated_Open_World_GDD_v0.2.docx` in the repo root.
@@ -66,7 +66,7 @@ Full note: [[Economy and Monetization]]
 - **Never sold:** power, boosts, revives, loot boxes, legacy perks.
 
 ## 7. How the team works
-Full notes: [[Team and Roles]], [[Current Status]], [[Decisions Log]]
+Full notes: [[Team and Roles]], [[Current Status]], [[Decisions|Decisions Log]]
 - **Repo:** https://github.com/JasonEyeglass/the-legacy-cycle (private). The Obsidian vault inside it is the team's shared memory; every member's Claude reads it.
 - **Rules (in `CLAUDE.md`):** pull before work, push after. Every note has an `owner:`. Only edit your own notes; suggest changes to others under `## Proposals`. Log decisions. Never force-push.
 - **Roblox Studio:** use Team Create with script drafts. Rojo later if scripts should live in Git.

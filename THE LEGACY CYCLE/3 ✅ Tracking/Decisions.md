@@ -6,7 +6,7 @@ owner: unassigned
 
 # Decisions Log
 
-Settled decisions for [[The Legacy Cycle]]. Newest at the bottom. Anyone may add a line; nobody edits or removes old lines. To reverse a decision, add a new line that says so. See [[Team and Roles]].
+Settled decisions for [[Home|The Legacy Cycle]]. Newest at the bottom. Anyone may add a line; nobody edits or removes old lines. To reverse a decision, add a new line that says so. See [[Team and Roles]].
 
 | Date | Decision | Decided by | Details |
 |---|---|---|---|

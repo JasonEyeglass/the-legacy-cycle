@@ -7,7 +7,7 @@ source: The_Legacy_Cycle_Updated_Open_World_GDD_v0.2.docx
 
 # GDD v0.2 Review
 
-Review of the game design document v0.2 for [[The Legacy Cycle]].
+Review of the game design document v0.2 for [[Home|The Legacy Cycle]].
 
 ## What works
 - **Scope discipline.** The minimum playable build, the milestones A–E and the "don't build six regions first" rule are the strongest part of the doc.

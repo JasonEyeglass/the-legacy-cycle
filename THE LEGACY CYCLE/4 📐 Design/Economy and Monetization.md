@@ -7,7 +7,7 @@ status: draft
 
 # Economy and Monetization (draft v0.1)
 
-How players earn and spend in [[The Legacy Cycle]], and how the game makes money. Fills the gap flagged in [[GDD v0.2 Review]]. Builds on the [[Legacy System Spec]] (what survives retirement) and [[Competitor Baseline - Rogue Lineage and Deepwoken]] (both charge an entry fee; we don't).
+How players earn and spend in [[Home|The Legacy Cycle]], and how the game makes money. Fills the gap flagged in [[GDD v0.2 Review]]. Builds on the [[Legacy System Spec]] (what survives retirement) and [[Competitor Baseline - Rogue Lineage and Deepwoken]] (both charge an entry fee; we don't).
 
 **Two rules everything below follows:**
 1. **Nothing you can buy makes you stronger.** No paid stats, gear, XP boosts or revives. The GDD already says cosmetics over pay-to-win.

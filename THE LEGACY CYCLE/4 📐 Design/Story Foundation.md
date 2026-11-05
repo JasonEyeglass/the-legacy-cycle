@@ -7,7 +7,7 @@ status: draft
 
 # Story Foundation (draft v0.1)
 
-The main story for [[The Legacy Cycle]]. It is built so that the story and the [[Legacy System Spec]] are the same thing: **one lifetime is not enough to end the Cycle.** Names come from GDD v0.2. Everything else is a proposal.
+The main story for [[Home|The Legacy Cycle]]. It is built so that the story and the [[Legacy System Spec]] are the same thing: **one lifetime is not enough to end the Cycle.** Names come from GDD v0.2. Everything else is a proposal.
 
 ## The premise
 Every few generations the **Void Sovereign** stirs in the Forgotten Realm and the world begins to rot. Each time, heroes rise, fight, and fail. The darkness touches them, and the greatest of them become monsters. That is the Cycle.
