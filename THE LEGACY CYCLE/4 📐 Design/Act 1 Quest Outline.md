@@ -92,7 +92,7 @@ Private dungeon, 1–4 players, 15–25 minutes (GDD target). Flow follows GDD s
 - After the boss, the player sees the **Fallen Knight's memory**: Scene 4 of the prologue, replayed from the Keeper's view. Now the player knows they played him.
 - The Keeper: *"He held the line for a hundred years. Nobody told him he could stop."*
 - She reveals the other fallen heroes are waking too. The nearest is in the Ethereal Forest.
-- **Reward:** 150 gold, title "Ember-Bearer", the road to the forest opens (Act 2).
+- **Reward:** 150 gold, title "Ember-Bearer", the road to the forest opens (Act 2, see [[Act 2 Quest Outline]]).
 - Seed for the final choice: she shows the player the empty stone ring in the shrine. *"Every hero I've known held on too long. Remember that."*
 
 ---
