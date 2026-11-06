@@ -78,6 +78,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The HP, Stamina and Ember gauges stay curved** (user, 2026-11-06, "we need to keep the curved UI"). They are not the straight bars from my prompt. The arcs carry the painted fill textures, a gilt rim and gold star ends.
 - **The arc rims are true circles, not rotated rectangles** (2026-11-06). The user saw jagged edges, because Roblox doesn't antialias rotated frames. The rim and groove are now `UIStroke`s on round frames, clipped to the arc; see [[Studio Gotchas]].
 
+- **Locking on shows the target's name and health** on the gilt lock-on bar at the top centre (2026-11-06). The sheet's lock bar had no use in the old HUD, which showed only the reticle and letterbox bars.
+
 ## Shrine of Embers (2026-11-06)
 
 - The user's obsidian-brazier mesh replaces the old blocky shrine in Havenbrook. See [[Shrine VFX]].
