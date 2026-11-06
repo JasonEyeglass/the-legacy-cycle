@@ -2,12 +2,16 @@
 created: 2026-11-05
 owner: JasonEyeglass
 tags: [plan, design, merge, proposal]
-status: proposal
+status: adopted
+updated: 2026-11-06
 ---
 
 # Merge Proposal: The Legacy Cycle + Action MMO plan (draft v0.1)
 
-A draft of the "possible merge" from [[Chat Import Hub - Roblox Action MMO]]. It keeps the Legacy Cycle story and world ([[Story Foundation]], [[Legacy System Spec]], [[Prologue Script]], [[Act 1 Quest Outline]]) and adds the parts of [[Game Plan v0.1 - Action MMO]] that fill its gaps. **Nothing here is decided.** If the team adopts it, log one line in [[Decisions|Decisions Log]].
+A draft of the "possible merge" from [[Chat Import Hub - Roblox Action MMO]]. It keeps the Legacy Cycle story and world ([[Story Foundation]], [[Legacy System Spec]], [[Prologue Script]], [[Act 1 Quest Outline]]) and adds the parts of [[Game Plan v0.1 - Action MMO]] that fill its gaps.
+
+> [!success] Adopted 2026-11-06
+> This merge is the direction. The build follows Fred's notes (`Fred/The Legacy Cycle/`, start at `The Legacy Cycle.md`); where they differ from this plan, the build wins. See [[Decisions|Decisions Log]]. The open questions at the bottom are still open.
 
 ## The merge in one line
 **Every fallen hero lives on as an Echo in your Ember.** Beat a boss and you carry their power and their memory. The legacy is theirs: the heroes before you, and what you learn from how they fell.
@@ -135,7 +139,7 @@ Audio has no owner yet. Free libraries at launch, or one person adds it.
 [[Team Tasks - Weeks 1-9]] works with these 5 roles once the letters are re-mapped.
 
 ## Open questions for the team
-- [ ] Adopt this merge, the Legacy Cycle plan as is, or the Shattered Sky plan?
+- [x] Adopt this merge, the Legacy Cycle plan as is, or the Shattered Sky plan? **Merge, adopted 2026-11-06.**
 - [ ] Art style: anime-styled dark fantasy, or keep a more grounded dark-fantasy look?
 - [ ] Does carrying Echoes add corruption, or does corruption come only from fighting the Void?
 - [ ] Keep the tagline "Your Choices. Their Tomorrow."? "Their" can now mean the people of the world, not your heirs.

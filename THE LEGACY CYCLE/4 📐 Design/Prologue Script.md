@@ -127,7 +127,7 @@ The spark rises into the sky. Time-lapse: Havenbrook is rebuilt, seasons pass, t
 **Setting:** present-day Havenbrook at dawn. Warm sunlight, stone streets, banners (GDD visual direction). The player's own character lies in the overgrown Shrine of Embers.
 
 **Gameplay:**
-1. **Character creation** happens here: the screen fades from gold, the player makes their character, and the camera opens on them waking up.
+1. The screen fades from gold and the camera opens on the player's own hero waking up. (Character creation already happened on first join, before the prologue: see Fred's `Join Flow.md`. The hero's name is the Roblox username, so no dialogue uses a typed name.)
 2. The golden spark drifts down and settles into the player's chest. The Ember bar appears in the HUD, faint.
 3. The Keeper is waiting at the shrine.
 
@@ -164,5 +164,5 @@ That last Keeper line foreshadows the final choice, where the player decides whe
 ## Open questions
 - [ ] Is "Caelan" the final name for the champion?
 - [ ] Voice acting or text only? Text with sound effects is cheaper; voice for the cold open only is a middle option.
-- [ ] Should character creation come before the prologue instead, so players feel they are someone from the start?
+- [x] Should character creation come before the prologue instead, so players feel they are someone from the start? **Yes, 2026-11-06:** the creator opens on first join, as built.
 - [ ] Is the "Tomas" line too dark for the Roblox audience?

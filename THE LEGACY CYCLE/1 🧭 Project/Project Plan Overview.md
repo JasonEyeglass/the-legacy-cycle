@@ -82,15 +82,15 @@ Full notes: [[Team and Roles]], [[Current Status]], [[Decisions|Decisions Log]]
 - [ ] Is the Void Sovereign the first hero?
 - [ ] Does corruption affect gameplay or only visuals and dialogue?
 - [ ] Voice acting or text only?
-- [ ] Character creation before or after the prologue?
+- [x] Character creation before or after the prologue? **Before** (on first join), 2026-11-06.
 - [ ] Is the tone right for the Roblox audience?
 
 **Economy and monetization** (drafted in [[Economy and Monetization]])
-- [ ] Robux prices, gold inheritance %, and gray areas (inventory space, character slots) listed there.
+- [ ] Robux prices and gray areas (inventory space, character slots) listed there.
 
 **Still missing from the plan**
 - [ ] Reasons to come back (daily or weekly activities).
-- [ ] Numbers: level ranges, region length, boss health and party scaling.
+- [ ] Numbers: region length, boss health and party scaling. (Level ranges and the XP curve are set in Fred's `Decisions.md`.)
 
 **Research**
 - [ ] Someone plays Rogue Lineage and Deepwoken for a few hours.
