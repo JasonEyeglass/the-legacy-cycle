@@ -152,6 +152,7 @@ A placeholder blockout in Fred's **test place** ("an RPG game", not the real gam
 - `1_Havenbrook`: markers on Fred's town. Guild Hall = House_H1 (with the Ember lantern), Tobin's Smithy = House_H5, Bounty Board = Fred's QuestBoard, town square, North Gate = Fred's Gatehouse, and a planned in-town Shrine of Embers (Fred's shrine currently sits at the far spawn).
 - `2_NorthRoad`: three farm fields spread down the valley (1.2), the collapsed watchtower with Bryn on the ridge at the valley's end (1.2–1.3), and the Crack near the gate (1.4).
   - Pacing: gate to watchtower is ~470 studs, about 24 s walking (WalkSpeed 20) or 14 s sprinting (34). The route passes the fields, Fred's Old Ruins and Hollow Arena. That's the test valley's limit (it ends at z ≈ −300); the real map can make the road as long as the full act needs.
+- `Act1FlowTest` (Script): makes Act 1 playable end to end as a test. Objective tracker (top right), dialogue lines, E prompts, the Bryn choice (E save / R take / F leave), the Crack teleports into the dungeon, the boss returns you to the shrine. Fights are placeholder prompts; nothing is saved; test solo (prompts are shared). Passed an automated run of all 16 steps on 2026-11-06 ("leave Bryn" branch).
 - `3_OldGateDungeon`: off-map at x = 1400. Burned streets, encounters, brazier puzzle, mini-boss, then the Fallen Knight at the old north gate.
 
 ## Implementation notes
