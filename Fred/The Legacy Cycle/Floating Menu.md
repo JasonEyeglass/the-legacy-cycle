@@ -46,6 +46,11 @@ There is no item system yet. `EQUIPPED` is fixed at `{Weapon = "Katana"}`, and n
   - It has a slow shimmer rather than a fire flicker, and it lights the ground, walls and nearby characters.
   - The Embers page turns it ember red (240,92,48), but only once the player has absorbed their Ember. See [[Shrine VFX]].
 - **World tint:** while the menu is open, `Lighting.FloatMenuTint` (a ColorCorrection on this client only) cools the whole view: tint (226,236,255), saturation -0.12, brightness -0.03. It fades with the panel.
+- **Glowing outline (2026-11-06, the user asked for a lighting outline):** a glowing edge traces the panel in the light's colour, so it is blue-white, or ember red on a lit Embers page.
+  - Five stacked UIStrokes run from a bright core line (the light colour pushed toward white) out to a faint halo 16 px wide.
+  - A brighter band on the core line turns round the rim at 40°/s.
+  - It is drawn on both faces and on other players' ghosts, and it shimmers, pops and fades with the light.
+  - The SurfaceGui part is 18 px (`PAD`) larger on every side than the page so the halo has room. The page itself is inset by the same amount, so the layout and the floor check are unchanged.
 - It fades in on open (0.4 s) and out on close (0.18 s).
 - **Embers page:** "You have not found your Ember" / "Seek the Shrine of Embers in Havenbrook" until the `HasEmber` attribute is true, then "Your Ember burns", with a lit ember diamond and halo.
 
