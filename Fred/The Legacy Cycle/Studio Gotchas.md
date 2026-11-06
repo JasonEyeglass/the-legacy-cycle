@@ -19,6 +19,8 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **Rotated frames are not antialiased.** A curve built from rotated rectangles looks jagged. Use a round frame (`UICorner` at 1, 0) with a `UIStroke`, which is smooth. Cut it to an arc with a `ClipsDescendants` frame, which is exact; a `UIGradient` mask on the stroke spans a bigger box than the frame and leaks past the arc. A `Border` stroke grows outward from the frame's edge. (Vitals, 2026-11-06.)
 - **First person hides your own body** through `LocalTransparencyModifier`. A Scriptable camera never resets it, so a cutscene that starts in first person shows no hero. Set the modifier to 0 every frame until the default camera is back (ReturnToMenu).
 - **`TextScaled` with a `UITextSizeConstraint` ignores `UIScale`:** the cap is in screen pixels, so text on a scaled-up stage comes out small. On a UIScale'd stage, use a fixed `TextSize`, which does scale.
+- **A Decal on a MeshPart follows the mesh's UVs**, so a classic face decal on the dynamic head smears. Put it on an invisible box Part welded in front of the face instead.
+- **ViewportFrames can capture blank** in `screen_capture` even with their contents in place. Nudging the camera or ImageTransparency redraws them.
 - **A line that starts with `(`** continues the line before it as a function call ("Ambiguous syntax"). End the earlier line with `;`.
 
 ## Asset safety

@@ -50,6 +50,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - The creator opens on your first join. You can change your look later at a Shrine of Embers (the V prompt).
 - Catalog hair from the Avatar Marketplace could work by asset id through HumanoidDescription; it is moderated and has no scripts. The catch is that it can't be tinted by our hair colours, and the preview would have to be built on the server. We are waiting for asset ids the user picks; no ids get invented. See [[Character Creator]].
 - **Creator Store hair models are banned.** Three free "No scripts" hair models hid a malicious Studio overlay script (see [[Studio Gotchas]]). We use our own `generate_mesh` hair instead.
+- **Faces and hairs come from the user's own packs** (user, 2026-11-06). This replaces the 4 FaceControls expressions and the 4 generated hairs above: 61 face decals and 33 hairs plus Shorn. Both packs were audited (no scripts). Old saves keep their indices, so a returning hero's face and hair change to whatever now sits at that index.
+- **A secondary hair** (user, 2026-11-06) is worn on top of the main one, from the same list and in the same colour. It is the last field of a look, so older saves load with none.
 
 ## Main menu and settings (2026-11-06)
 
