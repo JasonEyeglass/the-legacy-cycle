@@ -24,7 +24,11 @@ The user said the first pass was too strong and that an ember should be a weak f
 - A dim red light: (255,96,40), brightness 0.9, range 9.
 - The brazier's own sculpted flame now carries most of the look.
 
-## Two versions, side by side (pick one)
+## Chosen: A · Native (2026-11-06)
+
+The user picked A. B (the flipbook copy) and both comparison labels were deleted. The table below is kept as a record of what was compared. The uploaded flipbook image (`rbxassetid://124247210335986`) is still in the user's Roblox inventory, unused.
+
+## Two versions compared
 
 | | A · Native Roblox VFX | B · Blender flipbook |
 |---|---|---|
@@ -38,7 +42,6 @@ The user said the first pass was too strong and that an ember should be a weak f
   - 38 frames of life, stretched over 64 cells and rendered in EEVEE at 128 px per cell.
   - Alpha comes from brightness, with a threshold to remove render noise.
   - The working files are in this session's scratchpad (`shrine_fx`), which is temporary, so re-bake if the source is needed.
-- Each shrine has a temporary `TMP_CompareLabel` under its base. **Once a version is chosen**, delete the other model and the label. If B wins, rename `ShrineOfEmbers_Flipbook` to `ShrineOfEmbers`.
 
 ## Animation (`StarterPlayerScripts.ShrineFx`)
 

@@ -62,3 +62,9 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - Body armour is split into **Chestplate** (upper body) and **Leggings** (lower body). The full equipment slot set is Helmet, Chestplate, Leggings, Gloves, Weapon and Boots. See [[Floating Menu]].
 - **Embers** is the skill tree, opened from the floating menu. Its skills aren't designed yet, so the page is an unlit placeholder.
 - The floating menu has **Back to Main Menu**, which reopens the main menu mid-game.
+
+## Shrine of Embers (2026-11-06)
+
+- The user's obsidian-brazier mesh replaces the old blocky shrine in Havenbrook. See [[Shrine VFX]].
+- Its fire is an **ember, not a bonfire**: a weak smoulder over glowing coals.
+- The user compared it with a Blender Mantaflow flipbook and picked the **native Roblox VFX** version (built-in fire and spark textures). The flipbook copy was removed.
