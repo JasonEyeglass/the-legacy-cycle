@@ -62,6 +62,7 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - Body armour is split into **Chestplate** (upper body) and **Leggings** (lower body). The full equipment slot set is Helmet, Chestplate, Leggings, Gloves, Weapon and Boots. See [[Floating Menu]].
 - **Embers** is the skill tree, opened from the floating menu. Its skills aren't designed yet, so the page is an unlit placeholder.
 - The floating menu has **Back to Main Menu**, which reopens the main menu mid-game.
+- **The floating menu is an open grimoire** (user, 2026-11-06). The user called the old stacked-button panel slop. Of two Claude Design directions (A: obsidian slab with a tab rail; B: grimoire), they picked **B**. It is a fixed 760×440 spread: the left page has the level and chapters I–IV, the right page the open chapter. The Main page became the **Overview** ledger. Canvas: https://claude.ai/artifact/4wrPSPaMRBqVdkPurpwu4T
 
 ## Shrine of Embers (2026-11-06)
 
