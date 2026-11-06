@@ -72,6 +72,12 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Then direction E, "Illuminated": painted art from the user's own asset sheets** (user, 2026-11-06). The user said D still looked slop and generated a parchment-grimoire mockup from my brief, then three clean asset sheets. They approved uploading them as four atlases. D's structure stays (chapters, a picker page and a detail page with one action), drawn with that art: ribbon bookmarks for the chapters, a wax-seal close, slot plates round an ink knight, drop-cap titles, ink drawings and a ribbon-seal action. See [[Floating Menu]].
 - **The glowing outline is removed** (user, 2026-11-06). The painted book's edge frames it now, and the outline's 18 px margin went with it.
 
+## HUD and main menu art (2026-11-06)
+
+- **The HUD and main menu use the same illuminated art as the book** (user, 2026-11-06). The user generated a mockup and three clean sheets (HUD pieces, main-menu pieces, ink icons) from my prompts. They approved uploading them as three more atlases (GrimoireArt atlases 5–7).
+- **The HP, Stamina and Ember gauges stay curved** (user, 2026-11-06, "we need to keep the curved UI"). They are not the straight bars from my prompt. The arcs carry the painted fill textures, a gilt rim and gold star ends.
+- **The arc rims are true circles, not rotated rectangles** (2026-11-06). The user saw jagged edges, because Roblox doesn't antialias rotated frames. The rim and groove are now `UIStroke`s on round frames, clipped to the arc; see [[Studio Gotchas]].
+
 ## Shrine of Embers (2026-11-06)
 
 - The user's obsidian-brazier mesh replaces the old blocky shrine in Havenbrook. See [[Shrine VFX]].
