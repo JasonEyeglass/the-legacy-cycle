@@ -148,10 +148,10 @@ The GDD's minimum playable build is a 10–15 minute adventure. Cut Act 1 to:
 Cut for later: 1.2, 1.4 (upgrade can move to a guild NPC), the puzzle, and all side quests. This still proves milestone C (co-op dungeon) and milestone D (one choice changes the mini-boss).
 
 ## Studio layout (2026-11-06)
-A placeholder blockout in Fred's place ("an RPG game") under **`Workspace.Act1Layout`**, with floating labels. Fred's models are untouched; delete the folder to remove it all.
+A placeholder blockout in Fred's **test place** ("an RPG game", not the real game map) under **`Workspace.Act1Layout`**, with floating labels. It sketches the order and spacing of Act 1 locations for the real map to follow. Fred's models are untouched; delete the folder to remove it all.
 - `1_Havenbrook`: markers on Fred's town. Guild Hall = House_H1 (with the Ember lantern), Tobin's Smithy = House_H5, Bounty Board = Fred's QuestBoard, town square, North Gate = Fred's Gatehouse, and a planned in-town Shrine of Embers (Fred's shrine currently sits at the far spawn).
 - `2_NorthRoad`: three farm fields spread down the valley (1.2), the collapsed watchtower with Bryn on the ridge at the valley's end (1.2–1.3), and the Crack near the gate (1.4).
-  - Pacing: gate to watchtower is ~470 studs, about 24 s walking (WalkSpeed 20) or 14 s sprinting (34). The route passes the fields, Fred's Old Ruins and Hollow Arena. The valley ends at the border hills (z ≈ −300), so this is about as long as the road can get without growing the map.
+  - Pacing: gate to watchtower is ~470 studs, about 24 s walking (WalkSpeed 20) or 14 s sprinting (34). The route passes the fields, Fred's Old Ruins and Hollow Arena. That's the test valley's limit (it ends at z ≈ −300); the real map can make the road as long as the full act needs.
 - `3_OldGateDungeon`: off-map at x = 1400. Burned streets, encounters, brazier puzzle, mini-boss, then the Fallen Knight at the old north gate.
 
 ## Implementation notes
