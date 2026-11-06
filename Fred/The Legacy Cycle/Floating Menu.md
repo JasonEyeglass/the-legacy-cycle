@@ -7,6 +7,18 @@ updated: 2026-11-06
 
 `StarterPlayerScripts.CombatClient.FloatMenu` is an **open grimoire** hanging in the world beside the character, opened with **M**. It is drawn on a SurfaceGui in PlayerGui, attached to a part under the camera's world-UI folder. Back to [[The Legacy Cycle]]. The decisions behind it are in [[Decisions]].
 
+## Look: direction E, "Illuminated" (2026-11-06)
+
+The user said the frame-drawn dark book still looked slop. From a design brief ("illuminated grimoire") they generated a mockup, then three clean asset sheets on green (ink drawings, UI pieces, the book and cover). Those sheets are now the menu's art. Where this section differs from the D layout below, E wins.
+
+- **Art:** `ReplicatedStorage.GrimoireArt` holds four uploaded 1024 px atlases and a table of named pieces (`book_open`, `book_back`, ribbons, `seal`, `action_*`, `plate_*`, `dropcap`/`dropcap_left`, corners, `bar_*`, `knight`, `katana`, `slot_*`, `stat_*`, `fig_*`, `rune_ring`, `ruins`). `Art.new(name, props, parent)` and `Art.set(img, name)` point an image at a piece. The ink drawings are white with the ink in the alpha, so `ImageColor3` sets the ink colour.
+  - The sheets were keyed and cut by scratchpad tools (`art_cut.py`): a green key, a gold re-tint on spill, and shelf packing.
+- **Book:** the painted open book on parchment. The chapters are four **ribbon bookmarks** hanging from the top of the right page: the open one hangs longer and swings when picked, and Embers turns ember red once lit. A wax **seal** closes the book; a door glyph next to it returns to the main menu. The unspent-points count is a small seal on the Stats ribbon.
+- **Left page:** level in Roman numerals, XP and the gilt XP bar, then a drop-cap title (the first letter in rust in a gilt frame). Inventory is six **slot plates** round an ink knight; Stats is ruled rows with dotted leaders and an ink ruins vignette; Overview is a sepia hero portrait.
+- **Right page:** a drop-cap title, an italic subtitle, an ink drawing (the katana, a stat figure), ledger rows, and one **ribbon-seal action** with a hint under it.
+- **Palette:** brown inks on parchment, with gold, rust and ember accents. Fonts: Fondamento titles, Merriweather body and italics.
+- **Idle motion** (on the "Glints" overlay outside the CanvasGroup): a slow candlelight sheen, the main action's glint swelling every 4.2 s, the picked marker breathing, and the Embers rune ring turning.
+
 ## Layout (redesigned 2026-11-06, direction D)
 
 The design is direction **D, "Codex"**, from the Claude Design canvas https://claude.ai/artifact/4wrPSPaMRBqVdkPurpwu4T. The user first picked B, "Grimoire" (over A, the obsidian tab rail), after calling the old stacked-button panel slop. They then asked to combine B with C, a modern tabbed inventory taken from a reference image. D is that combination.
@@ -67,11 +79,7 @@ There is no item system yet. `EQUIPPED` is fixed at `{Weapon = "Katana"}`, and n
   - It has a slow shimmer rather than a fire flicker, and it lights the ground, walls and nearby characters.
   - The Embers page turns it ember red (240,92,48), but only once the player has absorbed their Ember. See [[Shrine VFX]].
 - **World tint:** while the menu is open, `Lighting.FloatMenuTint` (a ColorCorrection on this client only) gives the whole view a faint warm cast: tint (255,241,222), saturation -0.06, brightness -0.02. It fades with the panel.
-- **Glowing outline (2026-11-06, the user asked for a lighting outline):** a glowing edge traces the panel in the light's colour, so it is warm gold, or ember red on a lit Embers page.
-  - Five stacked UIStrokes run from a bright core line (the light colour pushed toward white) out to a faint halo 16 px wide.
-  - A brighter band on the core line turns round the rim at 40°/s.
-  - It is drawn on both faces and on other players' ghosts, and it shimmers, pops and fades with the light.
-  - The SurfaceGui part is 18 px (`PAD`) larger on every side than the page so the halo has room. The page itself is inset by the same amount, so the layout and the floor check are unchanged.
+- **No outline (removed 2026-11-06):** the glowing outline the user first asked for was removed once the painted book was in ("safe to remove the neon highlight"). The painted leather edge frames the book now. Its 18 px `PAD` margin went with it, so the SurfaceGui part is exactly the page size (12.7 × 7.3 studs).
 - It fades in on open (0.4 s) and out on close (0.18 s).
 - **Embers page:** "You have not found your Ember" / "Seek the Shrine of Embers in Havenbrook" until the `HasEmber` attribute is true, then "Your Ember burns", with a lit ember diamond and halo.
 

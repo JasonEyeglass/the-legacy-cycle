@@ -69,6 +69,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
   - The left page becomes cards to pick from (equipment, stats). The right page shows the picked thing's detail, with one solid gold action.
   - Overview shows the hero portrait.
   - Return to main menu is now a door icon next to close.
+- **Then direction E, "Illuminated": painted art from the user's own asset sheets** (user, 2026-11-06). The user said D still looked slop and generated a parchment-grimoire mockup from my brief, then three clean asset sheets. They approved uploading them as four atlases. D's structure stays (chapters, a picker page and a detail page with one action), drawn with that art: ribbon bookmarks for the chapters, a wax-seal close, slot plates round an ink knight, drop-cap titles, ink drawings and a ribbon-seal action. See [[Floating Menu]].
+- **The glowing outline is removed** (user, 2026-11-06). The painted book's edge frames it now, and the outline's 18 px margin went with it.
 
 ## Shrine of Embers (2026-11-06)
 
