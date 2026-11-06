@@ -147,6 +147,12 @@ The GDD's minimum playable build is a 10–15 minute adventure. Cut Act 1 to:
 
 Cut for later: 1.2, 1.4 (upgrade can move to a guild NPC), the puzzle, and all side quests. This still proves milestone C (co-op dungeon) and milestone D (one choice changes the mini-boss).
 
+## Studio layout (2026-11-06)
+A placeholder blockout in Fred's place ("an RPG game") under **`Workspace.Act1Layout`**, with floating labels. Fred's models are untouched; delete the folder to remove it all.
+- `1_Havenbrook`: markers on Fred's town. Guild Hall = House_H1 (with the Ember lantern), Tobin's Smithy = House_H5, Bounty Board = Fred's QuestBoard, town square, North Gate = Fred's Gatehouse, and a planned in-town Shrine of Embers (Fred's shrine currently sits at the far spawn).
+- `2_NorthRoad`: three farm fields (1.2), the collapsed watchtower with Bryn (1.2–1.3), and the Crack near the gate (1.4).
+- `3_OldGateDungeon`: off-map at x = 1400. Burned streets, encounters, brazier puzzle, mini-boss, then the Fallen Knight at the old north gate.
+
 ## Implementation notes
 - **Per-player visibility:** Bryn in the watchtower and in the guild exists only for players whose state matches. Use client-side visibility or a per-player NPC. Never one shared Bryn in the region (spec rule).
 - **Flags:** `knight_fate` on `character.storyFlags`; quest progress on `character.questState`; Act 1 complete as `character.storyFlags.act1_complete`. (One character per player since 2026-11-05; no `bloodline` section.)
