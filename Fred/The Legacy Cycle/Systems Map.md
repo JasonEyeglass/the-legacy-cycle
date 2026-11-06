@@ -1,0 +1,55 @@
+---
+tags: [legacy-cycle, architecture]
+updated: 2026-11-06
+---
+
+# Systems Map
+
+The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
+
+## ReplicatedFirst (client, first to run)
+
+- `MainMenu`: the menu before the game, and the one Back to Main Menu reopens. See [[Join Flow]].
+- `LoadingScreen` (LocalScript): the camera pan, the loading bar, then forge or continue. See [[Join Flow]].
+
+## ReplicatedStorage (shared)
+
+- `Appearance`: hero presets, plus `sanitize` and `apply`. See [[Character Creator]].
+- `HeroParts.Hair`: the generated hair accessories.
+- `Settings`: the settings values, `sanitize` and the client `watch`. See [[Settings]].
+- `Ornament`, `UiFocus`: the UI kit and the screen takeover. See [[UI Kit (Ornament)]].
+- `Combat.Config`: combat, movement, traversal, slide, sheathe and camera tuning, plus the animation ids and sound ids.
+- `Combat.Theme`: colours, fonts and panel, bar and diamond helpers.
+- `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
+- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`.
+
+## ServerScriptService
+
+- `Progression.Main` starts StatService, AppearanceService, SettingsService, Leveling, QuestService and then PlayerData, so that no listener misses a player's first load.
+- `Progression.PlayerData`:
+  - One DataStore record per player: level, XP, stats, look, settings, quest and done. DATA_VERSION is 3.
+  - It autosaves every 120 s, and on leave and on shutdown.
+  - If a load fails, that session is never saved.
+- `Progression.AppearanceService`: see [[Character Creator]].
+- `Progression.SettingsService`: see [[Settings]].
+- `Progression.StatService`, `Leveling`, `QuestService`: stat points, XP and level-ups, and quests.
+- `Combat.CombatService`: server combat; it clones the katana onto characters.
+- `Combat.EnemyAI`: enemies, cloned from templates.
+
+## StarterPlayerScripts (client)
+
+- `CombatClient` and its modules:
+  - `CombatCamera`: a third-person shoulder camera, lock-on, spring kicks and speed FOV. It skips its update while the camera is Scriptable.
+  - `Feedback`: camera shake, hitstop, sounds (through the Effects group), sparks, blade trails and the hurt vignette.
+  - `Locomotion`: procedural lean, banking, head look and afterimages.
+  - `Traversal`: double jump, wall run, wall climb, mantle and vault.
+  - `FloatMenu`: the M menu. See [[Floating Menu]].
+  - `LockReticle`.
+  - `MobileLayout`: touch buttons arranged in arcs around the jump button.
+- `AppearanceClient`: the per-frame face driver, plus the `Creator` module. See [[Character Creator]].
+
+## Workspace and SoundService
+
+- `Workspace.Cinematics.LoadingPan`: the shot folders for the loading pan.
+- `SoundService.Music`: holds World.Ambience.
+- `SoundService.Effects`: holds the combat sound templates and the FountainSound.
