@@ -31,6 +31,12 @@ The design is direction B, "Grimoire", from the Claude Design canvas https://cla
 - The page keys stay `Main`, `Inventory`, `Stats` and `Embers`, because MenuPresence checks them.
 - The left page and the Overview update from player attributes (`Level`, `XP`, `XPToNext`, `StatPoints`, `Stat_*`, `HasEmber`) through `AttributeChanged`. The old 0.25 s Stats poll is gone.
 - Gamepad: opening a chapter selects its first control (Spend, the first +, or the chapter itself).
+- **Interaction feedback (2026-11-06, the user said it lacked button states and a cursor):** the spec is the canvas's "B · Control states" artboard, and the code is `control()` with the `LOOKS` table in FloatMenu.
+  - Every control has rest, hover, pressed, gamepad-selected and disabled (or current) looks: a gold wash, the rim's opacity and colour, the ink colour and a scale.
+  - Hover grows the control by 2% (6% for the round +). A press sinks it to 97% (92% for the +) and it springs back on release. Keyboard and gamepad activations also give a 0.09 s dip.
+  - **Cursor:** `UserInputService.MouseIcon` shows the system pointing hand over an enabled control and the forbidden sign over a + with no points. It clears on leave and when the book closes.
+  - **Gamepad:** a gold ring (`SelectionImageObject`) replaces Roblox's blue selection box.
+  - **Sound and effects:** a faint tick on hover (at most one every 0.06 s). Close turns blood red on hover. Spending a point flares the stat number gold and pops it.
 - The back face is the book's leather cover with a gold sigil. Other players' ghosts show the same book, with the page title and blank chapter lines.
 
 ## Equipment slots (2026-11-06)
