@@ -63,6 +63,12 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Embers** is the skill tree, opened from the floating menu. Its skills aren't designed yet, so the page is an unlit placeholder.
 - The floating menu has **Back to Main Menu**, which reopens the main menu mid-game.
 - **The floating menu is an open grimoire** (user, 2026-11-06). The user called the old stacked-button panel slop. Of two Claude Design directions (A: obsidian slab with a tab rail; B: grimoire), they picked **B**. It is a fixed 760×440 spread: the left page has the level and chapters I–IV, the right page the open chapter. The Main page became the **Overview** ledger. Canvas: https://claude.ai/artifact/4wrPSPaMRBqVdkPurpwu4T
+- **Then direction D, "Codex": the grimoire with a modern layout** (user, 2026-11-06). After seeing C, a modern tabbed inventory taken from a reference image, the user asked to combine it with B.
+  - D keeps the book's leather, gilt and fonts.
+  - The chapters move to tabs across the top.
+  - The left page becomes cards to pick from (equipment, stats). The right page shows the picked thing's detail, with one solid gold action.
+  - Overview shows the hero portrait.
+  - Return to main menu is now a door icon next to close.
 
 ## Shrine of Embers (2026-11-06)
 
@@ -70,4 +76,4 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - Its fire is an **ember, not a bonfire**: a weak smoulder over glowing coals.
 - The user compared it with a Blender Mantaflow flipbook and picked the **native Roblox VFX** version (built-in fire and spark textures). The flipbook copy was removed.
 - You absorb the Ember **once per player, and it is saved** (user, 2026-11-06). Afterwards the shrine stays dark for that player only.
-- The floating menu's light is a **cool blue-white** that lights the surroundings and slightly cools the world's tint while open. The Embers page goes ember red once the Ember is lit (user, 2026-11-06).
+- ~~The floating menu's light is a cool blue-white that lights the surroundings and slightly cools the world's tint while open.~~ **Replaced 2026-11-06:** the user asked for a colour that suits the book instead of the blueish light. The light, its glowing outline and the world tint are now **warm candle gold** (255,196,122), with a faint warm tint. The Embers page still goes ember red once the Ember is lit.
