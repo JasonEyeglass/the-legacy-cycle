@@ -150,7 +150,8 @@ Cut for later: 1.2, 1.4 (upgrade can move to a guild NPC), the puzzle, and all s
 ## Studio layout (2026-11-06)
 A placeholder blockout in Fred's place ("an RPG game") under **`Workspace.Act1Layout`**, with floating labels. Fred's models are untouched; delete the folder to remove it all.
 - `1_Havenbrook`: markers on Fred's town. Guild Hall = House_H1 (with the Ember lantern), Tobin's Smithy = House_H5, Bounty Board = Fred's QuestBoard, town square, North Gate = Fred's Gatehouse, and a planned in-town Shrine of Embers (Fred's shrine currently sits at the far spawn).
-- `2_NorthRoad`: three farm fields (1.2), the collapsed watchtower with Bryn (1.2–1.3), and the Crack near the gate (1.4).
+- `2_NorthRoad`: three farm fields spread down the valley (1.2), the collapsed watchtower with Bryn on the ridge at the valley's end (1.2–1.3), and the Crack near the gate (1.4).
+  - Pacing: gate to watchtower is ~470 studs, about 24 s walking (WalkSpeed 20) or 14 s sprinting (34). The route passes the fields, Fred's Old Ruins and Hollow Arena. The valley ends at the border hills (z ≈ −300), so this is about as long as the road can get without growing the map.
 - `3_OldGateDungeon`: off-map at x = 1400. Burned streets, encounters, brazier puzzle, mini-boss, then the Fallen Knight at the old north gate.
 
 ## Implementation notes
