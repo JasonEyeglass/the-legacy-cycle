@@ -57,6 +57,9 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - Settings has Music and Sound effects volume sliders, a Camera shake toggle and a Low specs mode toggle. They are saved per player. See [[Settings]].
 - There is no real music track yet, so the Music slider controls the World.Ambience background loop and any track added to the Music sound group later.
 
+- **The loading screen has no Continue button** (user, 2026-11-06). Once loaded, a click or tap anywhere carries on, as do Enter, Space and gamepad A.
+- **Returning to the main menu asks first** (user, 2026-11-06). A parchment note on the book's right page offers Return or Stay.
+
 ## Inventory and menu (2026-11-06)
 
 - Body armour is split into **Chestplate** (upper body) and **Leggings** (lower body). The full equipment slot set is Helmet, Chestplate, Leggings, Gloves, Weapon and Boots. See [[Floating Menu]].

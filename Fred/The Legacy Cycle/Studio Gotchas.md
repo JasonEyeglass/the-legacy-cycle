@@ -17,6 +17,8 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **Touch buttons:** ContextActionService makes at most 7 of them. Any further buttons silently get none.
 - **First person:** the mouse is locked to the centre of the screen. A world-space menu has to keep still so the player can aim at it by looking (see [[Floating Menu]]).
 - **Rotated frames are not antialiased.** A curve built from rotated rectangles looks jagged. Use a round frame (`UICorner` at 1, 0) with a `UIStroke`, which is smooth. Cut it to an arc with a `ClipsDescendants` frame, which is exact; a `UIGradient` mask on the stroke spans a bigger box than the frame and leaks past the arc. A `Border` stroke grows outward from the frame's edge. (Vitals, 2026-11-06.)
+- **First person hides your own body** through `LocalTransparencyModifier`. A Scriptable camera never resets it, so a cutscene that starts in first person shows no hero. Set the modifier to 0 every frame until the default camera is back (ReturnToMenu).
+- **`TextScaled` with a `UITextSizeConstraint` ignores `UIScale`:** the cap is in screen pixels, so text on a scaled-up stage comes out small. On a UIScale'd stage, use a fixed `TextSize`, which does scale.
 - **A line that starts with `(`** continues the line before it as a function call ("Ambiguous syntax"). End the earlier line with `;`.
 
 ## Asset safety
