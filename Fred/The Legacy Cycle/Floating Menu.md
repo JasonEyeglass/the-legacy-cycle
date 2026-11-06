@@ -40,8 +40,14 @@ There is no item system yet. `EQUIPPED` is fixed at `{Weapon = "Katana"}`, and n
 
 ## Light (2026-11-06)
 
-- A PointLight on the panel part: warm firelight (255,170,96), brightness 1.6, range 12, no shadows. It turns ember red (240,92,48) on the Embers page.
-- It fades in on open (0.4 s) and out on close (0.18 s), with a slow `math.noise` flicker on top.
+- **Cool light (2026-11-06, the user asked for it cooler and lighting the environment):**
+  - A PointLight on the panel part: cold arcane blue-white (170,205,255), brightness 2.4, range 20.
+  - Shadows are on for your own panel (off in low specs) and always off for other players' ghosts.
+  - It has a slow shimmer rather than a fire flicker, and it lights the ground, walls and nearby characters.
+  - The Embers page turns it ember red (240,92,48), but only once the player has absorbed their Ember. See [[Shrine VFX]].
+- **World tint:** while the menu is open, `Lighting.FloatMenuTint` (a ColorCorrection on this client only) cools the whole view: tint (226,236,255), saturation -0.12, brightness -0.03. It fades with the panel.
+- It fades in on open (0.4 s) and out on close (0.18 s).
+- **Embers page:** "You have not found your Ember" / "Seek the Shrine of Embers in Havenbrook" until the `HasEmber` attribute is true, then "Your Ember burns", with a lit ember diamond and halo.
 
 ## Seen by other players (2026-11-06)
 

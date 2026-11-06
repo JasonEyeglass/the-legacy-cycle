@@ -21,17 +21,19 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Combat.Config`: combat, movement, traversal, slide, sheathe and camera tuning, plus the animation ids and sound ids.
 - `Combat.Theme`: colours, fonts and panel, bar and diamond helpers.
 - `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
-- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`.
+- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue).
 
 ## ServerScriptService
 
-- `Progression.Main` starts StatService, AppearanceService, SettingsService, Leveling, QuestService and then PlayerData, so that no listener misses a player's first load.
+- `Progression.Main` starts StatService, AppearanceService, SettingsService, EmberService, Leveling, QuestService and then PlayerData, so that no listener misses a player's first load.
 - `Progression.PlayerData`:
-  - One DataStore record per player: level, XP, stats, look, settings, quest and done. DATA_VERSION is 3.
+  - One DataStore record per player: level, XP, stats, look, settings, ember, quest and done. DATA_VERSION is 3; `ember` is an added field, and older saves read it as false.
   - It autosaves every 120 s, and on leave and on shutdown.
   - If a load fails, that session is never saved.
 - `Progression.AppearanceService`: see [[Character Creator]].
 - `Progression.SettingsService`: see [[Settings]].
+- `Progression.EmberService`: the once-per-player "Absorb the Ember" prompt on every `Shrine`-tagged part. It also publishes the `HasEmber` attribute. See [[Shrine VFX]].
+- `MenuPresence`: relays each player's open floating-menu page as the `MenuPage` attribute. See [[Floating Menu]].
 - `Progression.StatService`, `Leveling`, `QuestService`: stat points, XP and level-ups, and quests.
 - `Combat.CombatService`: server combat; it clones the katana onto characters.
 - `Combat.EnemyAI`: enemies, cloned from templates.
@@ -44,9 +46,12 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `Locomotion`: procedural lean, banking, head look and afterimages.
   - `Traversal`: double jump, wall run, wall climb, mantle and vault.
   - `FloatMenu`: the M menu. See [[Floating Menu]].
+  - `ReturnToMenu`: the camera-rise animation for Back to Main Menu.
+  - `Vitals`: the health, stamina and (once absorbed) Ember arcs.
   - `LockReticle`.
   - `MobileLayout`: touch buttons arranged in arcs around the jump button.
 - `AppearanceClient`: the per-frame face driver, plus the `Creator` module. See [[Character Creator]].
+- `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].
 
 ## Workspace and SoundService
 

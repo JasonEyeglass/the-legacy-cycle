@@ -51,3 +51,20 @@ One client script drives every model tagged `ShrineFx`:
 - **Near:** within 12 studs, the fire and light stir by about 20%.
 - **Use:** triggering either of the shrine's prompts gives a small puff of 14 sparks and 4 licks, and the fire rises 60% for 0.7 s. Only the player who used it sees the puff.
 - **Low specs:** half the particles, no smoke, and no light shadows.
+
+## Absorbing the Ember (2026-11-06)
+
+The user asked for this. It follows the prologue script's Scene 6: the golden spark settles into the player's chest, and the Ember bar appears in the HUD, faint.
+
+- **Rule:** you absorb it **once per player**, and it is saved. Each Shrine of Embers has a held **B** prompt (1.2 s, gamepad DPad-left) labelled "Absorb the Ember", shown above the R and V prompts. `Progression.EmberService` sets PlayerData `ember = true` and the `HasEmber` attribute, then fires `EmberAction` `"Absorbed"` to that player.
+- **Animation (client, about 3.7 s, `ShrineFx`):**
+  1. The fire flares one last time while a neon spark (with a trail, motes and a light) grows and rises out of the coals.
+  2. It hangs there, beating, while the fire starts to fail.
+  3. It arcs into the chest, speeding up.
+  4. A flash, a shower of 30 sparks (14 in low specs), a 0.25 shake and a sound.
+  5. The shrine goes out.
+- **The dark shrine:** no flame, embers or light, just a thin cold wisp of smoke. Its SurfaceAppearance is tinted to (72,66,64), which also turns the sculpted flame cold. This happens on the absorber's screen only; players who haven't taken their Ember still see the shrine lit. The absorb prompt is hidden locally once `HasEmber` is true. The R and V prompts still work, with no spark puff while the shrine is dark.
+- **Elsewhere:**
+  - Vitals has a faint Ember arc inside stamina (radius 67). It fills when the Ember arrives, then breathes. Shortcut: nothing drains it yet, so it always shows full.
+  - The floating menu's Embers page reads "You have not found your Ember" / "Seek the Shrine of Embers in Havenbrook" until you have it, then "Your Ember burns", with a lit ember diamond and an ember-red light.
+- **Not changed:** the Ember stat stays hidden until Echoes (a logged decision). Nothing spends the Ember yet (Ember Strike, saving Bryn).

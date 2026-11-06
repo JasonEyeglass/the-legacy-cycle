@@ -68,3 +68,5 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - The user's obsidian-brazier mesh replaces the old blocky shrine in Havenbrook. See [[Shrine VFX]].
 - Its fire is an **ember, not a bonfire**: a weak smoulder over glowing coals.
 - The user compared it with a Blender Mantaflow flipbook and picked the **native Roblox VFX** version (built-in fire and spark textures). The flipbook copy was removed.
+- You absorb the Ember **once per player, and it is saved** (user, 2026-11-06). Afterwards the shrine stays dark for that player only.
+- The floating menu's light is a **cool blue-white** that lights the surroundings and slightly cools the world's tint while open. The Embers page goes ember red once the Ember is lit (user, 2026-11-06).
