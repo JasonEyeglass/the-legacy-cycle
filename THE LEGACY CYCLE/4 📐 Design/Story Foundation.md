@@ -27,25 +27,25 @@ Every region boss in the GDD is a **hero or ruler from an earlier Cycle who fell
 ## The Ember: why the legacy system exists in the story
 - Heroes carry an **Ember**, a spark of the light that resists the Void. It is what lets players respawn, and it explains why death is not permanent.
 - Fighting the Void slowly corrupts the Ember. Past heroes fell because they **held on too long**.
-- **Retiring** at the Shrine of Embers means passing your Ember to an heir before it corrupts. That makes the mechanic the lesson of the story: the earlier heroes fell because they never passed theirs on.
-- Corruption can work in the story without forcing retirement, so retiring stays optional as the spec says. For example, a slowly growing corruption meter could change dialogue and visuals without ever forcing the player to retire.
+- The player learns this through **playable boss memories**, not by retiring (heirs and retirement cut 2026-11-05). Death is never permanent.
+- Corruption changes only visuals and dialogue.
 
 ## What drives the player, at three scales
 1. **This session (minutes):** a side quest, a dungeon, a boss memory to unlock.
 2. **This character (hours):** the main quest through each region and that region's boss. The knight choice and other choices change who your allies and enemies are.
-3. **This bloodline (weeks):** the Void Sovereign cannot be beaten by one generation. Opening the Forgotten Realm needs **three seals**, and each one can only be earned by a different generation of your family. That gives a long-term goal that only the legacy system can deliver.
+3. **This hero (weeks):** the region chapters and the **three seals** that open the Forgotten Realm, earned from the Frostbound King, the Infernal Titan and the Forsaken Monarch.
 
 ## Story arc (draft)
 - **Prologue: The Last Ember (first 5 minutes).** You play the last Cycle's champion in a short, scripted, powerful fight that you're meant to lose. You see the Fallen Knight fall to the Void. Then you wake up as a young villager in Havenbrook with a faint Ember. This teaches combat, sets up the mystery, and gives new players a clear first goal. It fills the "first 5 minutes" gap from [[GDD v0.2 Review]]. Full script: [[Prologue Script]].
 - **Act 1: Havenbrook.** Learn what the Cycle is. Meet the wounded knight (the GDD's choice). Beat the Fallen Knight and see his memory. Full outline: [[Act 1 Quest Outline]].
 - **Act 2: Forest and Frostveil.** Follow the trail of the earlier heroes. Learn that heroes fall when they hold on.
-- **Act 3: Ashen Wastes and Shadowlands.** Understand what the Titan was built to do and what deal the Monarch made. The first seal is earned here. Retiring becomes possible, and the heir begins with the family's story already in motion.
-- **Endgame: Forgotten Realm.** All three seals are needed (three generations). The final choice decides whether your bloodline ends the Cycle, takes control of it, or joins it.
+- **Act 3: Ashen Wastes and Shadowlands.** Understand what the Titan was built to do and what deal the Monarch made. The second and third seals are earned here.
+- **Endgame: Forgotten Realm.** All three seals are needed. Your hero makes the final choice: end the Cycle by letting go, take control of it, or join it.
 
 ## How the story is told on Roblox
 - **Short dialogue, voiced by NPCs players care about:** few long cutscenes, everything skippable, mobile-readable.
 - **Boss memories:** a 30-second playable flashback after each boss.
-- **The family chronicle:** a book in the ancestor hall that writes itself from your bloodline's deeds and flags.
+- **The Memory Journal:** a book in your character's menu that fills in from boss memories and your story flags.
 - **Environment and items** for players who want to dig, like Deepwoken, but never required to follow the main story. See [[Competitor Baseline - Rogue Lineage and Deepwoken]].
 
 ## What this means for the first playable build
@@ -59,7 +59,7 @@ Only the Prologue and Act 1 are needed: the prologue fight, Havenbrook, the woun
 - [ ] Is the tone right for the Roblox audience (dark fantasy but not grim)?
 
 ## Proposals
-**JasonEyeglass, 2026-11-05: story without heirs.** Logged in [[Decisions|Decisions Log]]; one character per player. Suggested changes for the owner:
+**JasonEyeglass, 2026-11-05: story without heirs.** ✅ Applied 2026-11-06 (Ember, three scales, Act 3, endgame, Memory Journal). Logged in [[Decisions|Decisions Log]]; one character per player. Suggested changes for the owner:
 - **The Ember:** past heroes still fell because they held on too long, but the player learns this through playable boss memories, not by retiring. Corruption changes only visuals and dialogue.
 - **Three scales:** "this bloodline (weeks)" becomes "this hero (weeks)": the region chapters and the three seals.
 - **Seals:** earned from the Frostbound King, the Infernal Titan and the Forsaken Monarch, not from three generations.

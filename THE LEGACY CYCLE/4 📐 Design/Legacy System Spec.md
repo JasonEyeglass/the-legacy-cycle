@@ -2,10 +2,15 @@
 created: 2026-11-03
 owner: unassigned
 tags: [spec, legacy, design, draft]
-status: draft
+status: superseded
+updated: 2026-11-06
 ---
 
 # Legacy System Spec (draft v0.1)
+
+> [!warning] Superseded 2026-11-06: no heirs, no permadeath
+> Each player keeps **one character** for the whole game. **There is no permadeath and no hardcore mode.** Retirement, the retirement ceremony, heirs, heirlooms, bloodline traits, reputation carry-over and the ancestor hall are cut. See [[Decisions|Decisions Log]] (2026-11-05 "No heirs").
+> **Still valid:** per-player story flags (the knight choice), the death penalty below, and the multiplayer rules below. Everything about retirement and heirs further down is kept only for history.
 
 One-page spec for the signature mechanic of [[Home|The Legacy Cycle]]. It answers concern #1 in [[GDD v0.2 Review]]: decide what carries between generations now, even if it is built later. Everything here is a proposal for the team to accept, change or reject.
 
@@ -41,7 +46,7 @@ Death is not the trigger. This keeps the game friendly for casual and mobile pla
 Balance rule: an heir should feel different, not stronger. Gate traits and heirlooms behind deeds, not playtime, so retiring early gives no advantage.
 
 ## Death penalty (current character)
-Death is not permanent. Proposed: respawn at the last shrine, gear durability loss and an unclaimed-loot drop the player can recover. A separate, opt-in hardcore mode with permadeath (which forces retirement) can come later. It is not in scope.
+Death is never permanent. On death: respawn at the last shrine, gear durability loss and an unclaimed-loot drop the player can recover. **No permadeath and no hardcore mode** (cut 2026-11-05).
 
 ## Multiplayer rules
 - All legacy data lives on the player's profile. Shared regions never change permanently. This follows GDD section 6.
@@ -49,6 +54,17 @@ Death is not permanent. Proposed: respawn at the last shrine, gear durability lo
 - In a party, the dungeon uses the host's story state. Each member keeps their own flags and rewards.
 
 ## Data model (sketch)
+**Current (2026-11-06):** no `bloodline`. Story flags live on the one character:
+```
+Profile (versioned, DataStoreService)
+  character
+    level, xp, inventory, currency, questState
+    storyFlags: { [flagId]: value }   -- e.g. knight_fate = "saved"
+    reputation: { [factionId]: number }
+```
+Full profile: [[Merge Proposal - Legacy Cycle and Action MMO]].
+
+Old heir version, kept for history:
 ```
 Profile (versioned, DataStoreService)
   bloodline
@@ -66,9 +82,9 @@ Profile (versioned, DataStoreService)
 **Important for milestone D:** store the knight choice in `bloodline.familyFlags` from day one, not on the character. Retirement can then be added later without migrating save data. Retirement itself is one atomic profile update: archive `character` into `ancestors`, apply the picks, then create a fresh `character`.
 
 ## Build order
-1. **Milestone D (no change in scope):** knight choice saved as a family flag, read by one later NPC.
-2. **After alpha:** deeds counter, reputation, retirement shrine, ceremony UI, one heirloom and three traits.
-3. **Later:** ancestor hall in Havenbrook (statues or portraits of past generations), more traits, hardcore mode.
+1. **Milestone D (no change in scope):** knight choice saved in `character.storyFlags`, read by one later NPC.
+2. ~~After alpha: deeds counter, reputation, retirement shrine, ceremony UI, one heirloom and three traits.~~ Cut.
+3. ~~Later: ancestor hall, more traits, hardcore mode.~~ Cut.
 
 ## Open questions
 - [ ] Should retirement be possible before the first boss, or only after it?
@@ -78,7 +94,7 @@ Profile (versioned, DataStoreService)
 - [ ] Is there a monetization link (cosmetic ancestor portraits, heirloom skins) that stays non-pay-to-win?
 
 ## Proposals
-**JasonEyeglass, 2026-11-05: cut heirs and retirement.** Logged in [[Decisions|Decisions Log]]. The heir loop is too complicated for younger players, so each player keeps one character for the whole game. If the owner agrees, mark this spec as superseded:
+**JasonEyeglass, 2026-11-05: cut heirs and retirement.** ✅ Applied 2026-11-06 (banner, death penalty, data model, build order). Logged in [[Decisions|Decisions Log]]. The heir loop is too complicated for younger players, so each player keeps one character for the whole game. If the owner agrees, mark this spec as superseded:
 - Cut: retirement, the retirement ceremony, heirs, heirlooms, bloodline traits, reputation carry-over, the ancestor hall, hardcore permadeath.
 - Keep: per-player story flags (the knight choice), the death penalty, and the multiplayer rule that flag-driven content shows only in private instances or per-player NPCs.
 - Data model: drop `bloodline`; move `familyFlags` to `character.storyFlags`. Full profile in [[Merge Proposal - Legacy Cycle and Action MMO]].
