@@ -204,3 +204,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The user's sound plan:** BGM-1 on the main menu, BGM-1 quiet under loading, BGM-2 in gameplay. UI: Click, Hover, Open and Close (windows, floating menu), Select (dialogue choices, interacting), Mission (quest taken, objective changed, quest abandoned), Quest Complete, Quest Failed.
 - **Button sounds are global, not per button.** One hook covers every button in PlayerGui, so new UI gets sounds without code. An attribute opts a button out or swaps its click for Select.
 - **Quest sounds play when their toast shows**, so a quest accepted mid-conversation sounds when the conversation closes, together with its "Quest Started" toast.
+
+## Running lunge (2026-11-10)
+
+- **One-handed thrusts are baked per frame by IK, not as Euler keys.** The hand target moves as a shoulder-relative direction plus a length, so its path never folds through the shoulder. Interpolating IK-solved keys as Euler angles flipped the wrist up to 170° per frame.
+- **The arms stop 0.025 studs short of straight, and a foot out of reach slides toward its hip.** A straight two-bone chain has no defined twist, so it flicks between frames, and a foot left at an unreachable target detaches from the leg.

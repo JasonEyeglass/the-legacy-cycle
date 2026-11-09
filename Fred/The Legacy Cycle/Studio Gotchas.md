@@ -55,3 +55,4 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
   2. Find the cut where the tip speed peaks, ignoring the frame-one snap from the stance.
   3. Fit a circle: the axis is the sum of (pᵢ−c)×(pᵢ₊₁−c), then a Kasa fit in the plane. Up is the middle angle of the cut.
   4. Write the result into `Config.SlashFx.Cuts` (2026-11-09).
+- **`require` keeps the old module after `UpdateSourceAsync` in Edit mode:** the same session returns the cached table. To test an edit, require a fresh clone parented next to the original (so `script.Parent` still resolves), then destroy it (2026-11-10).

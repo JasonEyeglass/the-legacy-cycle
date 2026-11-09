@@ -41,6 +41,21 @@ What the video adds is a **real source of motion** in place of hand-authored hil
 3. Copy the server idea. Have `CombatService` sample the blade from the same baked frames (hilt and blade per frame), not from a separate hitbox timing. Today we only have a `Hit` marker.
 4. Still apply the five key poses and craft rules on top. Captured motion needs snappier anticipation and a protected hit frame.
 
+**Steps 1–3 are built (2026-11-09) as the `/sword-anim` slash skill** (`~/.claude/skills/sword-anim/`).
+- `retarget_r15.py` takes any FBX/BVH (Unreal pack, Mixamo, FreeMoCap) and:
+  - places the weapon first, with the hilt measured from the shoulder socket by arm-length scale;
+  - runs our toolkit's IK and planner;
+  - reports clipping frames;
+  - writes R15Swing keys plus `weapon[frame]` CFrames for `CombatService`.
+- The self-test round-trips the KatanaM1 clip through a turned, scaled BVH: torso exact, hilt within 0.13 stud, blade within 5°.
+- **Blender only: we skip Unreal (decided 2026-11-09).** UE 5.8 crashed with "Out of video memory" while importing a pack. Packs go FBX → Blender → R15 directly.
+- **`--unarmed` mode** covers punches and kicks:
+  - both hands follow the source;
+  - fists are pushed out of the block head (a boxing guard clipped on every frame);
+  - the hit is the fastest limb's farthest reach.
+- Output is now the **solved per-frame joint poses**, which Studio bakes as-is, with no re-solve.
+- Not yet done: the Studio bake.
+
 ## Before we start: check these
 
 - Is Unreal Engine installed on this machine? It's needed only for Route A. FreeMoCap and Blender cover Route B without it.
