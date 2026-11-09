@@ -23,20 +23,24 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Townsfolk`: the 12 townsfolk (persona, look, stops, lines), the lore the AI may use, `pick` and `choices`. See [[Townsfolk]].
 - `Packages.Trove`: Sleitnick's Trove v1.8.0 (MIT), which tracks connections, instances, threads and cleanup functions and cleans them all at once. Use it in new code that has to clean up. `CombatClient.Wind`, `Rocks` and the wall climb use it.
 - `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
-- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show).
+- `Items`: every item (id, name, slot, icon, power, stack, blurb) and the inventory rules: `add`, `remove`, `equip`, `power`, `sanitize`, and `selfTest()` to run from the command bar. Item ids are save keys, so never rename one.
+- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `InventoryAction` ("Equip", itemId), `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show).
 
 ## ServerScriptService
 
-- `Progression.Main` starts StatService, AppearanceService, SettingsService, EmberService, Leveling, QuestService and then PlayerData, so that no listener misses a player's first load.
+- `Progression.Main` starts StatService, AppearanceService, SettingsService, EmberService, Leveling, QuestService, InventoryService, StoryService and then PlayerData, so that no listener misses a player's first load.
 - `Progression.PlayerData`:
-  - One DataStore record per player: level, XP, stats, look, settings, ember, quest and done. DATA_VERSION is 3; `ember` is an added field, and older saves read it as false.
+  - One DataStore record per player: level, XP, stats, look, settings, ember, quest, done, gold, inv and story. DATA_VERSION is 4. Fields added later (`ember`, then `gold`, `inv` and `story`) load as false or empty from older saves.
+  - `validFlag(flag, value)` says whether a story flag fits the save.
   - It autosaves every 120 s, and on leave and on shutdown.
   - If a load fails, that session is never saved.
 - `Progression.AppearanceService`: see [[Character Creator]].
 - `Progression.SettingsService`: see [[Settings]].
 - `Progression.EmberService`: the once-per-player "Absorb the Ember" prompt on every `Shrine`-tagged part. It also publishes the `HasEmber` attribute. See [[Shrine VFX]].
 - `MenuPresence`: relays each player's open floating-menu page as the `MenuPage` attribute. See [[Floating Menu]].
-- `Progression.StatService`, `Leveling`, `QuestService`: stat points, XP and level-ups, and quests.
+- `Progression.StatService`, `Leveling`, `QuestService`: stat points, XP and level-ups, and quests. StatService multiplies damage by the equipped weapon's power.
+- `Progression.InventoryService`: `add`, `remove`, `has`, `equip` and `addGold` for a player. It replicates `Gold`, `Inventory` (JSON) and `Equip_<slot>` attributes, and gives every hero `Items.Starter`, equipped.
+- `Progression.StoryService`: `get` and `set` for story flags (`knight_fate`, `prologue_seen`, `act1_complete`), replicated as `Story_<flag>` attributes.
 - `Combat.CombatService`: server combat; it clones the katana onto characters. Its `ClimbStart` and `ClimbEnd` actions call `CombatCore.climb`, which drains stamina while the climber moves and stops regen while they're on the wall.
 - `Combat.EnemyAI`: enemies, cloned from templates.
   - A Hollow Squire spawns at every part tagged `EnemySpawn`: the combat sandbox, and the dev space at (-130, 2990).

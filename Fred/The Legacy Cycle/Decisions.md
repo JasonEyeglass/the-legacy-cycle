@@ -150,3 +150,11 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Only slice work until it's done.** Polish that isn't on the slice's path waits.
 - **The dungeon is built before the prologue.** Their old-Havenbrook art and the Fallen Knight / Caelan model are the same thing, so they get made once.
 - **Only the part of roadmap Phase 1 the story needs is pulled forward:** items, inventory, equip and gold. Mining, smelting and forging come after the slice.
+
+## Story state and gear (2026-11-09)
+
+- **Every hero carries the Wanderer's Katana, and the Weapon slot is never empty.** You can swap blades but not unequip one, because the katana on your back is always drawn from the same model.
+- **A weapon's power multiplies damage on top of Strength.** The Wanderer's Katana is ×1, the tarnished Hale's Oath ×1.1 and Hale's Oath ×1.25. These numbers are placeholders until the slice pass.
+- **Story flags are short words with a short string, number or true/false value**, saved per player and replicated as `Story_<flag>` attributes so dialogue can branch on them. `knight_fate` is "saved", "took" or "left".
+- **Quest state stays where it was** (the profile's `quest` and `done`). The plan's "questState" didn't need a new field.
+- **Gold is saved and shown, but nothing spends it yet** (the open-question default in [[Act 1 Slice]]).

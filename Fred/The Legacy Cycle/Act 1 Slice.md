@@ -55,14 +55,15 @@ Some can come from what exists, some are new:
 - **Captain Aldric and The Missing Caravan** aren't in the team's Act 1. [Aldric stays as the gate warden who points players north; The Missing Caravan becomes side content outside the slice.]
 - **Ember Strike**, the prologue's skill and the game's "one magic ability", doesn't exist yet. [Build it in step 7, and let the hero use it after absorbing the Ember.]
 - **Gold** has no use in the slice, because Tobin's upgrade (1.4) is cut. [Save it and show it anyway, so the rewards are real.]
+- **1.1's "starter sword" reward:** since step 1, every hero already carries the Wanderer's Katana. [1.1 gives the 100 gold only, and Orla's line hands the katana over in words.]
 
 ## Later (not in the slice)
 
-1.2 and 1.4, the brazier puzzle, the archer, the side quests and the bounty board. Mining and forging (roadmap Phase 1's crafting loop). The Ethereal Forest.
+1.2 and 1.4, the brazier puzzle, the archer, the side quests and the bounty board. Mining and forging (roadmap Phase 1's crafting loop). The Ethereal Forest. A model of its own for each weapon (Hale's Oath looks like the katana for now). Armor items for the other equipment slots.
 
 ## Progress
 
-- [ ] 1 Story state and gear
+- [x] 1 Story state and gear (2026-11-09, waiting on the user's playtest)
 - [ ] 2 A Spark in Havenbrook
 - [ ] 3 The Wounded Knight
 - [ ] 4 Enemies
