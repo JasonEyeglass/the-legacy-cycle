@@ -142,4 +142,4 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 ## Names and attacking (2026-11-09)
 
 - **Only our nameplates; Roblox's name display is off everywhere** (user, 2026-11-09). Every Humanoid's DisplayDistanceType is None. Players, guards, townsfolk and Captain Aldric all wear the same plate: the name in Fondamento over a title in Merriweather. A player's title is their level, and their own plate is hidden from them.
-- **Light and heavy swings plant the feet** (user, 2026-11-09, "they shouldn't be able to move and attack at the same time"). WalkSpeed is 0 for 0.45 s after a light and 0.9 s after a heavy. A dodge cancels it, so you can still evade out of a swing. The running heavy keeps its lunge, which is its whole point.
+- **Light and heavy swings slow you to a crawl** (user, 2026-11-09: first "they shouldn't be able to move and attack at the same time", then "more like make them really slow"). WalkSpeed is 4 (walking is 20) for 0.45 s after a light and 0.9 s after a heavy. A full stop felt too much. A dodge cancels it, so you can still evade out of a swing. The running heavy keeps its lunge, which is its whole point.
