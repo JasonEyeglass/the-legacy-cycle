@@ -73,6 +73,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Embers are skills** (user, 2026-11-09). Absorbing one plays a short cinematic in two shots: lighting the embers, then collecting its power. After it, the Embers page pops open in the floating menu with the skill tree.
 - **The tree's shape is a placeholder:** three paths of two sealed skills out of the Ember. No skill names, costs or effects are invented; the nodes stay sealed until the skills are designed.
 - **The dev space has a Hollow Squire and three Training Dummies** (user, 2026-11-09). Dummies never give XP or quest credit.
+- **The dev space has a replayable Ember shrine** (user, 2026-11-09) for testing the cinematic. A `DevReplay` shrine never saves the Ember, so it must stay out of the real world.
+- **Landed hits shake the camera harder** (user, 2026-11-09): up to 1.6 times the usual maximum angle, for your own hits only.
 
 ## Inventory and menu (2026-11-06)
 

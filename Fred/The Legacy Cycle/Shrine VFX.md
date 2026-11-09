@@ -62,6 +62,7 @@ The user asked for this. It follows the prologue script's Scene 6: the golden sp
   - **Shot 2, collecting its power:** hero and shrine side-on, drifting in (FOV 55 to 52), while steps 1 to 4 below play.
   - The camera comes back 0.7 s into the shrine going out. The floating menu then opens on the Embers page and lights the skill tree (`FloatMenu.revealEmbers`, see [[Floating Menu]]).
   - It stops early (camera, bars and HUD restored, no menu) if the hero dies or respawns.
+  - **To test it, use the dev shrine:** `workspace.Dev.DevShrineOfEmbers` (`DevReplay = true`) replays the cinematic on B, with an 8 s cooldown. It never saves the Ember and relights itself afterwards.
 - **Animation (client, about 3.7 s, `ShrineFx`):**
   1. The fire flares one last time while a neon spark (with a trail, motes and a light) grows and rises out of the coals.
   2. It hangs there, beating, while the fire starts to fail.
