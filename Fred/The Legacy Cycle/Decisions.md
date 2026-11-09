@@ -68,6 +68,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Shift lock is on Ctrl, not Shift** (user, 2026-11-09), because Shift sprints. Roblox's built-in shift lock stays off. Slide moved to C and R1 only.
 - **The shift lock indicator is minimal:** a small dot and a thin gilt ring at the centre of the screen, with no label.
 - **The controls strip hides itself** after 12 s on screen, and Caps Lock toggles it (user, 2026-11-09).
+- **The ground-impact star and shockwave only come from a drop from a great height** (user, 2026-11-09): a fall speed of 110 studs/s or more, about a 30-stud drop (`Config.Traversal.ImpactLanding`). Ordinary jumps and double jumps still thump (shake and sound) but don't crack the ground.
+- **Cleanup code uses Trove** (user, 2026-11-09): Sleitnick's Trove sits at `ReplicatedStorage.Packages.Trove`, copied from its official GitHub source and read through before adding. New code that tracks connections or temporary instances uses it; existing code is only switched over when it's being changed anyway.
 - **Shift lock eases instead of snapping** (user, 2026-11-09): the hero turns in over up to 0.45 s, and the view glides after the mouse. The hero faces exactly where the crosshair points.
 
 ## Embers and the dev space (2026-11-09)

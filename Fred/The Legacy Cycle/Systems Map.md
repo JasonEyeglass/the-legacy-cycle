@@ -21,8 +21,9 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Combat.Config`: combat, movement, traversal, slide, sheathe and camera tuning, plus the animation ids and sound ids.
 - `Combat.Theme`: colours, fonts and panel, bar and diamond helpers.
 - `Townsfolk`: the 12 townsfolk (persona, look, stops, lines), the lore the AI may use, `pick` and `choices`. See [[Townsfolk]].
+- `Packages.Trove`: Sleitnick's Trove v1.8.0 (MIT), which tracks connections, instances, threads and cleanup functions and cleans them all at once. Use it in new code that has to clean up. Nothing uses it yet.
 - `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
-- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye).
+- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show).
 
 ## ServerScriptService
 
