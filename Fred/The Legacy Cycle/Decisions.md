@@ -79,6 +79,15 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **VFX follow the field guide's curve rules** (user, 2026-11-09, picks 1, 3 and 4 of [[Roblox VFX Techniques]]): impacts pop with a 3-frame star, sizes ease out, transparency holds then fades, and shockwaves get a dark under-layer. Built-in particle textures only until the user uploads their own; ground winds wait for a wind texture.
 - **Landed hits shake the camera harder** (user, 2026-11-09): up to 1.6 times the usual maximum angle, for your own hits only.
 
+## Townsfolk (2026-11-09)
+
+- **Havenbrook gets about 12 townsfolk** (user, 2026-11-09): pedestrians with simple routines between the market, fountain, doors, board, keep and gate. A few are named from the Act 1 outline (Orla Venn, Tobin); the rest are new and count as proposals.
+- **Smart talk is a hybrid** (user): written lines picked by context (Ember, quest state, blade drawn, met before), plus answers to the player's chosen topic from Roblox's built-in `TextGenerator`, held to each person's persona and the world's lore. The written line is the fallback whenever the AI fails, is slow or is over budget.
+- **The player only picks reply choices** (user): no typed chat, so it works the same on gamepad and phone.
+- **Townsfolk wear the hero presets** (user): the hero's own body, dressed through `Appearance.apply`.
+- **No quests, prices or rewards from the AI.** The prompt forbids them, and its replies go only to the player talking.
+- **Roblox's AI rules are followed** (2026-11-09): an AI notice shows for the whole conversation. AI memory lasts one conversation and is never saved, and each person gives at most 6 AI answers per player per 15 minutes. Cross-session AI memory or unlimited AI chat would count as "extended AI interactions", which force the Restricted (18+) label, so they stay out. Answer the Content Maturity questionnaire's AI questions before publishing.
+
 ## Inventory and menu (2026-11-06)
 
 - Body armour is split into **Chestplate** (upper body) and **Leggings** (lower body). The full equipment slot set is Helmet, Chestplate, Leggings, Gloves, Weapon and Boots. See [[Floating Menu]].

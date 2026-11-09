@@ -20,8 +20,9 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Ornament`, `UiFocus`: the UI kit and the screen takeover. See [[UI Kit (Ornament)]].
 - `Combat.Config`: combat, movement, traversal, slide, sheathe and camera tuning, plus the animation ids and sound ids.
 - `Combat.Theme`: colours, fonts and panel, bar and diamond helpers.
+- `Townsfolk`: the 12 townsfolk (persona, look, stops, lines), the lore the AI may use, `pick` and `choices`. See [[Townsfolk]].
 - `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
-- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue).
+- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye).
 
 ## ServerScriptService
 
@@ -40,6 +41,8 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - A Hollow Squire spawns at every part tagged `EnemySpawn`: the combat sandbox, and the dev space at (-130, 2990).
   - A Training Dummy stands at every part tagged `DummySpawn` (three in `workspace.Dev.Dummies`). Dummies have no brain and an anchored root, 1000 HP and a full heal 3 s after the last hit. They respawn after death and carry `Dummy = true`, which Leveling and QuestService skip, so they give no XP or kill credit.
 
+- `Townsfolk` (Script): spawns the townsfolk, walks their routines and runs conversations. Its `UseAI` attribute switches the AI off. `Townsfolk.Mind` asks TextGenerator in character, with written lines as the fallback. See [[Townsfolk]].
+
 ## StarterPlayerScripts (client)
 
 - `CombatClient` and its modules:
@@ -53,11 +56,14 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `LockReticle`.
   - `MobileLayout`: touch buttons arranged in arcs around the jump button.
 - `AppearanceClient`: the per-frame face driver, plus the `Creator` module. See [[Character Creator]].
+- `DialogueClient`: Captain Aldric's scripted talk, and townsfolk reply choices with the AI notice.
+- `TownsfolkBarks`: chat-bubble remarks from townsfolk you pass.
 - `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].
   - `ShrineFx.Cinematic`: the absorb cutscene's camera and effects: `take()` (bars, grade, depth of field, bloom, flash, FOV punch, cleanup), `dolly` and `orbit` shots, and `ring`, `pillar` and `motes`.
 
 ## Workspace and SoundService
 
 - `Workspace.Cinematics.LoadingPan`: the shot folders for the loading pan.
+- `Workspace.World.Havenbrook.Townsfolk`: `Stops` (22 invisible stop parts, found by searching for clear ground) and `People` (filled at run time).
 - `SoundService.Music`: holds World.Ambience.
 - `SoundService.Effects`: holds the combat sound templates and the FountainSound.

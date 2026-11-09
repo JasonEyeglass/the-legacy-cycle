@@ -21,6 +21,7 @@ A dark-fantasy open-world Roblox RPG with R15 characters and katana combat. It i
   - [[Settings]]: Music and Sound effects sliders, plus Camera shake and Low specs.
   - [[Floating Menu]]: the in-world M menu (Inventory, Stats, Embers, Back to Main Menu).
   - [[Shrine VFX]]: the new Shrine of Embers mesh, with native and Blender-flipbook fire side by side.
+  - [[Townsfolk]]: 12 Havenbrook townsfolk who walk, glance, remark and talk through reply choices answered by Roblox's AI.
 - [[UI Kit (Ornament)]]: the fantasy UI helpers and the gotchas they work around.
 - [[Studio Gotchas]]: Roblox Studio and Studio MCP lessons from building this.
 - [[Roblox VFX Techniques]]: VFX and animation recipes studied from 13 YouTube tutorials, and the AI video-watching repos.
