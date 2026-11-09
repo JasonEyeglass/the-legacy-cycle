@@ -80,10 +80,12 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].
   - `ShrineFx.Cinematic`: the absorb cutscene's camera and effects: `take()` (bars, grade, depth of field, bloom, flash, FOV punch, cleanup), `dolly` and `orbit` shots, and `ring`, `pillar` and `motes`.
 
+- `ReplicatedStorage.Audio` (client): music crossfades (`music`), one-shot UI sounds (`ui`), and `start`, which gives every PlayerGui button hover and click sounds (a `UiSound` attribute of "Select" or "None" overrides) and plays Select on ProximityPrompts.
+
 ## Workspace and SoundService
 
 - `Workspace.Cinematics.LoadingPan`: the shot folders for the loading pan.
 - `Workspace.World["Old Watchtower"]` and `Workspace.World["Ser Bryn Hale"]` (tagged `StoryNPC`, anchored, posed sitting; Persistent streaming): quest 1.3.
 - `Workspace.World.Havenbrook.Townsfolk`: `Stops` (22 invisible stop parts, found by searching for clear ground) and `People` (filled at run time).
-- `SoundService.Music`: holds World.Ambience.
-- `SoundService.Effects`: holds the combat sound templates and the FountainSound.
+- `SoundService.Music` (SoundGroup, the Music slider): BGM-1 (main menu, low under the loading screen) and BGM-2 (gameplay), played by `ReplicatedStorage.Audio`.
+- `SoundService.Effects` (SoundGroup, the Sound effects slider): holds the combat sound templates, the FountainSound, and `UI`: the UI sounds (click, hover, open, select, mission, quest complete, quest failed).
