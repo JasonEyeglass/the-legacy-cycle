@@ -176,3 +176,10 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Saving Bryn drains the Ember only for the rest of 1.3,** and only on the Ember arc, since nothing spends the Ember yet. Once Ember Strike exists (step 7), saving him should cost it properly.
 - **Taking the sword gives the true Hale's Oath (×1.25).** The tarnished one is kept for a later beat (the dungeon's Hollowed Bryn).
 - **Reply choices fit the quest:** a townsperson's quest topics come first while they apply.
+
+## Enemies for the slice (2026-11-09)
+
+- **Every placement so far is a placeholder** (user, 2026-11-09). The watchtower, Bryn and the dev-space spawns move once the real map and world design are done.
+- **The hound and brute are stand-ins on the Squire rig.** The hound is a small, hunched humanoid and the brute a scaled-up soldier, so the gameplay can be built now. Real models (a four-legged hound with its own animations, a brute model) replace them later without code changes, as long as they keep the template names.
+- **The brute has poise instead of more health.** Light hits can't interrupt its slam, so the fight is about reading the telegraph and parrying or dodging. A parry still stuns it, which is the opening.
+- **Enemy kinds are data:** a template in `EnemyTemplate` plus an optional `Config.Enemy.Kinds` entry, picked by a spawn part's `Enemy` attribute. The dungeon (step 5) places spawn parts the same way.

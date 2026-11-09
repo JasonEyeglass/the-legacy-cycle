@@ -67,7 +67,7 @@ Some can come from what exists, some are new:
 - [x] 1 Story state and gear (2026-11-09, waiting on the user's playtest)
 - [x] 2 A Spark in Havenbrook (2026-11-09, waiting on the user's playtest)
 - [x] 3 The Wounded Knight (2026-11-09, waiting on the user's playtest)
-- [ ] 4 Enemies
+- [x] 4 Enemies (2026-11-09, stand-in models for the hound and brute; waiting on the user's playtest)
 - [ ] 5 The Old Gate
 - [ ] 6 What He Would Not Let Go
 - [ ] 7 Prologue
