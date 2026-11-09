@@ -62,6 +62,12 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The loading screen has no Continue button** (user, 2026-11-06). Once loaded, a click or tap anywhere carries on, as do Enter, Space and gamepad A.
 - **Returning to the main menu asks first** (user, 2026-11-06). A parchment note on the book's right page offers Return or Stay.
 
+## Controls (2026-11-09)
+
+- **Shift lock is on Ctrl, not Shift** (user, 2026-11-09), because Shift sprints. Roblox's built-in shift lock stays off. Slide moved to C and R1 only.
+- **The shift lock indicator is minimal:** a small dot and a thin gilt ring at the centre of the screen, with no label.
+- **The controls strip hides itself** after 12 s on screen, and Caps Lock toggles it (user, 2026-11-09).
+
 ## Inventory and menu (2026-11-06)
 
 - Body armour is split into **Chestplate** (upper body) and **Leggings** (lower body). The full equipment slot set is Helmet, Chestplate, Leggings, Gloves, Weapon and Boots. See [[Floating Menu]].

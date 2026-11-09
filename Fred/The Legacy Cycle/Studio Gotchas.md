@@ -21,6 +21,8 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **`TextScaled` with a `UITextSizeConstraint` ignores `UIScale`:** the cap is in screen pixels, so text on a scaled-up stage comes out small. On a UIScale'd stage, use a fixed `TextSize`, which does scale.
 - **A Decal on a MeshPart follows the mesh's UVs**, so a classic face decal on the dynamic head smears. Put it on an invisible box Part welded in front of the face instead.
 - **ViewportFrames can capture blank** in `screen_capture` even with their contents in place. Nudging the camera or ImageTransparency redraws them.
+- **CanvasGroup `GroupTransparency` was ignored in playtests** (2026-11-09): both a 1,209 px strip and a 24 px mark stayed fully drawn at 1. Fade the pieces one by one instead (text, image and stroke transparencies).
+- **A custom shift lock** sets `MouseBehavior = LockCenter` and `UserGameSettings.RotationType = CameraRelative` every frame from a render step after the camera, which resets both.
 - **A line that starts with `(`** continues the line before it as a function call ("Ambiguous syntax"). End the earlier line with `;`.
 
 ## Asset safety
