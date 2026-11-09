@@ -61,7 +61,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 
 - `CombatClient` and its modules:
   - `CombatCamera`: a third-person shoulder camera, lock-on, spring kicks and speed FOV. It skips its update while the camera is Scriptable.
-  - `Feedback`: camera shake, hitstop, sounds (through the Effects group), sparks, blade trails and the hurt vignette.
+  - `Feedback`: camera shake, hitstop, sounds (through the Effects group), sparks, blade trails and the hurt vignette, and the crescent slash (`Feedback.slash`: fits the blade tip's arc and stacks the four `Config.SlashFx` flipbooks on it; pooled rigs in `Workspace.Terrain` named `SlashFx_<kind>`).
   - `Locomotion`: procedural lean, banking, head look and afterimages.
   - `Traversal`: double jump, wall run, wall climb (up, down and sideways, held by a LinearVelocity), mantle and vault.
   - `Minimap`: the radar (top right), turning with the camera. It shows `MapLandmark` anchors with labels, enemies as red wax dots, `KnightGuard` guards as ink shields (`icon_guard`), and the quest star pinned to the edge.

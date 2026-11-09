@@ -28,6 +28,9 @@ A dark-fantasy open-world Roblox RPG with R15 characters and katana combat. It i
 - [[Roblox VFX Techniques]]: VFX and animation recipes studied from 13 YouTube tutorials, and the AI video-watching repos.
 - [[VFX and Animation Training Log]]: measured Blender drills (slash flipbook, five-beat sword swing, layered slash, impact burst, hit reaction with hitstop) and what each iteration fixed.
 - [[Roblox Dev Study - Round 2]]: 14 more videos on growing a game, hit-stop and combat feel, animation craft, and mesh/beam VFX, with what to apply here first.
+- [[Sword Animation Pipeline - Retarget and Mocap]]: get sword moves from Unreal packs or FreeMoCap, retarget onto R15 with hands-on-hilt IK and a per-frame clipping pass. Adopted as our source-of-motion step.
+- [[AI-Drawn VFX Textures - PhotoCraft]]: an agent draws white, layered VFX flipbooks in code via PhotoCraft's MCP; the game tints each layer. Includes the edge-check and no-red-droplets guards.
+- [[World Building Pipeline - Blender Scripts]]: whole zones and models from AI-written headless Blender scripts (named constants, kits placed by game code, breakables pre-cut 4 ways and matched to the swing). Adopted for world building.
 - Dev log: [[2026-11-06]].
 
 ## Key locations

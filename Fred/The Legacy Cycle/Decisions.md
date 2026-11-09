@@ -188,3 +188,9 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 
 - **Place names show at the top centre on entering, not under the minimap** (user, 2026-11-09). Zones are circles round map landmarks for now, until the real map has region bounds.
 - **Every quest can be abandoned, and a story quest starts over.** Every quest so far is a main quest (Aldric's caravan included), so allowing only side quests would leave nothing to abandon. A story quest comes back by itself, so the story can't be lost. Choices already made stay made.
+
+## Katana slash VFX (2026-11-09)
+
+- **The slash follows the blade, not a fixed angle per attack.** The tip's real path decides the crescent's plane, size and direction, so new animations and combo steps work without tuning. The cost is that a swing whose animation hasn't loaded shows no crescent, only the trail.
+- **Our own drawn sheets instead of PhaseVFX for this one**, because the user asked to re-create the katana slash and it's a signature effect that has to match our swings.
+- **Enemy slashes are void purple**, so a player can tell at a glance whose blade is coming.

@@ -41,3 +41,9 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **The Assistant undoes camera changes:** after an `execute_luau` that sets `CameraType`, Studio's Assistant resets it ("The execute_luau changed camera type. Resetting..."). To hold a test camera, set it every frame from a `BindToRenderStep` at `Last`, and unbind it afterwards.
 - **Captures time out during heavy scenes:** a `screen_capture` mid-cinematic can time out or return a blank frame, and the MCP connection can drop for a few seconds. Check state with `execute_luau` before trusting a capture, and hold the shot as a still to inspect it.
 - **Clones keep joints that point outside them.** `ServerStorage.Combat.Katana`'s `RightHandle.Motor6D` has Part0 = `Workspace.Animations.Katana Rig`'s Right Arm, so parenting a clone of the katana into Workspace snapped that rig onto the clone (2026-11-09). Before placing a clone, check every JointInstance, constraint and attachment reference inside it, and destroy or repoint any whose Part0, Part1 or Attachment is outside the clone.
+
+## Particles
+
+- **A ParticleEmitter's `Size` is half the card's rendered width.** A sheet whose arc radius is 0.369 of a cell needs `Size = radius / 0.369 / 2` (measured 2026-11-09).
+- **`VelocityPerpendicular` cards:** the card lies flat across the velocity v. Its unrotated image-up is world up projected onto the card, and image-right is v × up. `Rotation` +θ turns the image by −θ about v. Near-vertical v (a flat sweep) uses a fallback up, so tip v a few degrees off vertical.
+- **Edit-mode particle captures:** emit with a short lifetime, wait about half a second inside the same `execute_luau`, then capture. A freshly set texture can show nothing on the first emit while it loads; emit again.
