@@ -21,7 +21,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Combat.Config`: combat, movement, traversal, slide, sheathe and camera tuning, plus the animation ids and sound ids.
 - `Combat.Theme`: colours, fonts and panel, bar and diamond helpers.
 - `Townsfolk`: the 12 townsfolk (persona, look, stops, lines), the lore the AI may use, `pick` and `choices`. See [[Townsfolk]].
-- `Packages.Trove`: Sleitnick's Trove v1.8.0 (MIT), which tracks connections, instances, threads and cleanup functions and cleans them all at once. Use it in new code that has to clean up. Nothing uses it yet.
+- `Packages.Trove`: Sleitnick's Trove v1.8.0 (MIT), which tracks connections, instances, threads and cleanup functions and cleans them all at once. Use it in new code that has to clean up. `CombatClient.Wind` uses it.
 - `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
 - **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show).
 
@@ -51,14 +51,15 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `Feedback`: camera shake, hitstop, sounds (through the Effects group), sparks, blade trails and the hurt vignette.
   - `Locomotion`: procedural lean, banking, head look and afterimages.
   - `Traversal`: double jump, wall run, wall climb, mantle and vault.
+  - `Wind`: wind VFX. `ring` is the shockwave for double jumps, wall kicks and ground-pounds, and `burst` is the double-jump updraft. They are pale curved-Beam gusts with a puff of air, and each effect cleans up through its own Trove.
   - `FloatMenu`: the M menu. See [[Floating Menu]].
   - `ReturnToMenu`: the camera-rise animation for Back to Main Menu.
   - `Vitals`: the health, stamina and (once absorbed) Ember arcs.
   - `LockReticle`.
   - `MobileLayout`: touch buttons arranged in arcs around the jump button.
 - `AppearanceClient`: holds the `Creator` module (opened by the join flow and the main menu). See [[Character Creator]].
-- `DialogueClient`: Captain Aldric's scripted talk, and townsfolk reply choices with the AI notice.
-- `TownsfolkBarks`: chat-bubble remarks from townsfolk you pass.
+- `DialogueClient`: Captain Aldric's scripted talk, and townsfolk reply choices (the AI notice shows only if `UseAI` is on).
+- `TownsfolkBarks`: remarks and bump/blow reactions from townsfolk, drawn by its `Bubble` module.
 - `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].
   - `ShrineFx.Cinematic`: the absorb cutscene's camera and effects: `take()` (bars, grade, depth of field, bloom, flash, FOV punch, cleanup), `dolly` and `orbit` shots, and `ring`, `pillar` and `motes`.
 
