@@ -197,3 +197,4 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 
 - **Damage lands when the blade crosses the front** (user, 2026-11-09). The hit times come from the measured animations, one per light combo step. They aren't kept short for snappiness. Heavies now land about 0.2 s later than before, which also gives more time to parry an enemy's heavy.
 - **The running heavy stays one hit** for now, though its animation cuts three times. Multi-hit would be a balance change.
+- **A cut can be posed for the camera, not only measured.** When a swing's real plane is edge-on to the play camera (Light 2), its crescent is rolled to follow how the swing reads on screen, along the hands. The measured timing and radius stay.
