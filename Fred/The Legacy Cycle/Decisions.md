@@ -68,6 +68,7 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Shift lock is on Ctrl, not Shift** (user, 2026-11-09), because Shift sprints. Roblox's built-in shift lock stays off. Slide moved to C and R1 only.
 - **The shift lock indicator is minimal:** a small dot and a thin gilt ring at the centre of the screen, with no label.
 - **The controls strip hides itself** after 12 s on screen, and Caps Lock toggles it (user, 2026-11-09).
+- **Shift lock eases instead of snapping** (user, 2026-11-09): the hero turns in over up to 0.45 s, and the view glides after the mouse. The hero faces exactly where the crosshair points.
 
 ## Embers and the dev space (2026-11-09)
 
@@ -86,6 +87,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Smart talk is a hybrid** (user): written lines picked by context (Ember, quest state, blade drawn, met before), plus answers to the player's chosen topic from Roblox's built-in `TextGenerator`, held to each person's persona and the world's lore. The written line is the fallback whenever the AI fails, is slow or is over budget.
 - **The player only picks reply choices** (user): no typed chat, so it works the same on gamepad and phone.
 - **Townsfolk wear the hero presets** (user): the hero's own body, dressed through `Appearance.apply`.
+- **Townsfolk react when bumped or hit** (user, 2026-11-09): a shove, a turn and a written line. These are never AI lines.
+- **Townsfolk speech uses our own bubble** (user, 2026-11-09): minimalist, with no background (italic text over a thin gold rule), instead of Roblox's chat bubble.
 - **No quests, prices or rewards from the AI.** The prompt forbids them, and its replies go only to the player talking.
 - **Roblox's AI rules are followed** (2026-11-09): an AI notice shows for the whole conversation. AI memory lasts one conversation and is never saved, and each person gives at most 6 AI answers per player per 15 minutes. Cross-session AI memory or unlimited AI chat would count as "extended AI interactions", which force the Restricted (18+) label, so they stay out. Answer the Content Maturity questionnaire's AI questions before publishing.
 

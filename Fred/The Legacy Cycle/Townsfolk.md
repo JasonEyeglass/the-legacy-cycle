@@ -44,7 +44,9 @@ Everyone except Orla and Tobin is a proposal, and so are all the personas and li
   - The `UseAI` attribute on the server script switches the AI off.
 - **The client:**
   - `DialogueClient` shows the reply choices (click, 1–4, or the gamepad), a pulsing ellipsis while an answer is coming, and the AI notice.
-  - `TownsfolkBarks` shows a chat-bubble remark when you come within 10 studs. The chance is 45%, each person waits 35 s between remarks, and remarks are at least 5 s apart.
+  - `TownsfolkBarks` shows a remark when you come within 10 studs. The chance is 45%, each person waits 35 s between remarks, and remarks are at least 5 s apart.
+  - Remarks and reactions use our own bubble, `TownsfolkBarks.Bubble`, not Roblox's chat bubble: italic text with no background, over a thin gold rule, animated in 5 beats.
+- **Reactions** (2026-11-09): bumping into someone, or hitting them with a swing, gets a shove, a turn toward you and a line from `Townsfolk.Reactions` (two "bump" and two "struck" lines each). The server watches bumps every 0.1 s (closing speed over 1.5 studs/s within 3.4 studs). Hits come from `CombatCore.onBystanderHit`. Cooldowns are 4 s for bumps and 1.2 s for hits. The `TownsfolkReact` remote sends the line to players within 40 studs.
   - `Locomotion` gives townsfolk the same lean, foot planting and head turn as combatants. They look at the player they're talking to, otherwise at the nearest player within 12 studs.
 
 ## Roblox's AI rules (2026-11-09)
@@ -62,7 +64,7 @@ From Roblox's generative-AI documentation:
 
 - "Met before" is remembered per server only. Saving it would need a PlayerData field. Saving the AI's context across sessions would make it "extended", so don't.
 - There is no day and night cycle yet (ClockTime stays at 17.5). The facts already say morning, afternoon, evening or night, so routines could follow a cycle later.
-- Townsfolk don't react to fights yet (no fleeing or cowering).
+- Townsfolk react to being bumped or hit, but not yet to fights nearby (no fleeing or cowering).
 - Captain Aldric is unchanged: still a scripted conversation that gives the caravan quest.
 - **Dev space crowd (for testing):** while `workspace.Dev.Townsfolk.Stops` exists, the server spawns a second copy of all 12 there, each wandering between any of its 9 stops (Dev1–Dev9, on open baseplate north of the spawn, out of the Squire's leash). They talk, remark and use the AI like the town's. Delete that folder, or the Dev space, before release.
 - 3 houses (H2, H5, H7) had no clear ground by their doors, so they have no stops.
