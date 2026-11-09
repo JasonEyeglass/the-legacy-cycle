@@ -13,6 +13,7 @@ A dark-fantasy open-world Roblox RPG with R15 characters and katana combat. It i
 
 ## Map
 
+- **Current checkpoint: [[Act 1 Slice]]**, the first playable 15–20 minutes (the prologue and Act 1's cut), in 8 build steps.
 - [[Decisions]]: every settled design call, with its date.
 - [[Systems Map]]: every Studio module, with what it does and where it lives.
 - Player-facing systems:

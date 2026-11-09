@@ -179,6 +179,134 @@ def visible_fraction(scene, cam, target_rig, bones=("Head", "Torso"), prefix="T_
     return v / n
 ```
 
+## Drill 6: two-handed katana M1 on an R15 rig, in Roblox Studio (30 fps, 37 frames)
+
+**Setup:**
+- `workspace.R15Rig` in The Legacy Cycle's place, with the game's katana (`ServerStorage.Combat.Katana`, grip motor C0 `(0, -0.15, 0)` from the hand, rotation (180°, 0, -90°); blade tip 6.1 studs up the handle).
+- The rig's joints are **AnimationConstraints** (Avatar Joint Upgrade), not Motor6Ds. A Pose's CFrame is the joint Transform, and every attachment has identity rotation.
+- Toolkit `ServerStorage.AnimTraining.R15Swing` (copy in `VFX Training/2026-11-09/r15/R15Swing.lua`), built in four stages:
+  1. **Keys describe the weapon, not the joints:** hilt point, blade direction and edge direction, plus pelvis, chest, both feet and a look target, all in HumanoidRootPart space.
+  2. **Every frame is solved, then baked.** Two-bone IK puts both hands on the hilt (right at the guard, left 0.75 studs toward the pommel) and plants both feet. The bake writes one Keyframe per frame.
+  3. **The torso fits itself.** When an arm can't reach, the chest takes the smallest yaw/pitch offset that fixes it.
+  4. **The off-hand can let go.** An `lgrip` weight (0–1) releases the left hand to the hip.
+- Output: `R15Rig.AnimSaves.KatanaM1_Train1`, which the clip editor loads, with a `Hit` marker on frame 15 (contact). The bake script is `r15/BakeKatanaM1.lua`.
+
+**Beats:**
+
+| Beat | Frames | Pose |
+|---|---|---|
+| Idle | 0 | Guard, blade forward-up |
+| Anticipation | 7, held to 11 | Load over the right shoulder, chest twisted 30° right |
+| Action | 13 in-between, 15 contact | Tip up, then the cut |
+| Follow-through | 18 strike end, 25 settle | Left hand released |
+| Recovery | 36 | Guard, regrip |
+
+| Version | What was wrong | Fix |
+|---|---|---|
+| v1 | Strike crammed into 3 frames: blade turn **87°/frame**, tip 9.5 studs/frame. The 6-stud blade pointed 45° down in follow-through, putting the **tip 0.7 studs under the floor**. Both arms over-reached in follow-through | Add a tip-up in-between key and spread the strike over 4 frames. Keep the blade slope ≥ −0.3 at hip height |
+| v2 | Peak turn 55°, the tip stays above the floor, but the arms over-reach on 14 frames. The chest twisted 25° left into the follow-through, which pulls the left shoulder back away from the pommel | **Hips rotate, shoulders stay square** (pelvis yaw to 18°, chest about 0–5°). Add the auto torso fit as a safety net |
+| v3 | Recovery swept the blade flat through forward-left. That puts the left hand (on the pommel) 0.65 studs right of the right hand, and the fit needed up to a **40° chest twist, jumping 25°/frame**. A tip-up recovery in-between was no better | **Release the off-hand** after the follow-through (lgrip 1→0, frames 18→25) and regrip on the way to guard |
+| v4 | Load peak was 66% of the strike (eased "out" over 6 frames) | Make the windup ease-in-out over 7 frames: 46% |
+| v5 | **Passes the measured gates** (row below) | n/a |
+
+**v5 measured:**
+- Strike peak 5.69 studs/frame (**171 studs/s**) on frame 16, the frame after contact.
+- Max blade turn 55°/frame; tip at least 0.83 studs above the floor.
+- No arm or leg over-reach; chest fit ≤6°; the planted foot drifts 0.000 studs.
+- On the baked clip, replaying it through FK matches the solver (error 0.00000) and both grip points sit on the hilt (gap 0.000).
+- Statue captures: `r15/katana_m1_statues_row.jpg` and `r15/katana_m1_statues_closeup.jpg`.
+
+**v6: limb clearance (after review: "limbs are too close to each other, it's clipping")**
+- v5 passed every motion gate but was never checked for clipping. An oriented-box overlap test (separating axis) between unjoined parts, plus the blade against the body, found **all 37 frames clipping**: forearms 0.7–1.3 studs inside the chest, the two forearms up to 1.1 studs inside each other, and the thighs touching.
+- **With the arms attached at the shoulder, block R15 has no clip-free two-hand grip.** A scan of more than 900 reachable hilt placements, at three blade angles and three chest twists, found the best still clipping 0.41 studs. The left forearm has to cross the 2-stud torso to reach a centred hilt.
+- **Limb detachment fixes it.** Pose CFrames carry translation, so slide both shoulder joints forward (0.3, or 0.5 forward and 0.15 down). Combined with hands 1.0 stud apart (block hands are 1 stud deep, so 0.75 made them overlap) and the hilt 1.6–2.0 studs out front, contact drops to about 0.1–0.2.
+- **Hip detachment:** drop the thigh sockets 0.2 and spread them 0.1 (`HIP_DETACH`). The block thigh top otherwise pokes 0.19 into the LowerTorso, and in a crouch it tilts up into the chest. At −0.2 the thigh sits flush with the LowerTorso's bottom face, so no gap shows.
+- **Elbows point out, not down.** The out-pole won every search; down-and-back poles drive the forearms into the chest.
+- **A blade pointing to the character's left crosses the forearms** (the right hand ends up left of the left hand), so the strike end clipped 0.67 whatever the placement. Release the off-hand right after contact instead. The release path arcs outward, because a straight line from hilt to hip runs through the torso.
+- **Keep the torso turning through the follow-through** (chest 0 → 55 → 50 → 50). Unwinding it straight after contact snapped 40°.
+- **An out-of-reach IK target must not pull the hand off the wrist.** The solver now pins the hand to the arm's end (gap 0.0000).
+- **Tooling:**
+  - `M.clipping` measures the overlap.
+  - A per-key search over hilt offset, chest twist, elbow poles and shoulder detachment places the keys.
+  - `M.plan` picks per-frame poles, detachment and small chest/hilt nudges with a Viterbi smoothness pass, so choices don't flicker.
+  - `M.bakeFrames` bakes the result.
+- **Result:** `KatanaM1_Train2` (Train1 is kept for comparison).
+  - Worst limb contact 0.23 studs, from 1.34. Nothing over 0.25; 9 frames between 0.15 and 0.23, all at the two-hand grip.
+  - Blade turn ≤50°/frame, strike 168 studs/s, load 50%, tip at least 0.83 studs above the floor.
+  - Hands never leave the wrists; the right grip gap is 0.000.
+  - Replaying the baked clip matches the planned frames (error 0.00000).
+  - Leftovers: the chest turns 28° in one frame into contact, and the left hand trails its release path by 0.3 on frame 16.
+  - Files: `r15/BakeKatanaM1_v2.lua` (reproduces the clip to 0.003) and `r15/katana_m1_v2_clearance.jpg`.
+
+**v7: the same swing rebuilt in Blender (after "try it in Blender")**
+- **Setup:** `r15/r15_blender.py` builds its own scene, `R15_Katana`, in the training .blend. A copy is saved as `r15/r15_katana_m1.blend`.
+  - It is a block R15 with the exact `R15Rig` part sizes and joint pivots, read from Studio. One bone per part, with the bone head on the joint.
+  - Axes map Roblox (x, y, z) to Blender (x, −z, y).
+  - Same keys and sampler as Train2, but **Blender's own IK** solves the limbs: two-bone IK with pole targets, elbows and knees hinge-locked to local X (elbows bend 0–160° forward, knees backward).
+  - Hands and feet copy the rotation of keyed target empties. The head uses a Track To constraint.
+  - Limb detachment is a keyed bone location on the upper arm and thigh.
+  - The same oriented-box clipping test is ported to Python.
+- **Gotcha: a straight IK chain never bends.** Block limbs rest dead straight. Blender's solver starts from the pose and can't pick a bend direction, so the hand stopped up to 0.6 short. A 30° seed bend in the lower-limb rotation fixes it, with a miss of 0.000.
+- **Gotcha: calibrate pole angles numerically.** Sweep `pole_angle` and keep the value that puts the elbow on the pole's side (right arm −80°, left arm −110°, knees 90°). Don't guess from bone roll.
+- **Gotcha: a bone-parented object hangs off the bone's tail.** Setting `matrix_world` straight after parenting gave garbage. Set `matrix_basis = (bone.matrix_local @ T(0, length, 0))⁻¹ @ target` instead.
+- **Fixed controls aren't enough:** shoulders 0.3 forward and elbows out everywhere gave 0.59 worst. What fixed it, roughly in order of payoff:
+  1. **The released off-hand rests and arcs in chest space, not root space.** Once the chest turns 50°, a root-space rest spot is 0.3 out of reach and the arc points the wrong way. The UpperTorso-space arc (−0.9, 0.2, −0.5) cleared the release and the regrip.
+  2. **Key the rig controls.** Shoulder detachment and elbow pole directions are keyed per frame and picked by a 1.3-second Viterbi scan (64 combos × 37 frames). A change cost stops the controls popping. The right elbow pole 'out and up' (1, 0.5, 0) won almost every frame.
+  3. **Fix the path, not the pose.** Two frames still clipped between good keys:
+     - At f9 the Catmull-Rom hilt path bulged 0.1 back toward the chest between the load keys.
+     - At f3 the guard→load path ran close to the body.
+     In-between keys with the hilt 0.2–0.3 further out fixed both. Ease them as in/out pairs (into the in-between `inn`, out of it `out`), so an in-between never becomes a stop.
+  4. The guard hilt moved out 1.9 (from 1.75), so the left hand clears the chest.
+- **Result:** worst limb contact **0.228** (Train2: 0.23). Blade turn ≤49.8°/frame, strike 168 studs/s on frame 15, hand and foot IK miss 0.000. Every check on the renders came back clean.
+  - Files: `r15/katana_m1_blender_beats.jpg` (5 beats × game/side/front cameras), `r15/katana_m1_blender_closeup.jpg`, `r15/katana_m1_blender.gif` (half speed, game and side views).
+- **Blender vs Studio:** the clipping scores are equal. Blender pays for itself in iteration and inspection:
+  - A fresh evaluation is about 1 ms, so a full scan takes 1–3 s, against minutes over Studio MCP.
+  - Real IK constraints and keyable rig controls.
+  - Renders from any camera, without `screen_capture` timeouts.
+  - The cost is a transfer step back to Studio: per-frame joint transforms through a Luau builder, since Studio can't reach localhost.
+
+**Drill 7: running attack, a one-handed lunging dash cut (Blender, 2026-11-09)**
+- **Brief:** "do a running attack… use the katana running animation as the starting point of running".
+  - It fits `Config.RunningHeavy`'s contract: 0.87 s (26 frames), blade across the front on frame 10 (0.33 s), the 46 studs/s lunge on a gliding stance.
+  - It's a different move from the game's spin slash: a right-to-left horizontal cut.
+  - Keys and tooling: `RUN_KEYS` and `RUN_CFG` in `r15/r15_blender.py`. Files: `r15/r15_katana_run_attack.blend`, `r15/katana_run_attack_beats.jpg`, `r15/katana_run_attack.gif`.
+- **Five beats:**
+  1. **Idle (f0):** the game's Katana Run, keyframe 11 of 41 (t = 0.167 s): left foot mid-stance, right foot swinging through. The right foot plants next, which is the lunge step.
+  2. **Anticipation (f4–6):** step into the lunge, chest winds 55° right, blade cocked over the right shoulder, off-hand guiding forward.
+  3. **Action (f8–10):** the whip accelerates through an in-between key, and the off-hand pulls back to the hip to power the cut.
+  4. **Follow-through (f13–18):** the blade carries to the left-back and the torso keeps turning to 45°. The off-hand counter-balances out to the left.
+  5. **Recovery (f26):** rise into a low-forward ready carry, and the game blends back into the run.
+- **Starting from an existing clip:** read its poses in Studio (read-only) and FK them on `R15Rig`. Then build the first key from them:
+  - the exact hand, feet and torso;
+  - full foot and off-hand matrices, so foot pitch survives;
+  - the clip's own per-side joint translations and elbow/knee directions as the starting rig controls (`pin_start`), blended into the planned controls by frame 6.
+  - Frame 0 matches the run within 0.003 studs, except the upper arms (0.4). Hinge-locked IK twists a block upper arm differently from the clip, because its pivot sits on an inner corner. The 0.1 s crossfade hides it.
+- **The game's Katana Run clips on every frame:** thighs into the 42°-leaning chest, 0.05–0.64, and 0.32 at the frame used. It also uses large non-mirrored joint translations (left hip socket 1.17 studs, shoulders 0.49).
+  - So the attack inherits 0.47 on frame 0, and the hips blend out of the run's detachment by frame 1, faster than the arms.
+- **One-handed tooling:**
+  - **Chest-space hilt keys (`hiltUT`), interpolated in chest space.** Interpolating them in root space dragged the hand straight through the chest while the torso unwound (1.05 contact). In chest space the hand rides the twist.
+  - **Keyed off-hand positions (`lfree`, chest space).**
+  - **Per-key foot lift.** A planted foot gliding with the lunge mustn't hop.
+- **Fixes, in order of payoff:**
+  - **Don't loop the recovery back to a trailing carry.** The blade slerps the short way, through the body (0.47). End in a ready pose and let the game blend.
+  - **Widen hand paths past the torso sides.** A 1-stud hand centred at x 1.3 already overlaps a 2-stud chest.
+  - **Point the knees out in a deep lunge** (pole (1, 0, -0.5)). Halve the pelvis pitch, drop the hip sockets 0.25 and spread them 0.15. A forward knee otherwise rises into the LowerTorso.
+  - **Keep the follow-through blade above the floor.** A one-handed blade 6.1 studs long, pointing 25° down from hip height, reaches the ground.
+- **Result:**
+  - Frames 3–26: worst limb contact **0.18** (better than M1 Train2's 0.23). Frames 0–2 come from the run pose: 0.47, 0.25, 0.35.
+  - Blade turn ≤56.6°/frame, tip about 210 studs/s at contact, tip at least 0.51 above the floor, hand/foot IK miss ≤0.08.
+
+**Lessons:**
+- **For a two-handed weapon, bake from the weapon every frame.** Interpolating joint rotations between sparse keys slides the hands off the hilt. With per-frame IK the grip holds exactly, but the clip editor shows 37 keys, so edit the weapon keys and re-bake rather than hand-tweaking frames.
+- **R15 arm reach is shorter than its parts add up to.** Max shoulder-to-wrist is **1.56 studs**, not the 1.64 that the two segment lengths sum to, because the shoulder joint sits 0.5 studs off the upper arm's centre. Keep the hilt about 1.2–1.5 studs from **both** shoulders.
+- **Two hands on the hilt keep the shoulders square.** Turn the hips, not the chest. Twisting the chest toward the follow-through pulls the off-hand's shoulder away.
+- **A blade pointing across the body is the hardest two-hand reach,** because the pommel hand ends up on the far side. Release the off-hand after the cut and regrip in recovery. This is common in action-game katanas, and it also chambers the off-hand.
+- **Speed budget for a long blade:** at 60°/frame of turn, a 6.1-stud blade's tip tops out at about **190 studs/s** from rotation alone (6.1 × 1.05 rad × 30). The game's existing katana attacks peak at 200–260 studs/s, so the rest must come from hilt travel of about 0.3+ studs/frame (a step-in or lunge). This M1 has only about 0.4 studs/frame of hilt travel and no step, so at 171 studs/s it sits at the light end.
+- **An in-between that eases to a stop mid-recovery makes a hitch** (speed 1.8 → 0.75 → 0.49 → 1.2 studs/frame). Pair "in" then "out" eases, or drop the key.
+- **Large auto-fit offsets mean the key is wrong.** Offsets over about 6° jitter 13–25° per frame. Move the key instead.
+- **Off-axis screenshots lie:** perspective made a blade pointing straight at the camera look sideways. Check the HumanoidRootPart-space tip position before "fixing" a pose.
+- **Keep tuned keys in a file, not only in `_G`:** one `screen_capture` timed out and Studio briefly dropped off MCP.
+
 ## Common mistakes
 
 - **An empty first frame in a OneShot flipbook:** it delays the effect by one frame.
@@ -195,6 +323,18 @@ def visible_fraction(scene, cam, target_rig, bones=("Head", "Torso"), prefix="T_
 - **EXPO ease-out on an expanding ring:** it freezes after a few frames.
 - **Judging a hit reaction in a 3/4 view:** from the game camera, the attacker's own body hides the target at melee range.
 - **Freezing the guard pose in hitstop:** key the impact pose on the contact frame.
+- **Interpolating joint rotations between sparse keys for a two-handed weapon:** the hands slide off the hilt. Bake per frame from the weapon.
+- **Twisting the chest into a two-handed follow-through:** the off-hand over-reaches. Turn the hips and keep the shoulders square.
+- **Pointing a 6-stud blade 45° down at hip height:** the tip goes through the floor.
+- **Judging a pose from an off-axis screenshot:** check the tip position in HumanoidRootPart space.
+- **Shipping a pose without a clipping check:** block R15 limbs are 1 stud thick, and a hilt 1 stud in front of the chest buries both forearms.
+- **Keeping the arms attached for a two-hand grip on block R15:** no placement is clip-free. Detach the shoulders forward 0.3–0.5.
+- **Moving the released hand in a straight line to the hip:** it passes through the torso. Arc it outward.
+- **Leaving a Blender IK chain dead straight at rest:** it never bends. Seed a small hinge bend in the pose.
+- **Putting the released off-hand's rest spot in root space:** once the chest twists it's out of reach. Make it chest-relative.
+- **Interpolating chest-relative hand keys in root space:** while the torso twists, the hand cuts a straight line through the chest. Interpolate in chest space.
+- **Looping a recovery back to the start pose when the blade must turn about 180°:** the slerp takes the short way, through the body. End in a ready pose and let the game blend.
+- **Assuming an existing clip is clean:** measure it. The game's Katana Run clips 0.05–0.64 on every frame.
 
 ## Checklist
 
@@ -210,10 +350,14 @@ def visible_fraction(scene, cam, target_rig, bones=("Head", "Torso"), prefix="T_
 - [ ] Hit reaction: snap dot with the blade velocity > 0.7; head spacing peaks right after impact; recovery peak < ⅓ of the hit.
 - [ ] The target is ≥40% visible (ray cast) from the shipped camera at contact; the contact point is outside the attacker's silhouette.
 - [ ] Hitstop is a runtime pause of both tracks, with the impact pose on the frozen frame.
+- [ ] Two-handed weapon: baked per frame with IK. On the baked clip, grip gap = 0, the planted foot's drift = 0, no over-reach, and the torso auto-fit is ≤6°.
+- [ ] Long blade: tip speed budget = blade length × 60°/frame of turn; anything above that comes from hilt travel (step-in).
+- [ ] Clipping check on every frame (oriented-box overlap of unjoined parts plus the blade): worst contact ≤0.25 studs, and only at the grip.
+- [ ] Two-hand grip on block R15: shoulders detached forward, hands 1.0 apart, hilt 1.6–2.0 studs out, elbows out. Hip sockets dropped 0.2.
 
 ## Next drills
 
-- Study round 2 is pending: YouTube blocked transcript requests from this IP (HTTP 429, then IpBlocked). The queued videos are Blender VFX for Roblox (MaskedFaces), the anime sword slash (BlenderBuilder), hitstop (SugarPunch), sprite sheets from 3D (CoderNunk) and procedural cartoon flames (Blender Box).
+- Play `KatanaM1_Train1` from the clip editor and judge it by eye. Then make a step-in version (front foot steps about 0.6 studs on the strike) for 200+ studs/s, and fire hitstop and the layered slash from its `Hit` marker.
 - Judge the hitstop videos (0/3/6 frames) by eye, then in Studio with `AdjustSpeed(0)` on both tracks.
 - Export the five-beat swing and the hit reaction to Roblox through the Luau pose-builder route. Fire the layered slash and the impact burst from a `Hit` marker on frame 20, the measured contact frame.
 - Make a separate dust sheet for the burst; judge the layered slash in Studio at game distance.

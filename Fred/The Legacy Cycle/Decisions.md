@@ -143,3 +143,10 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 
 - **Only our nameplates; Roblox's name display is off everywhere** (user, 2026-11-09). Every Humanoid's DisplayDistanceType is None. Players, guards, townsfolk and Captain Aldric all wear the same plate: the name in Fondamento over a title in Merriweather. A player's title is their level, and their own plate is hidden from them.
 - **Light and heavy swings slow you to a crawl** (user, 2026-11-09: first "they shouldn't be able to move and attack at the same time", then "more like make them really slow"). WalkSpeed is 4 (walking is 20) for 0.45 s after a light and 0.9 s after a heavy. A full stop felt too much. A dodge cancels it, so you can still evade out of a swing. The running heavy keeps its lunge, which is its whole point.
+
+## Next checkpoint: the Act 1 slice (2026-11-09)
+
+- **The next checkpoint is the Act 1 slice** (user, 2026-11-09, "Act 1 slice first", over finishing mining and forging first). That means the prologue plus Act 1's first playable cut (1.1, 1.3, 1.5, 1.6) from the team's outline, about 15–20 minutes, solo or with up to 3 friends. The plan and progress are in [[Act 1 Slice]].
+- **Only slice work until it's done.** Polish that isn't on the slice's path waits.
+- **The dungeon is built before the prologue.** Their old-Havenbrook art and the Fallen Knight / Caelan model are the same thing, so they get made once.
+- **Only the part of roadmap Phase 1 the story needs is pulled forward:** items, inventory, equip and gold. Mining, smelting and forging come after the slice.
