@@ -183,3 +183,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The hound and brute are stand-ins on the Squire rig.** The hound is a small, hunched humanoid and the brute a scaled-up soldier, so the gameplay can be built now. Real models (a four-legged hound with its own animations, a brute model) replace them later without code changes, as long as they keep the template names.
 - **The brute has poise instead of more health.** Light hits can't interrupt its slam, so the fight is about reading the telegraph and parrying or dodging. A parry still stuns it, which is the opening.
 - **Enemy kinds are data:** a template in `EnemyTemplate` plus an optional `Config.Enemy.Kinds` entry, picked by a spawn part's `Enemy` attribute. The dungeon (step 5) places spawn parts the same way.
+
+## Town title and abandoning quests (2026-11-09)
+
+- **Place names show at the top centre on entering, not under the minimap** (user, 2026-11-09). Zones are circles round map landmarks for now, until the real map has region bounds.
+- **Every quest can be abandoned, and a story quest starts over.** Every quest so far is a main quest (Aldric's caravan included), so allowing only side quests would leave nothing to abandon. A story quest comes back by itself, so the story can't be lost. Choices already made stay made.

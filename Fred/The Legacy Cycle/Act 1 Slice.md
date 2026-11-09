@@ -56,7 +56,7 @@ Some can come from what exists, some are new:
 - **Ember Strike**, the prologue's skill and the game's "one magic ability", doesn't exist yet. [Build it in step 7, and let the hero use it after absorbing the Ember.]
 - **Gold** has no use in the slice, because Tobin's upgrade (1.4) is cut. [Save it and show it anyway, so the rewards are real.]
 - **1.1's "starter sword" reward:** since step 1, every hero already carries the Wanderer's Katana. [1.1 gives the 100 gold only.] Settled 2026-11-09: 100 gold and 60 XP.
-- **The Missing Caravan vs 1.1:** only one quest runs at a time, so a player who took Aldric's quest first gets 1.1 once it ends. [Make the Caravan a side quest that can run beside the story, when the quest log allows more than one.]
+- **The Missing Caravan vs 1.1:** only one quest runs at a time, so a player who took Aldric's quest first gets 1.1 once it ends. [Make the Caravan a side quest that can run beside the story, when the quest log allows more than one.] Eased 2026-11-09: abandoning the caravan lets 1.1 start.
 
 ## Later (not in the slice)
 

@@ -42,6 +42,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - starts story quests (`startsWithEmber`) by themselves;
   - pays `rewardGold` through InventoryService;
   - exposes `talked(player, npc)`, which the Townsfolk script calls when a conversation opens.
+  - `abandon(player)`, which the quest scroll's "Abandon quest" sends through `QuestEvent("Abandon")`. A story quest then starts over.
 - Quests so far: `ASpark` (1.1 A Spark in Havenbrook: Orla, the lantern, Orla; 60 XP and 100 gold), `WoundedKnight` (1.3: Bryn's choice, then Orla; 80 XP; starts after 1.1) and `MissingCaravan` (Aldric). A `choose` step waits for its story flag (`QuestService.waitingOn` and `flagSet`).
 - `Progression.InventoryService`: `add`, `remove`, `has`, `equip` and `addGold` for a player. It replicates `Gold`, `Inventory` (JSON) and `Equip_<slot>` attributes, and gives every hero `Items.Starter`, equipped.
 - `Progression.StoryService`: `get` and `set` for story flags (`knight_fate`, `prologue_seen`, `act1_complete`), replicated as `Story_<flag>` attributes. It also handles the `StoryChoice` remote: a scripted conversation's choice (only `BrynHale` so far), checked against the quest, the flag and the distance to the speaker.
@@ -64,6 +65,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `Locomotion`: procedural lean, banking, head look and afterimages.
   - `Traversal`: double jump, wall run, wall climb (up, down and sideways, held by a LinearVelocity), mantle and vault.
   - `Minimap`: the radar (top right), turning with the camera. It shows `MapLandmark` anchors with labels, enemies as red wax dots, `KnightGuard` guards as ink shields (`icon_guard`), and the quest star pinned to the edge.
+  - `ZoneTitle`: writes a zone's name at the top centre on entering it. Zones are `MapLandmark`s with a `Radius` attribute.
   - `Rocks`: the big-drop ground impact. `Rocks.impact(root, k, fromAbove?)` reads the ground's material, and `Rocks.kindOf` maps it to one of 9 profiles in `PROFILES` (stone, earth, mud, sand, snow, ice, wood, metal, water). The profile sets the rim pieces, the debris shape and amount, the dust or spray, and any sparks, all in the ground's own material and colour. Everything sinks back after about 2.3 s and is cleaned by one Trove. It runs only on the client, so you only see your own.
   - `Wind`: wind VFX. `ring` is the shockwave for double jumps, wall kicks and ground-pounds, `burst` is the double-jump updraft, and `dash` is the dodge slipstream (through `Locomotion.dash`). They are pale curved-Beam gusts with a puff of air, and each effect cleans up through its own Trove.
   - `FloatMenu`: the M menu. See [[Floating Menu]].
