@@ -156,6 +156,12 @@ Files: `hit_reaction_hitstop_shouldercam.mp4`, `hit_reaction_hitstop_gamecam.mp4
 - **The impact pose shows on the contact frame and is what hitstop freezes.** A freeze on the guard pose shows nothing.
 - **A reaction's spacing peaks right after impact, then decays.** The turn-around from sink to recovery is a near-zero frame by nature. What matters is that the recovery peak stays well under the hit peak, or it reads as a second hit.
 - **Hitstop is a runtime time remap.** Bake no hold keys: each client pauses both rigs' tracks (`AnimationTrack:AdjustSpeed(0)`) for H frames, then restores the speed. The 3f (100 ms) and 6f (200 ms) values are a rule of thumb (**Unverified**). The videos are built, but the right value is not yet judged by eye or in Studio.
+- **Correction from study round 2** ([[Roblox Dev Study - Round 2]], Sakurai's hit-stop techniques). This drill's freeze is the bare minimum. Smash also:
+  - blends the victim *into* the damage pose over about 4 frames during the stop, rather than holding one pose;
+  - shakes the victim's visual (not the hurtbox) more than the attacker's: sideways on the ground, decaying across the stop;
+  - lets the attacker creep at a sub-frame speed;
+  - scales the stop by damage × a per-move coefficient.
+  The shake was skipped here, so that is the next iteration.
 - **Drill 5 changed drill 2's strike** (strike arm direction `(0.3, −0.95, −0.1)`, blade `(0.75, −0.55, −0.3)`) so the blade reaches a target at melee range. From the shoulder camera, the blade is now behind the attacker's head on frames 20–22. That is acceptable only because the slash VFX covers contact.
 
 ```python

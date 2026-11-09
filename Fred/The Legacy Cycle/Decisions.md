@@ -138,3 +138,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The armor is Blender meshes, uploaded as one Model** (user picked "Blender meshes"). The pieces are split by body part, so each can be welded to its part and follow every animation with no skinning. They are split by material too (steel, tabard, gold, leather, slit), so the colours come from MeshPart Color and Material with no textures to upload. Each piece is named `<BodyPart>__<Material>` and grouped by the game's slots: Helmet (Head), Chestplate (torso and upper arms), Gloves (lower arms and hands), Leggings (legs) and Boots (feet).
 - **Armor pieces are welded, not skinned or Accessories.** Each MeshPart is joined to its body part with a Weld (`ArmorWeld`), whose C0 is the piece's part-local centre turned 180° about Y. The FBX importer faces meshes backwards, so the turn undoes that; a later re-import needs the same turn.
 - **Under the plate, the knight's body is dark padding** (34,31,33), so the joints between plates read as cloth, not skin.
+
+## Names and attacking (2026-11-09)
+
+- **Only our nameplates; Roblox's name display is off everywhere** (user, 2026-11-09). Every Humanoid's DisplayDistanceType is None. Players, guards, townsfolk and Captain Aldric all wear the same plate: the name in Fondamento over a title in Merriweather. A player's title is their level, and their own plate is hidden from them.
+- **Light and heavy swings plant the feet** (user, 2026-11-09, "they shouldn't be able to move and attack at the same time"). WalkSpeed is 0 for 0.45 s after a light and 0.9 s after a heavy. A dodge cancels it, so you can still evade out of a swing. The running heavy keeps its lunge, which is its whole point.
