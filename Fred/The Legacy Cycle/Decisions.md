@@ -194,3 +194,6 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The slash is measured from each animation, ahead of time.** Each swing's cuts (timing and the tip's circle) live in `Config.SlashFx.Cuts`, so the crescent appears as the blade starts and grows with it. Sampling at run time could only draw it after the blade had passed. The cost: after editing a swing animation, re-measure its cuts (see Studio Gotchas). An animation with no cuts entry shows only the trail.
 - **Our own drawn sheets instead of PhaseVFX for this one**, because the user asked to re-create the katana slash and it's a signature effect that has to match our swings.
 - **Enemy slashes are void purple**, so a player can tell at a glance whose blade is coming.
+
+- **Damage lands when the blade crosses the front** (user, 2026-11-09). The hit times come from the measured animations, one per light combo step. They aren't kept short for snappiness. Heavies now land about 0.2 s later than before, which also gives more time to parry an enemy's heavy.
+- **The running heavy stays one hit** for now, though its animation cuts three times. Multi-hit would be a balance change.
