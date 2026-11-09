@@ -55,6 +55,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `Feedback`: camera shake, hitstop, sounds (through the Effects group), sparks, blade trails and the hurt vignette.
   - `Locomotion`: procedural lean, banking, head look and afterimages.
   - `Traversal`: double jump, wall run, wall climb (up, down and sideways, held by a LinearVelocity), mantle and vault.
+  - `Minimap`: the radar (top right), turning with the camera. It shows `MapLandmark` anchors with labels, enemies as red wax dots, `KnightGuard` guards as ink shields (`icon_guard`), and the quest star pinned to the edge.
   - `Rocks`: the big-drop ground impact. `Rocks.impact(root, k, fromAbove?)` reads the ground's material, and `Rocks.kindOf` maps it to one of 9 profiles in `PROFILES` (stone, earth, mud, sand, snow, ice, wood, metal, water). The profile sets the rim pieces, the debris shape and amount, the dust or spray, and any sparks, all in the ground's own material and colour. Everything sinks back after about 2.3 s and is cleaned by one Trove. It runs only on the client, so you only see your own.
   - `Wind`: wind VFX. `ring` is the shockwave for double jumps, wall kicks and ground-pounds, `burst` is the double-jump updraft, and `dash` is the dodge slipstream (through `Locomotion.dash`). They are pale curved-Beam gusts with a puff of air, and each effect cleans up through its own Trove.
   - `FloatMenu`: the M menu. See [[Floating Menu]].
