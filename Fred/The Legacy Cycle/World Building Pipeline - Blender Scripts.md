@@ -35,4 +35,5 @@ Study of YorusDevs, "How Opus 5.5 built my entire game map in Blender" (https://
   - All gates pass on a demo post and on the Grow an Ember brazier.
 - [ ] Import one pre-cut GLB in Studio and check the 180° glTF turn against `normal_roblox`.
 - [ ] Write the runtime picker: the swing-plane normal comes from the blade at the `Hit` frame, then take the max |dot| cut, swap in its shards and push them apart.
-- [ ] Add pre-export checks to every build script: normals outward, no coplanar overlaps, triangle budget.
+- [x] Pre-export checks built: `check_mesh.py` covers inside-out parts, coplanar overlaps and the triangle budget (2026-11-09).
+- [x] **`/build-world` slash skill** created (`~/.claude/skills/build-world/`), with a zone-kit template (forest/snow styles), the mesh gate and the precut usage. Run `/build-world` to start any model or zone.

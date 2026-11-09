@@ -47,3 +47,11 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **A ParticleEmitter's `Size` is half the card's rendered width.** A sheet whose arc radius is 0.369 of a cell needs `Size = radius / 0.369 / 2` (measured 2026-11-09).
 - **`VelocityPerpendicular` cards:** the card lies flat across the velocity v. Its unrotated image-up is world up projected onto the card, and image-right is v × up. `Rotation` +θ turns the image by −θ about v. Near-vertical v (a flat sweep) uses a fallback up, so tip v a few degrees off vertical.
 - **Edit-mode particle captures:** emit with a short lifetime, wait about half a second inside the same `execute_luau`, then capture. A freshly set texture can show nothing on the first emit while it loads; emit again.
+
+- **Posing an animation in Edit mode:** load it on a rig's Animator, `track:Play(0, 1, 1)`, then call `animator:StepAnimations(1/60)` in a loop. That matches Play mode exactly. Setting `TimePosition` and stepping 0 does not pose it correctly.
+- **The Katana Rig in `Workspace.Animations` is R6** (its katana hangs off "Right Arm"). The game is R15, so check swings on a `StarterCharacter` copy with the katana welded the way `CombatService.attachKatana` does it (grip at the bottom of RightHand).
+- **Re-measuring slash cuts after editing a swing animation:**
+  1. Step it on that copy and record `RightHandle.TrailTip` in HumanoidRootPart space.
+  2. Find the cut where the tip speed peaks, ignoring the frame-one snap from the stance.
+  3. Fit a circle: the axis is the sum of (pᵢ−c)×(pᵢ₊₁−c), then a Kasa fit in the plane. Up is the middle angle of the cut.
+  4. Write the result into `Config.SlashFx.Cuts` (2026-11-09).

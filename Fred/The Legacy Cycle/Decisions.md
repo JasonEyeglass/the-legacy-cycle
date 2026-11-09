@@ -191,6 +191,6 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 
 ## Katana slash VFX (2026-11-09)
 
-- **The slash follows the blade, not a fixed angle per attack.** The tip's real path decides the crescent's plane, size and direction, so new animations and combo steps work without tuning. The cost is that a swing whose animation hasn't loaded shows no crescent, only the trail.
+- **The slash is measured from each animation, ahead of time.** Each swing's cuts (timing and the tip's circle) live in `Config.SlashFx.Cuts`, so the crescent appears as the blade starts and grows with it. Sampling at run time could only draw it after the blade had passed. The cost: after editing a swing animation, re-measure its cuts (see Studio Gotchas). An animation with no cuts entry shows only the trail.
 - **Our own drawn sheets instead of PhaseVFX for this one**, because the user asked to re-create the katana slash and it's a signature effect that has to match our swings.
 - **Enemy slashes are void purple**, so a player can tell at a glance whose blade is coming.
