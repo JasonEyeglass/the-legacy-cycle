@@ -54,6 +54,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `MobileLayout`: touch buttons arranged in arcs around the jump button.
 - `AppearanceClient`: the per-frame face driver, plus the `Creator` module. See [[Character Creator]].
 - `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].
+  - `ShrineFx.Cinematic`: the absorb cutscene's camera and effects: `take()` (bars, grade, depth of field, bloom, flash, FOV punch, cleanup), `dolly` and `orbit` shots, and `ring`, `pillar` and `motes`.
 
 ## Workspace and SoundService
 

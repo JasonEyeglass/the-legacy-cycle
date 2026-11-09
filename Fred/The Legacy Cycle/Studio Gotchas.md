@@ -23,6 +23,7 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **ViewportFrames can capture blank** in `screen_capture` even with their contents in place. Nudging the camera or ImageTransparency redraws them.
 - **CanvasGroup `GroupTransparency` was ignored in playtests** (2026-11-09): both a 1,209 px strip and a 24 px mark stayed fully drawn at 1. Fade the pieces one by one instead (text, image and stroke transparencies).
 - **A custom shift lock** sets `MouseBehavior = LockCenter` and `UserGameSettings.RotationType = CameraRelative` every frame from a render step after the camera, which resets both.
+- **Our own head-look follows the camera** (Locomotion): the local hero's head turns toward where the camera looks, so a cutscene camera beside the hero turned the head away from the shot. It now skips the local hero while the camera is Scriptable.
 - **A line that starts with `(`** continues the line before it as a function call ("Ambiguous syntax"). End the earlier line with `;`.
 
 ## Asset safety

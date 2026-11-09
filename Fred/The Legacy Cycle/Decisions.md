@@ -74,6 +74,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The tree's shape is a placeholder:** three paths of two sealed skills out of the Ember. No skill names, costs or effects are invented; the nodes stay sealed until the skills are designed.
 - **The dev space has a Hollow Squire and three Training Dummies** (user, 2026-11-09). Dummies never give XP or quest credit.
 - **The dev space has a replayable Ember shrine** (user, 2026-11-09) for testing the cinematic. A `DevReplay` shrine never saves the Ember, so it must stay out of the real world.
+- **The absorb cinematic is a bigger 5-beat cutscene** (user, 2026-11-09, "gotta be cooler"): orbiting shots, a graded picture, a pillar and ring of fire, spiralling motes, the hero lifted off the ground and an impact flash. See [[Shrine VFX]].
+- **The skill tree's nodes are clickable** (user, 2026-11-09): a sealed node shows which path and step it is; the Ember core goes back.
 - **Landed hits shake the camera harder** (user, 2026-11-09): up to 1.6 times the usual maximum angle, for your own hits only.
 
 ## Inventory and menu (2026-11-06)

@@ -1,6 +1,6 @@
 ---
 tags: [legacy-cycle, system, vfx]
-updated: 2026-11-06
+updated: 2026-11-09
 ---
 
 # Shrine VFX
@@ -57,18 +57,15 @@ One client script drives every model tagged `ShrineFx`:
 The user asked for this. It follows the prologue script's Scene 6: the golden spark settles into the player's chest, and the Ember bar appears in the HUD, faint.
 
 - **Rule:** you absorb it **once per player**, and it is saved. Each Shrine of Embers has a held **B** prompt (1.2 s, gamepad DPad-left) labelled "Absorb the Ember", shown above the R and V prompts. `Progression.EmberService` sets PlayerData `ember = true` and the `HasEmber` attribute, then fires `EmberAction` `"Absorbed"` to that player.
-- **Cinematic (user, 2026-11-09):** the absorb now plays as a short cutscene of about 5 s. Letterbox bars close in, `UiFocus` hides the HUD and holds the hero still, and a Scriptable camera turns the hero toward the shrine.
-  - **Shot 1, lighting the embers (1.9 s):** a low three-quarter push-in on the coals (FOV 48 to 42). The smoulder roars up through an `ignite` value (+160% fire and light), with a burst of embers and a column of rising sparks.
-  - **Shot 2, collecting its power:** hero and shrine side-on, drifting in (FOV 55 to 52), while steps 1 to 4 below play.
-  - The camera comes back 0.7 s into the shrine going out. The floating menu then opens on the Embers page and lights the skill tree (`FloatMenu.revealEmbers`, see [[Floating Menu]]).
-  - It stops early (camera, bars and HUD restored, no menu) if the hero dies or respawns.
+- **Cinematic (user, 2026-11-09; reworked the same day because the user wanted it cooler):** about 6 s, in `ShrineFx` with the shots and effects in its `Cinematic` module. Letterbox bars close in, `UiFocus` hides the HUD and holds the hero still, and the hero turns to the shrine. The picture is graded warm and desaturated, with depth of field and bloom (both off in low specs). The 5 beats:
+  1. **Anticipation (1 s):** an over-the-shoulder dolly toward the brazier (FOV 50 to 46). The world darkens and a low swing sounds.
+  2. **Lighting the embers (1.7 s):** the camera orbits the shrine, rising. The fire roars up (`ignite`, +160% fire and light) with a warm flash, a FOV punch, a shake and a deep strike. A ring of fire runs out along the ground, a pillar of light stands up from the bowl, and 5 motes spiral up it in a helix (3 in low specs).
+  3. **Collecting its power (2.6 s):** the camera orbits the hero from the front. The spark rises and hangs while the hero lifts 0.9 studs off the ground. Then 8 motes (4 in low specs) spiral into the chest as the spark arcs in.
+  4. **Impact:** a white-gold flash, a bigger punch and shake, a clash, a ring at the feet, an ember aura round the hero fading over 1.6 s, and a shower of 45 sparks.
+  5. **Recovery:** the camera pulls back to a wide three-quarter as the hero settles to the ground. The shrine goes out, and the floating menu opens on the Embers page and lights the skill tree (`FloatMenu.revealEmbers`, see [[Floating Menu]]).
+  - The hero's head no longer follows the camera while the camera is Scriptable (Locomotion), so the cutscene camera can't turn the head away from the shot.
+  - It stops early (camera, bars, grade, HUD restored, no menu) if the hero dies or respawns.
   - **To test it, use the dev shrine:** `workspace.Dev.DevShrineOfEmbers` (`DevReplay = true`) replays the cinematic on B, with an 8 s cooldown. It never saves the Ember and relights itself afterwards.
-- **Animation (client, about 3.7 s, `ShrineFx`):**
-  1. The fire flares one last time while a neon spark (with a trail, motes and a light) grows and rises out of the coals.
-  2. It hangs there, beating, while the fire starts to fail.
-  3. It arcs into the chest, speeding up.
-  4. A flash, a shower of 30 sparks (14 in low specs), a 0.25 shake and a sound.
-  5. The shrine goes out.
 - **The dark shrine:** no flame, embers or light, just a thin cold wisp of smoke. Its SurfaceAppearance is tinted to (72,66,64), which also turns the sculpted flame cold. This happens on the absorber's screen only; players who haven't taken their Ember still see the shrine lit. The absorb prompt is hidden locally once `HasEmber` is true. The R and V prompts still work, with no spark puff while the shrine is dark.
 - **Elsewhere:**
   - Vitals has a faint Ember arc inside stamina (radius 67). It fills when the Ember arrives, then breathes. Shortcut: nothing drains it yet, so it always shows full.
