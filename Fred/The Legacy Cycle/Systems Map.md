@@ -51,7 +51,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `Feedback`: camera shake, hitstop, sounds (through the Effects group), sparks, blade trails and the hurt vignette.
   - `Locomotion`: procedural lean, banking, head look and afterimages.
   - `Traversal`: double jump, wall run, wall climb, mantle and vault.
-  - `Wind`: wind VFX. `ring` is the shockwave for double jumps, wall kicks and ground-pounds, and `burst` is the double-jump updraft. They are pale curved-Beam gusts with a puff of air, and each effect cleans up through its own Trove.
+  - `Wind`: wind VFX. `ring` is the shockwave for double jumps, wall kicks and ground-pounds, `burst` is the double-jump updraft, and `dash` is the dodge slipstream (through `Locomotion.dash`). They are pale curved-Beam gusts with a puff of air, and each effect cleans up through its own Trove.
   - `FloatMenu`: the M menu. See [[Floating Menu]].
   - `ReturnToMenu`: the camera-rise animation for Back to Main Menu.
   - `Vitals`: the health, stamina and (once absorbed) Ember arcs.
