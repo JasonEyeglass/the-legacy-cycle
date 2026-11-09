@@ -129,3 +129,10 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - The user compared it with a Blender Mantaflow flipbook and picked the **native Roblox VFX** version (built-in fire and spark textures). The flipbook copy was removed.
 - You absorb the Ember **once per player, and it is saved** (user, 2026-11-06). Afterwards the shrine stays dark for that player only.
 - ~~The floating menu's light is a cool blue-white that lights the surroundings and slightly cools the world's tint while open.~~ **Replaced 2026-11-06:** the user asked for a colour that suits the book instead of the blueish light. The light, its glowing outline and the world tint are now **warm candle gold** (255,196,122), with a faint warm tint. The Embers page still goes ember red once the Ember is lit.
+
+## Havenbrook Knight (2026-11-09)
+
+- **Guards pick their fidgets at random** (user, 2026-11-09, "use all those randomly for the knight on guard"). The Idle loop runs all the time. A fidget plays every 5–11 s, never the same one twice in a row.
+- **Fidgets play at Movement priority, above the Idle-priority loop.** Two tracks at the same priority average instead of one overriding the other, so a fidget at Idle priority would only half-play. Each fidget starts and ends on the stance, so the short 0.35 s fades don't pop.
+- **Knights are tagged `KnightGuard`, not found by name**, so more guards just need the tag.
+- **The armor is Blender meshes, uploaded as one Model** (user picked "Blender meshes"). The pieces are split by body part, so each can be welded to its part and follow every animation with no skinning. They are split by material too (steel, tabard, gold, leather, slit), so the colours come from MeshPart Color and Material with no textures to upload. Each piece is named `<BodyPart>__<Material>` and grouped by the game's slots: Helmet (Head), Chestplate (torso and upper arms), Gloves (lower arms and hands), Leggings (legs) and Boots (feet).

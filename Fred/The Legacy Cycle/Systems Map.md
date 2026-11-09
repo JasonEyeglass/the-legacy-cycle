@@ -42,6 +42,8 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - A Hollow Squire spawns at every part tagged `EnemySpawn`: the combat sandbox, and the dev space at (-130, 2990).
   - A Training Dummy stands at every part tagged `DummySpawn` (three in `workspace.Dev.Dummies`). Dummies have no brain and an anchored root, 1000 HP and a full heal 3 s after the last hit. They respawn after death and carry `Dummy = true`, which Leveling and QuestService skip, so they give no XP or kill credit.
 
+- `KnightGuard` (Script): every model tagged `KnightGuard` loops the `KnightIdle` animation and plays a random fidget (`KnightIdleInspect`, `Spin`, `Shoulder`, `GroundTap`) every 5–11 s at Movement priority. Animations load through `Combat.AnimLoader`. The Havenbrook Knight is tagged.
+
 - `Townsfolk` (Script): spawns the townsfolk, walks their routines and runs conversations. Its `UseAI` attribute switches the AI off. `Townsfolk.Mind` asks TextGenerator in character, with written lines as the fallback. See [[Townsfolk]].
 
 ## StarterPlayerScripts (client)
