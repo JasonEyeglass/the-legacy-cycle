@@ -201,6 +201,6 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 
 ## Music and UI sounds (2026-11-09)
 
-- **The user's sound plan:** BGM-1 on the main menu, BGM-1 quiet under loading, BGM-2 in gameplay. UI: Click, Hover, Open (windows, floating menu), Select (dialogue choices, interacting), Mission (quest taken, objective changed, quest abandoned), Quest Complete, Quest Failed.
+- **The user's sound plan:** BGM-1 on the main menu, BGM-1 quiet under loading, BGM-2 in gameplay. UI: Click, Hover, Open and Close (windows, floating menu), Select (dialogue choices, interacting), Mission (quest taken, objective changed, quest abandoned), Quest Complete, Quest Failed.
 - **Button sounds are global, not per button.** One hook covers every button in PlayerGui, so new UI gets sounds without code. An attribute opts a button out or swaps its click for Select.
 - **Quest sounds play when their toast shows**, so a quest accepted mid-conversation sounds when the conversation closes, together with its "Quest Started" toast.

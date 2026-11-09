@@ -88,4 +88,4 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Workspace.World["Old Watchtower"]` and `Workspace.World["Ser Bryn Hale"]` (tagged `StoryNPC`, anchored, posed sitting; Persistent streaming): quest 1.3.
 - `Workspace.World.Havenbrook.Townsfolk`: `Stops` (22 invisible stop parts, found by searching for clear ground) and `People` (filled at run time).
 - `SoundService.Music` (SoundGroup, the Music slider): BGM-1 (main menu, low under the loading screen) and BGM-2 (gameplay), played by `ReplicatedStorage.Audio`.
-- `SoundService.Effects` (SoundGroup, the Sound effects slider): holds the combat sound templates, the FountainSound, and `UI`: the UI sounds (click, hover, open, select, mission, quest complete, quest failed).
+- `SoundService.Effects` (SoundGroup, the Sound effects slider): holds the combat sound templates, the FountainSound, and `UI`: the UI sounds (click, hover, open, close, select, mission, quest complete, quest failed).
