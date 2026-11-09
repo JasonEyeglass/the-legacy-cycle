@@ -55,7 +55,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `Vitals`: the health, stamina and (once absorbed) Ember arcs.
   - `LockReticle`.
   - `MobileLayout`: touch buttons arranged in arcs around the jump button.
-- `AppearanceClient`: the per-frame face driver, plus the `Creator` module. See [[Character Creator]].
+- `AppearanceClient`: holds the `Creator` module (opened by the join flow and the main menu). See [[Character Creator]].
 - `DialogueClient`: Captain Aldric's scripted talk, and townsfolk reply choices with the AI notice.
 - `TownsfolkBarks`: chat-bubble remarks from townsfolk you pass.
 - `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].

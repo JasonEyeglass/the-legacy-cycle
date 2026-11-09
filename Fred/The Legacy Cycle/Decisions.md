@@ -21,7 +21,8 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
   - Vitality: +3 HP.
   - Strength, Endurance and Ember: +0.5 each.
   - Ember stays hidden until Echoes.
-- Each region has a fixed enemy level. Respec is free at a shrine, but not in combat or in dungeons.
+- Each region has a fixed enemy level.
+- **The Shrine of Embers only gives the Ember** (user, 2026-11-09): it has no stat reset and no appearance change. This replaces "respec is free at a shrine". There is no respec anywhere for now; the old code is in StatService's history. Looks change from the main menu.
 - XP curve: about 100 hours to reach level 100.
   - `xpToNext(L) = round5(4.5 * L^0.78 * (10 + 2(L-1)))`
   - Enemy XP is `10 + 2(level-1)`.

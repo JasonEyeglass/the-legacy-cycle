@@ -31,7 +31,7 @@ Players build their hero from presets. The look is saved as 6 indices and applie
 - When a profile loads, it publishes the `HasLook` attribute (false until a hero exists) and the `Look` attribute (the indices, comma-joined, `hair2` last).
 - It dresses every spawned character in the saved look, or in the default if there isn't one.
 - `AppearanceAction:FireServer("Save", look)` is checked with sanitize, limited to one save a second, stored in PlayerData `look` and applied to the character again.
-- Every Shrine-tagged part gets a **LookPrompt**: "Change appearance", key V (gamepad DPadDown), sitting under the respec prompt. Triggering it sends `FireClient("Open")`.
+- The Shrine of Embers no longer has a "Change appearance" prompt (removed 2026-11-09, user). The creator opens from the join flow and the main menu.
 
 ## Client: `StarterPlayerScripts.AppearanceClient` and its `Creator` module
 

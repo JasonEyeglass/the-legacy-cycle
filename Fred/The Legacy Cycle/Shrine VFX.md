@@ -10,7 +10,7 @@ The Shrine of Embers in Havenbrook now uses the user's imported obsidian-brazier
 ## The model
 
 - `Workspace.World.Havenbrook.ShrineOfEmbers`:
-  - `Shrine`: the MeshPart, scaled from 1.9 to 6 studs tall and anchored. It is tagged `Shrine`, so StatService and AppearanceService still give it the R "Reset stat points" and V "Change appearance" prompts.
+  - `Shrine`: the MeshPart, scaled from 1.9 to 6 studs tall and anchored. It is tagged `Shrine`, so EmberService gives it the B "Absorb the Ember" prompt, its only prompt (the R stat reset and V appearance prompts were removed on 2026-11-09, user).
   - `FxCore`: an invisible emitter volume in the bowl, at 70% of the height. It holds the emitters and the `Glow` PointLight (255,128,56, range 16, shadows on).
   - `FxSmoke`: an invisible part above the bowl for the smoke.
 - The model is tagged `ShrineFx`. Its `FxVariant` attribute records which version it is.
@@ -49,14 +49,13 @@ One client script drives every model tagged `ShrineFx`:
 - **Flicker:** the light's brightness follows `math.noise`.
 - **Breath:** every 5.5 s the coals brighten by about 25%, with a slow flicker.
 - **Near:** within 12 studs, the fire and light stir by about 20%.
-- **Use:** triggering either of the shrine's prompts gives a small puff of 14 sparks and 4 licks, and the fire rises 60% for 0.7 s. Only the player who used it sees the puff.
 - **Low specs:** half the particles, no smoke, and no light shadows.
 
 ## Absorbing the Ember (2026-11-06)
 
 The user asked for this. It follows the prologue script's Scene 6: the golden spark settles into the player's chest, and the Ember bar appears in the HUD, faint.
 
-- **Rule:** you absorb it **once per player**, and it is saved. Each Shrine of Embers has a held **B** prompt (1.2 s, gamepad DPad-left) labelled "Absorb the Ember", shown above the R and V prompts. `Progression.EmberService` sets PlayerData `ember = true` and the `HasEmber` attribute, then fires `EmberAction` `"Absorbed"` to that player.
+- **Rule:** you absorb it **once per player**, and it is saved. Each Shrine of Embers has a held **B** prompt (1.2 s, gamepad DPad-left) labelled "Absorb the Ember", the shrine's only prompt. `Progression.EmberService` sets PlayerData `ember = true` and the `HasEmber` attribute, then fires `EmberAction` `"Absorbed"` to that player.
 - **Cinematic (user, 2026-11-09; reworked the same day because the user wanted it cooler):** about 6 s, in `ShrineFx` with the shots and effects in its `Cinematic` module. Letterbox bars close in, `UiFocus` hides the HUD and holds the hero still, and the hero turns to the shrine. The picture is graded warm and desaturated, with depth of field and bloom (both off in low specs). The 5 beats:
   1. **Anticipation (1 s):** an over-the-shoulder dolly toward the brazier (FOV 50 to 46). The world darkens and a low swing sounds.
   2. **Lighting the embers (1.7 s):** the camera orbits the shrine, rising. The fire roars up (`ignite`, +160% fire and light) with a warm flash, a FOV punch, a shake and a deep strike. A ring of fire runs out along the ground, a pillar of light stands up from the bowl, and 5 motes spiral up it in a helix (3 in low specs).
@@ -67,7 +66,7 @@ The user asked for this. It follows the prologue script's Scene 6: the golden sp
   - The hero's head no longer follows the camera while the camera is Scriptable (Locomotion), so the cutscene camera can't turn the head away from the shot.
   - It stops early (camera, bars, grade, HUD restored, no menu) if the hero dies or respawns.
   - **To test it, use the dev shrine:** `workspace.Dev.DevShrineOfEmbers` (`DevReplay = true`) replays the cinematic on B, with an 8 s cooldown. It never saves the Ember and relights itself afterwards.
-- **The dark shrine:** no flame, embers or light, just a thin cold wisp of smoke. Its SurfaceAppearance is tinted to (72,66,64), which also turns the sculpted flame cold. This happens on the absorber's screen only; players who haven't taken their Ember still see the shrine lit. The absorb prompt is hidden locally once `HasEmber` is true. The R and V prompts still work, with no spark puff while the shrine is dark.
+- **The dark shrine:** no flame, embers or light, just a thin cold wisp of smoke. Its SurfaceAppearance is tinted to (72,66,64), which also turns the sculpted flame cold. This happens on the absorber's screen only; players who haven't taken their Ember still see the shrine lit. The absorb prompt is hidden locally once `HasEmber` is true, so a dark shrine has no prompt at all.
 - **Elsewhere:**
   - Vitals has a faint Ember arc inside stamina (radius 67). It fills when the Ember arrives, then breathes. Shortcut: nothing drains it yet, so it always shows full.
   - The floating menu's Embers page reads "You have not found your Ember" / "Seek the Shrine of Embers in Havenbrook" until you have it, then "Your Ember burns", with a lit ember diamond and an ember-red light.
