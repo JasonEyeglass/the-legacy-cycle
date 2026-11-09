@@ -1,6 +1,6 @@
 ---
 tags: [legacy-cycle, architecture]
-updated: 2026-11-09
+updated: 2026-11-10
 ---
 
 # Systems Map
@@ -27,6 +27,8 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `InventoryAction` ("Equip", itemId), `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show), `StoryChoice` (conversation, option).
 
 ## ServerScriptService
+
+- `DevWorldTravel` (Studio only): a pad beside the dev spawn. Hold G there to go to the new Havenbrook square, and G at the square to come back.
 
 - `Progression.Main` starts StatService, AppearanceService, SettingsService, EmberService, Leveling, QuestService, InventoryService, StoryService and then PlayerData, so that no listener misses a player's first load.
 - `Progression.PlayerData`:
@@ -82,7 +84,15 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 
 - `ReplicatedStorage.Audio` (client): music crossfades (`music`), one-shot UI sounds (`ui`), and `start`, which gives every PlayerGui button hover and click sounds (a `UiSound` attribute of "Select" or "None" overrides) and plays Select on ProximityPrompts.
 
+## ServerStorage (build tools, run from the command bar)
+
+- `WorldGen`: the continent's terrain from seeded noise. `build()` writes it in 82 s, `clear()` empties its box, `heightAt` / `columnAt` / `regionAt` / `crossings()` answer placers. Its constants are at the top. See [[World Building Pipeline - Blender Scripts]].
+- `WorldPlacer` (child `KitManifest`, generated from the kit build): `place()` rebuilds `Workspace.Continent` from the kit in `ServerStorage.WorldKit`, using blockouts for pieces not imported yet.
+- `WorldKit` (made by the user): the imported `Havenbrook.glb` and `Nature.glb` models.
+
 ## Workspace and SoundService
+
+- `Workspace.Continent` (generated, rebuilt by `WorldPlacer.place()`, so hand edits are lost): the new Havenbrook, outskirts, bridges, nature, and `Story` folders of `Anchor_*` parts.
 
 - `Workspace.Cinematics.LoadingPan`: the shot folders for the loading pan.
 - `Workspace.World["Old Watchtower"]` and `Workspace.World["Ser Bryn Hale"]` (tagged `StoryNPC`, anchored, posed sitting; Persistent streaming): quest 1.3.

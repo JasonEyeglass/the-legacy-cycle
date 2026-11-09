@@ -56,3 +56,6 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
   3. Fit a circle: the axis is the sum of (pᵢ−c)×(pᵢ₊₁−c), then a Kasa fit in the plane. Up is the middle angle of the cut.
   4. Write the result into `Config.SlashFx.Cuts` (2026-11-09).
 - **`require` keeps the old module after `UpdateSourceAsync` in Edit mode:** the same session returns the cached table. To test an edit, require a fresh clone parented next to the original (so `script.Parent` still resolves), then destroy it (2026-11-10).
+- **`Region3int16` has no `CFrame`:** use `.Min` and `.Max` (2026-11-10).
+- **`Lighting.Technology` can't be read from the command bar or the MCP** (capability error). Don't read it in tooling code (2026-11-10).
+- **Terrain `ReplaceMaterial` repaints without reshaping:** use it with a 4-stud-aligned `Region3` (`:ExpandToGrid(4)`) for streets, squares and ploughed fields on generated terrain (2026-11-10).
