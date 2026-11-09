@@ -64,4 +64,5 @@ From Roblox's generative-AI documentation:
 - There is no day and night cycle yet (ClockTime stays at 17.5). The facts already say morning, afternoon, evening or night, so routines could follow a cycle later.
 - Townsfolk don't react to fights yet (no fleeing or cowering).
 - Captain Aldric is unchanged: still a scripted conversation that gives the caravan quest.
+- **Dev space crowd (for testing):** while `workspace.Dev.Townsfolk.Stops` exists, the server spawns a second copy of all 12 there, each wandering between any of its 9 stops (Dev1–Dev9, on open baseplate north of the spawn, out of the Squire's leash). They talk, remark and use the AI like the town's. Delete that folder, or the Dev space, before release.
 - 3 houses (H2, H5, H7) had no clear ground by their doors, so they have no stops.
