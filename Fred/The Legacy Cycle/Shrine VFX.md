@@ -57,6 +57,11 @@ One client script drives every model tagged `ShrineFx`:
 The user asked for this. It follows the prologue script's Scene 6: the golden spark settles into the player's chest, and the Ember bar appears in the HUD, faint.
 
 - **Rule:** you absorb it **once per player**, and it is saved. Each Shrine of Embers has a held **B** prompt (1.2 s, gamepad DPad-left) labelled "Absorb the Ember", shown above the R and V prompts. `Progression.EmberService` sets PlayerData `ember = true` and the `HasEmber` attribute, then fires `EmberAction` `"Absorbed"` to that player.
+- **Cinematic (user, 2026-11-09):** the absorb now plays as a short cutscene of about 5 s. Letterbox bars close in, `UiFocus` hides the HUD and holds the hero still, and a Scriptable camera turns the hero toward the shrine.
+  - **Shot 1, lighting the embers (1.9 s):** a low three-quarter push-in on the coals (FOV 48 to 42). The smoulder roars up through an `ignite` value (+160% fire and light), with a burst of embers and a column of rising sparks.
+  - **Shot 2, collecting its power:** hero and shrine side-on, drifting in (FOV 55 to 52), while steps 1 to 4 below play.
+  - The camera comes back 0.7 s into the shrine going out. The floating menu then opens on the Embers page and lights the skill tree (`FloatMenu.revealEmbers`, see [[Floating Menu]]).
+  - It stops early (camera, bars and HUD restored, no menu) if the hero dies or respawns.
 - **Animation (client, about 3.7 s, `ShrineFx`):**
   1. The fire flares one last time while a neon spark (with a trail, motes and a light) grows and rises out of the coals.
   2. It hangs there, beating, while the fire starts to fail.

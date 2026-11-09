@@ -68,10 +68,16 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The shift lock indicator is minimal:** a small dot and a thin gilt ring at the centre of the screen, with no label.
 - **The controls strip hides itself** after 12 s on screen, and Caps Lock toggles it (user, 2026-11-09).
 
+## Embers and the dev space (2026-11-09)
+
+- **Embers are skills** (user, 2026-11-09). Absorbing one plays a short cinematic in two shots: lighting the embers, then collecting its power. After it, the Embers page pops open in the floating menu with the skill tree.
+- **The tree's shape is a placeholder:** three paths of two sealed skills out of the Ember. No skill names, costs or effects are invented; the nodes stay sealed until the skills are designed.
+- **The dev space has a Hollow Squire and three Training Dummies** (user, 2026-11-09). Dummies never give XP or quest credit.
+
 ## Inventory and menu (2026-11-06)
 
 - Body armour is split into **Chestplate** (upper body) and **Leggings** (lower body). The full equipment slot set is Helmet, Chestplate, Leggings, Gloves, Weapon and Boots. See [[Floating Menu]].
-- **Embers** is the skill tree, opened from the floating menu. Its skills aren't designed yet, so the page is an unlit placeholder.
+- **Embers** is the skill tree, opened from the floating menu. Its skills aren't designed yet, so the page is an unlit placeholder. (2026-11-09: it now shows a sealed tree once the Ember is absorbed; see Embers and the dev space.)
 - The floating menu has **Back to Main Menu**, which reopens the main menu mid-game.
 - **The floating menu is an open grimoire** (user, 2026-11-06). The user called the old stacked-button panel slop. Of two Claude Design directions (A: obsidian slab with a tab rail; B: grimoire), they picked **B**. It is a fixed 760×440 spread: the left page has the level and chapters I–IV, the right page the open chapter. The Main page became the **Overview** ledger. Canvas: https://claude.ai/artifact/4wrPSPaMRBqVdkPurpwu4T
 - **Then direction D, "Codex": the grimoire with a modern layout** (user, 2026-11-06). After seeing C, a modern tabbed inventory taken from a reference image, the user asked to combine it with B.
