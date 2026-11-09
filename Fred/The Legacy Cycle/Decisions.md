@@ -87,6 +87,7 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Smart talk is a hybrid** (user): written lines picked by context (Ember, quest state, blade drawn, met before), plus answers to the player's chosen topic from Roblox's built-in `TextGenerator`, held to each person's persona and the world's lore. The written line is the fallback whenever the AI fails, is slow or is over budget.
 - **The player only picks reply choices** (user): no typed chat, so it works the same on gamepad and phone.
 - **Townsfolk wear the hero presets** (user): the hero's own body, dressed through `Appearance.apply`.
+- **AI answers are off** (user, 2026-11-09). The user asked to remove the "AI-powered conversation" notice. Roblox requires that notice whenever replies may come from AI, so the AI was switched off instead (`UseAI = false`). Townsfolk now answer from written lines only, and the notice no longer shows. This replaces the hybrid above for now; the AI code stays and the rules in the next bullet apply again if it is turned back on.
 - **Townsfolk react when bumped or hit** (user, 2026-11-09): a shove, a turn and a written line. These are never AI lines.
 - **Townsfolk speech uses our own bubble** (user, 2026-11-09): minimalist, with no background (italic text over a thin gold rule), instead of Roblox's chat bubble.
 - **No quests, prices or rewards from the AI.** The prompt forbids them, and its replies go only to the player talking.

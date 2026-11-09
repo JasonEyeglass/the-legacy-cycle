@@ -5,7 +5,7 @@ updated: 2026-11-09
 
 # Townsfolk
 
-Havenbrook's 12 townsfolk walk the town, glance at players, comment as players pass, and talk through reply choices. Their answers come from Roblox's built-in AI, held to each person's character, with written lines as the fallback. Back to [[The Legacy Cycle]]. Decisions are in [[Decisions]] (Townsfolk).
+Havenbrook's 12 townsfolk walk the town, glance at players, comment as players pass, and talk through reply choices. Their answers come from written lines. **The AI answers are switched off** (user, 2026-11-09), so no AI notice shows. The AI path below stays built and comes back by setting `UseAI` to true. Back to [[The Legacy Cycle]]. Decisions are in [[Decisions]] (Townsfolk).
 
 ## Who lives here
 
@@ -41,7 +41,7 @@ Everyone except Orla and Tobin is a proposal, and so are all the personas and li
   - The prompt: the moment's facts (level, Ember, blade, met before, quest, time of day) and the written line as the gist.
   - Cleaning: replies are tidied and capped at 220 characters. An out-of-world reply is dropped.
   - Fallback: any error, a timeout over 6 s, or more than 80 requests a minute → the written line.
-  - The `UseAI` attribute on the server script switches the AI off.
+  - The `UseAI` attribute on the server script switches the AI on or off. It is **false** (off) as of 2026-11-09, and also defaults to false if it is missing.
 - **The client:**
   - `DialogueClient` shows the reply choices (click, 1–4, or the gamepad), a pulsing ellipsis while an answer is coming, and the AI notice.
   - `TownsfolkBarks` shows a remark when you come within 10 studs. The chance is 45%, each person waits 35 s between remarks, and remarks are at least 5 s apart.
@@ -51,7 +51,7 @@ Everyone except Orla and Tobin is a proposal, and so are all the personas and li
 
 ## Roblox's AI rules (2026-11-09)
 
-From Roblox's generative-AI documentation:
+These apply only while `UseAI` is on; it is off now. From Roblox's generative-AI documentation:
 - **Disclosure:** players must see that the conversation is with AI, at the start and throughout. The dialogue panel shows "AI-powered conversation, not a human. It may make mistakes." for the whole townsfolk conversation. Roblox also prefixes its own notice to the first reply; that is stripped, since the panel already shows it.
 - **Moderation:** Roblox moderates TextGenerator input and output, and holds its models to All Ages. Replies go only to the player talking.
 - **Keep it non-"extended":** "extended AI interactions" (unlimited continuous AI chat, or AI memory across sessions) require the **Restricted (18+)** maturity label. So:
