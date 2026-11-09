@@ -31,7 +31,7 @@ Each step ends in something playable. The prologue is built last, even though it
 |---|---|---|---|
 | 1 | **Story state and gear** | `storyFlags`, `questState`, `gold` and `inv` in the save (DATA_VERSION 4; old saves load empty). An Items registry with the starter sword, *Hale's Oath* and the tarnished *Hale's Oath*. An inventory service (add, remove, has, equip) whose equipped weapon's damage feeds combat. The floating menu's Inventory page shows real items. | PlayerData, CombatCore/Rules, FloatMenu's slot plates |
 | 2 | **1.1 A Spark in Havenbrook** | After absorbing the Ember, the Keeper sends you to the guild. Orla Venn doubts you until your Ember flares at the old lantern. Reward: starter sword and 100 gold. | Shrine of Embers and the absorb cinematic (this is the prologue's Scene 6 spark), Townsfolk Orla, DialogueClient, QuestService |
-| 3 | **1.3 The Wounded Knight** | Bryn Hale below the watchtower beyond the north gate, with Void veins. Only players whose state matches see him. Three-way choice saved as `knight_fate` (saved / took / left): saving drains the Ember, taking gives *Hale's Oath*. Orla's next line changes with it. | The Havenbrook Knight rig and armor (as Bryn), dialogue choices |
+| 3 | **1.3 The Wounded Knight** | Bryn Hale below the watchtower outside the gate (Havenbrook has one), with Void veins. Only players whose state matches see him. Three-way choice saved as `knight_fate` (saved / took / left): saving drains the Ember, taking gives *Hale's Oath*. Orla's next line changes with it. | The Havenbrook Knight rig and armor (as Bryn), dialogue choices |
 | 4 | **Enemies** | Hollowed soldier (a Hollow Squire reskin in old Havenbrook armor), void hound (fast, low health, packs), void brute (the mini-boss when Bryn is saved or taken). The archer waits for later. | EnemyAI, the Squire |
 | 5 | **1.5 The Old Gate** | A dungeon instance per party (1–4 players) under the town, in the same place, so there's no teleport. Groups are formed by standing in the gate circle when the leader starts. Order: encounters, then the mini-boss (Hollowed Bryn if the leader left him, otherwise a void brute), then the Fallen Knight at the old gate in 3 phases, with the Bryn assist if he was saved. Checkpoints sit before the mini-boss and before the boss. | Combat, EnemyAI, the knight armor (blackened for Caelan) |
 | 6 | **1.6 What He Would Not Let Go** | The Fallen Knight's memory as a cutscene, then the Keeper's last lines. Rewards: 150 gold and the title "Ember-Bearer". Sets `act1_complete`. | ShrineFx.Cinematic, the roblox-cutscene kit |
@@ -66,7 +66,7 @@ Some can come from what exists, some are new:
 
 - [x] 1 Story state and gear (2026-11-09, waiting on the user's playtest)
 - [x] 2 A Spark in Havenbrook (2026-11-09, waiting on the user's playtest)
-- [ ] 3 The Wounded Knight
+- [x] 3 The Wounded Knight (2026-11-09, waiting on the user's playtest)
 - [ ] 4 Enemies
 - [ ] 5 The Old Gate
 - [ ] 6 What He Would Not Let Go

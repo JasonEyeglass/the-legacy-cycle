@@ -24,7 +24,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 - `Packages.Trove`: Sleitnick's Trove v1.8.0 (MIT), which tracks connections, instances, threads and cleanup functions and cleans them all at once. Use it in new code that has to clean up. `CombatClient.Wind`, `Rocks` and the wall climb use it.
 - `Stats`, `Progression`, `Quests`: shared definitions and `sanitize` for player data (see [[Decisions]], Stats and leveling).
 - `Items`: every item (id, name, slot, icon, power, stack, blurb) and the inventory rules: `add`, `remove`, `equip`, `power`, `sanitize`, and `selfTest()` to run from the command bar. Item ids are save keys, so never rename one.
-- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `InventoryAction` ("Equip", itemId), `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show).
+- **Remotes:** `AppearanceAction`, `SettingsAction`, `StatAction`, `InventoryAction` ("Equip", itemId), `MenuAction` (the floating menu's open page), `EmberAction` (the absorb animation cue), `TownsfolkAction` (RemoteFunction: open, ask, bye), `TownsfolkReact` (a bump or blow line to show), `StoryChoice` (conversation, option).
 
 ## ServerScriptService
 
@@ -42,9 +42,9 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - starts story quests (`startsWithEmber`) by themselves;
   - pays `rewardGold` through InventoryService;
   - exposes `talked(player, npc)`, which the Townsfolk script calls when a conversation opens.
-- Quests so far: `ASpark` (1.1 A Spark in Havenbrook: Orla, the lantern, Orla; 60 XP and 100 gold) and `MissingCaravan` (Aldric).
+- Quests so far: `ASpark` (1.1 A Spark in Havenbrook: Orla, the lantern, Orla; 60 XP and 100 gold), `WoundedKnight` (1.3: Bryn's choice, then Orla; 80 XP; starts after 1.1) and `MissingCaravan` (Aldric). A `choose` step waits for its story flag (`QuestService.waitingOn` and `flagSet`).
 - `Progression.InventoryService`: `add`, `remove`, `has`, `equip` and `addGold` for a player. It replicates `Gold`, `Inventory` (JSON) and `Equip_<slot>` attributes, and gives every hero `Items.Starter`, equipped.
-- `Progression.StoryService`: `get` and `set` for story flags (`knight_fate`, `prologue_seen`, `act1_complete`), replicated as `Story_<flag>` attributes.
+- `Progression.StoryService`: `get` and `set` for story flags (`knight_fate`, `prologue_seen`, `act1_complete`), replicated as `Story_<flag>` attributes. It also handles the `StoryChoice` remote: a scripted conversation's choice (only `BrynHale` so far), checked against the quest, the flag and the distance to the speaker.
 - `Combat.CombatService`: server combat; it clones the katana onto characters. Its `ClimbStart` and `ClimbEnd` actions call `CombatCore.climb`, which drains stamina while the climber moves and stops regen while they're on the wall.
 - `Combat.EnemyAI`: enemies, cloned from templates.
   - A Hollow Squire spawns at every part tagged `EnemySpawn`: the combat sandbox, and the dev space at (-130, 2990).
@@ -72,7 +72,8 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - `LockReticle`.
   - `MobileLayout`: touch buttons arranged in arcs around the jump button.
 - `AppearanceClient`: holds the `Creator` module (opened by the join flow and the main menu). See [[Character Creator]].
-- `DialogueClient`: Captain Aldric's scripted talk, and townsfolk reply choices (the AI notice shows only if `UseAI` is on).
+- `DialogueClient`: scripted talk (Aldric, the lantern, Bryn), story choices at the end of a scripted conversation, and townsfolk reply choices (the AI notice shows only if `UseAI` is on). A prompt with `NoTurn` keeps its speaker still.
+- `StoryWorld`: shows a `StoryNPC` model only to players whose active quest is its `ShowQuest`, and shows the player's `FateFlag` choice on it (Bryn: the Void put out, or his sword gone).
 - `TownsfolkBarks`: remarks and bump/blow reactions from townsfolk, drawn by its `Bubble` module.
 - `ShrineFx`: the shrine fire animation, the absorb animation and the dark state. See [[Shrine VFX]].
   - `ShrineFx.Cinematic`: the absorb cutscene's camera and effects: `take()` (bars, grade, depth of field, bloom, flash, FOV punch, cleanup), `dolly` and `orbit` shots, and `ring`, `pillar` and `motes`.
@@ -80,6 +81,7 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
 ## Workspace and SoundService
 
 - `Workspace.Cinematics.LoadingPan`: the shot folders for the loading pan.
+- `Workspace.World["Old Watchtower"]` and `Workspace.World["Ser Bryn Hale"]` (tagged `StoryNPC`, anchored, posed sitting; Persistent streaming): quest 1.3.
 - `Workspace.World.Havenbrook.Townsfolk`: `Stops` (22 invisible stop parts, found by searching for clear ground) and `People` (filled at run time).
 - `SoundService.Music`: holds World.Ambience.
 - `SoundService.Effects`: holds the combat sound templates and the FountainSound.

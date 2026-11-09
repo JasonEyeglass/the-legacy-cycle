@@ -166,3 +166,13 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The guild is Orla at the quest board.** No guild hall is built for the slice. The "old Ember lantern" stands beside the board.
 - **1.1 pays 100 gold and 60 XP, not a sword.** Every hero already carries the Wanderer's Katana (the open question's default).
 - **Talking to a townsperson counts for quest steps after the greeting is picked**, so Orla's greeting always answers the step you came for.
+
+## Quest 1.3, The Wounded Knight (2026-11-09)
+
+- **The watchtower stands outside the town's only gate, east of the road.** The outline says "the north gate", but Havenbrook has one gate.
+- **Story quests are never offered by talking to someone.** They start by themselves, in order (`after`), once you have your Ember and nothing else is underway.
+- **Bryn is one shared model, hidden on every client that isn't on 1.3.** One world copy is simpler than spawning one per player. The server still checks every choice, so a hidden Bryn can't be used.
+- **The choice is made once.** `knight_fate` can't be changed after it's set.
+- **Saving Bryn drains the Ember only for the rest of 1.3,** and only on the Ember arc, since nothing spends the Ember yet. Once Ember Strike exists (step 7), saving him should cost it properly.
+- **Taking the sword gives the true Hale's Oath (×1.25).** The tarnished one is kept for a later beat (the dungeon's Hollowed Bryn).
+- **Reply choices fit the quest:** a townsperson's quest topics come first while they apply.

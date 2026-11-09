@@ -24,12 +24,12 @@ Havenbrook's 12 townsfolk walk the town, glance at players, comment as players p
 | Bram | Porter | the gate, the market, doorways | "Seen anything strange?" |
 | Edda | Baker | doorways, the market, the fountain | "Got anything to eat?" |
 
-Everyone except Orla and Tobin is a proposal, and so are all the personas and lines. Orla and Tobin are walking townsfolk for now; they give no quests.
+Everyone except Orla and Tobin is a proposal, and so are all the personas and lines. Tobin is a walking townsperson. Orla is the guild at the quest board: story quests 1.1 and 1.3 send you to her.
 
 ## How it works
 
-- **The roster** is in `ReplicatedStorage.Townsfolk`: name, title, persona, look, walk speed, stops, greetings, remarks, "who" lines and one topic each. It also holds the lore the AI may use, `pick` (the most specific line that fits) and `choices`, with self-checks.
-- **Context** a line can depend on: the Ember, met before (this server), blade drawn, the active quest, finished quests. For example, Doran's lines change once the caravan quest is done, and Garrick tells a player with a drawn blade to put it away.
+- **The roster** is in `ReplicatedStorage.Townsfolk`: name, title, persona, look, walk speed, stops, greetings, remarks, "who" lines and one topic each, plus `questTopics` (Orla) offered first while they fit the quest. It also holds the lore the AI may use, `pick` (the most specific line that fits) and `choices`, with self-checks.
+- **Context** a line can depend on: the Ember, met before (this server), blade drawn, the active quest and step, finished quests and story flags (`story`). For example, Doran's lines change once the caravan quest is done, and Garrick tells a player with a drawn blade to put it away.
 - **The server** (`ServerScriptService.Townsfolk`):
   - Bodies: each person is spawned from the hero's own body (StarterCharacter), dressed with `Appearance.apply`, and given a nameplate and an E "Talk" prompt.
   - Movement: they walk between their stops in `Havenbrook.Townsfolk.Stops` on pathfinding routes and linger 6–14 s at each. They pass through each other (collision group `Townsfolk`), and players still bump them.
