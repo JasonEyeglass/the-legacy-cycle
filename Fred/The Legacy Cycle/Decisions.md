@@ -158,3 +158,11 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **Story flags are short words with a short string, number or true/false value**, saved per player and replicated as `Story_<flag>` attributes so dialogue can branch on them. `knight_fate` is "saved", "took" or "left".
 - **Quest state stays where it was** (the profile's `quest` and `done`). The plan's "questState" didn't need a new field.
 - **Gold is saved and shown, but nothing spends it yet** (the open-question default in [[Act 1 Slice]]).
+
+## Quest 1.1, A Spark in Havenbrook (2026-11-09)
+
+- **The Keeper sends you without a model, for now.** Their line comes as a toast after the absorb cinematic. A Keeper NPC is still on the slice's asset list, for 1.6.
+- **Story quests start by themselves** (`startsWithEmber`), never by talking to someone. If another quest is underway, 1.1 waits until that one ends.
+- **The guild is Orla at the quest board.** No guild hall is built for the slice. The "old Ember lantern" stands beside the board.
+- **1.1 pays 100 gold and 60 XP, not a sword.** Every hero already carries the Wanderer's Katana (the open question's default).
+- **Talking to a townsperson counts for quest steps after the greeting is picked**, so Orla's greeting always answers the step you came for.

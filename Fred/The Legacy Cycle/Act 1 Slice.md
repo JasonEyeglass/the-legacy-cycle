@@ -55,16 +55,17 @@ Some can come from what exists, some are new:
 - **Captain Aldric and The Missing Caravan** aren't in the team's Act 1. [Aldric stays as the gate warden who points players north; The Missing Caravan becomes side content outside the slice.]
 - **Ember Strike**, the prologue's skill and the game's "one magic ability", doesn't exist yet. [Build it in step 7, and let the hero use it after absorbing the Ember.]
 - **Gold** has no use in the slice, because Tobin's upgrade (1.4) is cut. [Save it and show it anyway, so the rewards are real.]
-- **1.1's "starter sword" reward:** since step 1, every hero already carries the Wanderer's Katana. [1.1 gives the 100 gold only, and Orla's line hands the katana over in words.]
+- **1.1's "starter sword" reward:** since step 1, every hero already carries the Wanderer's Katana. [1.1 gives the 100 gold only.] Settled 2026-11-09: 100 gold and 60 XP.
+- **The Missing Caravan vs 1.1:** only one quest runs at a time, so a player who took Aldric's quest first gets 1.1 once it ends. [Make the Caravan a side quest that can run beside the story, when the quest log allows more than one.]
 
 ## Later (not in the slice)
 
-1.2 and 1.4, the brazier puzzle, the archer, the side quests and the bounty board. Mining and forging (roadmap Phase 1's crafting loop). The Ethereal Forest. A model of its own for each weapon (Hale's Oath looks like the katana for now). Armor items for the other equipment slots.
+1.2 and 1.4, the brazier puzzle, the archer, the side quests and the bounty board. Mining and forging (roadmap Phase 1's crafting loop). The Ethereal Forest. A model of its own for each weapon (Hale's Oath looks like the katana for now). Armor items for the other equipment slots. A guild hall building. The lantern's own "Done" line once 1.1 is over (it reads as cold again).
 
 ## Progress
 
 - [x] 1 Story state and gear (2026-11-09, waiting on the user's playtest)
-- [ ] 2 A Spark in Havenbrook
+- [x] 2 A Spark in Havenbrook (2026-11-09, waiting on the user's playtest)
 - [ ] 3 The Wounded Knight
 - [ ] 4 Enemies
 - [ ] 5 The Old Gate

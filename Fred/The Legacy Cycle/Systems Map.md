@@ -36,9 +36,13 @@ The Studio modules, grouped by where they run. Back to [[The Legacy Cycle]].
   - If a load fails, that session is never saved.
 - `Progression.AppearanceService`: see [[Character Creator]].
 - `Progression.SettingsService`: see [[Settings]].
-- `Progression.EmberService`: the once-per-player "Absorb the Ember" prompt on every `Shrine`-tagged part. It also publishes the `HasEmber` attribute. See [[Shrine VFX]].
+- `Progression.EmberService`: the once-per-player "Absorb the Ember" prompt on every `Shrine`-tagged part. It also publishes the `HasEmber` attribute. See [[Shrine VFX]]. It also makes every `EmberLantern`-tagged model (a `Flame` part with `Sparks`, and a `Touch` prompt with Dialogue `EmberLantern`) flare for anyone with an Ember. There's one by Havenbrook's quest board and a test copy in the dev space.
 - `MenuPresence`: relays each player's open floating-menu page as the `MenuPage` attribute. See [[Floating Menu]].
-- `Progression.StatService`, `Leveling`, `QuestService`: stat points, XP and level-ups, and quests. StatService multiplies damage by the equipped weapon's power.
+- `Progression.StatService`, `Leveling`, `QuestService`: stat points, XP and level-ups, and quests. StatService multiplies damage by the equipped weapon's power. QuestService also:
+  - starts story quests (`startsWithEmber`) by themselves;
+  - pays `rewardGold` through InventoryService;
+  - exposes `talked(player, npc)`, which the Townsfolk script calls when a conversation opens.
+- Quests so far: `ASpark` (1.1 A Spark in Havenbrook: Orla, the lantern, Orla; 60 XP and 100 gold) and `MissingCaravan` (Aldric).
 - `Progression.InventoryService`: `add`, `remove`, `has`, `equip` and `addGold` for a player. It replicates `Gold`, `Inventory` (JSON) and `Equip_<slot>` attributes, and gives every hero `Items.Starter`, equipped.
 - `Progression.StoryService`: `get` and `set` for story flags (`knight_fate`, `prologue_seen`, `act1_complete`), replicated as `Story_<flag>` attributes.
 - `Combat.CombatService`: server combat; it clones the katana onto characters. Its `ClimbStart` and `ClimbEnd` actions call `CombatCore.climb`, which drains stamina while the climber moves and stops regen while they're on the wall.
