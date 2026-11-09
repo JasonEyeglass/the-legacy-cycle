@@ -76,6 +76,7 @@ These are the settled calls, newest last. The team repo's `3 ✅ Tracking/Decisi
 - **The dev space has a replayable Ember shrine** (user, 2026-11-09) for testing the cinematic. A `DevReplay` shrine never saves the Ember, so it must stay out of the real world.
 - **The absorb cinematic is a bigger 5-beat cutscene** (user, 2026-11-09, "gotta be cooler"): orbiting shots, a graded picture, a pillar and ring of fire, spiralling motes, the hero lifted off the ground and an impact flash. See [[Shrine VFX]].
 - **The skill tree's nodes are clickable** (user, 2026-11-09): a sealed node shows which path and step it is; the Ember core goes back.
+- **VFX follow the field guide's curve rules** (user, 2026-11-09, picks 1, 3 and 4 of [[Roblox VFX Techniques]]): impacts pop with a 3-frame star, sizes ease out, transparency holds then fades, and shockwaves get a dark under-layer. Built-in particle textures only until the user uploads their own; ground winds wait for a wind texture.
 - **Landed hits shake the camera harder** (user, 2026-11-09): up to 1.6 times the usual maximum angle, for your own hits only.
 
 ## Inventory and menu (2026-11-06)

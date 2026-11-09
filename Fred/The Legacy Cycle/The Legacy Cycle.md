@@ -23,6 +23,7 @@ A dark-fantasy open-world Roblox RPG with R15 characters and katana combat. It i
   - [[Shrine VFX]]: the new Shrine of Embers mesh, with native and Blender-flipbook fire side by side.
 - [[UI Kit (Ornament)]]: the fantasy UI helpers and the gotchas they work around.
 - [[Studio Gotchas]]: Roblox Studio and Studio MCP lessons from building this.
+- [[Roblox VFX Techniques]]: VFX and animation recipes studied from 13 YouTube tutorials, and the AI video-watching repos.
 - Dev log: [[2026-11-06]].
 
 ## Key locations
