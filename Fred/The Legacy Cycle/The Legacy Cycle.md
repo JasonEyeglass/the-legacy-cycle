@@ -25,6 +25,7 @@ A dark-fantasy open-world Roblox RPG with R15 characters and katana combat. It i
 - [[UI Kit (Ornament)]]: the fantasy UI helpers and the gotchas they work around.
 - [[Studio Gotchas]]: Roblox Studio and Studio MCP lessons from building this.
 - [[Roblox VFX Techniques]]: VFX and animation recipes studied from 13 YouTube tutorials, and the AI video-watching repos.
+- [[VFX and Animation Training Log]]: measured Blender drills (slash flipbook, five-beat sword swing) and what each iteration fixed.
 - Dev log: [[2026-11-06]].
 
 ## Key locations
