@@ -30,7 +30,7 @@ Study of YorusDevs, "How Opus 5.5 built my entire game map in Blender" (https://
 
 - [ ] Confirm the Blender version and the MCP add-on source.
 - [x] Turn one Act 1 zone into a `build_<zone>_kit.py` with top-level constants and a Roblox export (2026-11-10). `Legacy Cycle World/build_havenbrook_kit.py` builds the Havenbrook and Nature kits, and `ServerStorage.WorldPlacer` places them on the `WorldGen` continent.
-- [ ] Import `Havenbrook.glb` and `Nature.glb` into `ServerStorage.WorldKit`, then rerun `WorldPlacer.place()`. The placer reports whether the kit came in turned 180°.
+- [x] Import `Havenbrook.glb` and `Nature.glb` into `ServerStorage.WorldKit`, then rerun `WorldPlacer.place()` (2026-11-10). The 3D Importer maps (x, y, z) to (−x, z, y) at 1:1, with no turn.
 - [x] `precut.py` written and tested (2026-11-09). It's in LihFolk `45 Procedural Blender Assets/scripts/`.
   - It makes 4 exact-Boolean cuts with filled faces in an inner colour, exporting a GLB of the intact model plus 8 shards and a JSON of cut normals.
   - All gates pass on a demo post and on the Grow an Ember brazier.

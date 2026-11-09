@@ -59,3 +59,4 @@ Lessons from building The Legacy Cycle through Roblox Studio and the Studio MCP.
 - **`Region3int16` has no `CFrame`:** use `.Min` and `.Max` (2026-11-10).
 - **`Lighting.Technology` can't be read from the command bar or the MCP** (capability error). Don't read it in tooling code (2026-11-10).
 - **Terrain `ReplaceMaterial` repaints without reshaping:** use it with a 4-stud-aligned `Region3` (`:ExpandToGrid(4)`) for streets, squares and ploughed fields on generated terrain (2026-11-10).
+- **3D Importer GLBs land in `Workspace.Scene`:** one Model per object, each holding `<name>_Node` Models with the MeshParts inside. Every part comes in grey Plastic, so set materials in code from the part names. The axes map Blender (x, y, z) to (−x, z, y) at 1:1 (2026-11-10).
